@@ -7,5 +7,8 @@ public class MyWorld extends World {
         GreenfootImage background = new GreenfootImage("background.png");
         background.scale(getWidth(), getHeight());
         setBackground(background);
+        
+        Player player = new Player();
+        addObject(player, 300, 200);
     }
 }
