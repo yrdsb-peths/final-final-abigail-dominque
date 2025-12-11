@@ -13,14 +13,18 @@ public class Player extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    // Sets player image
-    public Player()
+    private int frame = 0;
+    private int animationTimer = 0;
+    
+    // Sets player image when the user moves
+    public void act()
     {
-        setImage("player.png");
+        movePlayer();
+        animatePlayer();
     }
     
     // Player movements
-    public void act()
+    public void movePlayer()
     {
         if(Greenfoot.isKeyDown("left"))
         {
@@ -40,6 +44,17 @@ public class Player extends Actor
         if(Greenfoot.isKeyDown("down"))
         {
             setLocation(getX(), getY() + 3);
+        }
+    }
+    
+    private void animatePlayer()
+    {
+        animationTimer++;
+        
+        if(animationTimer % 6 == 0)  // controls speed
+        {
+            setImage("walk" + frame + ".png");
+            frame = (frame + 1) % 4; // 4-frame animation
         }
     }
 }
