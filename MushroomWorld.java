@@ -9,12 +9,12 @@ public class MushroomWorld extends World {
         background.scale(getWidth(), getHeight());
         setBackground(background);
         
+        // Adds item
+        MushroomHut hut = new MushroomHut();
+        addObject(hut, 100, 200);
+        
         // Add player
         Player player = new Player();
         addObject(player, 300, 200);
-        
-        // Adds item
-        MushroomHut hut = new MushroomHut();
-        addObject(hut, 400, 300);
     }
 }
