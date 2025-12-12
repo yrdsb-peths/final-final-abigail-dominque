@@ -8,8 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class TitleScreen extends World
 {
+    //Creates title label
     Label titleLabel = new Label("Fairyland", 130);
     
+    //Creates play button
     Label play = new Label ("Play", 80);
     /**
      * Constructor for objects of class TitleScreen.
@@ -27,6 +29,7 @@ public class TitleScreen extends World
     
     public void act()
     {
+        //if play label is clicked, the world will switch 
         if (Greenfoot.mouseClicked(play))
         {
             Greenfoot.setWorld(new MyWorld());
