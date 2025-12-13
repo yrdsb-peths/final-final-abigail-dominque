@@ -6,19 +6,21 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
+
 public class DialogueWorld extends World
 {
-    
-    /**
-     * Constructor for objects of class DialogueWorld.
-     * 
-     */
     public DialogueWorld()
-    {    
-        // Create a new world with 600x600 cells with a cell size of 1x1 pixels.
-        super(600, 600, 1); 
+    {
+        super(600, 600, 1);
 
-        DialogueBox a = new DialogueBox ("I know my rent was gonna be late");
-        addObject (a, 300, 550);
+        String[] testing = {
+            "Hello, hello, hello.",
+            "Testing, testing, testing.",
+            "I like giraffes.",
+            "I also like cats."
+        };
+
+        DialogueBox test = new DialogueBox(testing);
+        addObject(test, getWidth() / 2, 400);
     }
-}
+} 
