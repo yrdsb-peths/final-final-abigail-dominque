@@ -10,11 +10,13 @@ public class MushroomWorld extends World {
         setBackground(background);
         
         // Adds item
+        /*
         MushroomHut hut = new MushroomHut();
         addObject(hut, 100, 200);
+        */
         
         // Add player
         Player player = new Player();
-        addObject(player, 300, 200);
+        addObject(player, getWidth() / 2, getHeight() / 2);
     }
 }
