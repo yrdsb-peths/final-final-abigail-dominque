@@ -12,7 +12,9 @@ public class MushroomWorld extends World {
         // Adds item
         MushroomHut hut = new MushroomHut();
         addObject(hut, 100, 200);
-        
+
+       
+        // Add Mushroom NPC
         MushroomChibiNPC mushroom = new MushroomChibiNPC();
         addObject(mushroom, 130, 150);
         
