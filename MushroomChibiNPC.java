@@ -17,6 +17,7 @@ public class MushroomChibiNPC extends Actor
     
     public MushroomChibiNPC()
     {
+        // Loads and scales image 
         idle = new GreenfootImage("mushroom_chibi.jpg");
         idle.scale(WIDTH, HEIGHT);
         setImage(idle);
