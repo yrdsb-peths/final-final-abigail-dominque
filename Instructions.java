@@ -13,7 +13,7 @@ public class Instructions extends World
         super(1000, 700, 1); 
         
         MushroomBigNPC mushroom = new MushroomBigNPC();
-        addObject(mushroom, getHeight() / 2, getWidth() / 2);
+        addObject(mushroom, 500, 350);
         
         String [] text1 = {
             "Welcome to Fairyland!"
