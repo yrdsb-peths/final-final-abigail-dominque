@@ -8,8 +8,8 @@ public class Player extends Actor
      */
     
     // Sets the players height and width
-    private static final int PLAYER_WIDTH = 64;
-    private static final int PLAYER_HEIGHT = 64;
+    private static final int PLAYER_WIDTH = 80;
+    private static final int PLAYER_HEIGHT = 80;
     
     // Sets image variables
     private GreenfootImage idleImage;
