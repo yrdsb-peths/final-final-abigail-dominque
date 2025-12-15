@@ -19,6 +19,13 @@ public class MushroomChibiNPC extends Actor
     
     public void act()
     {
-        // Add your action code here.
-    }
+        Player player = (Player)getOneIntersectingObject(Player.class);
+    
+        if (player != null)
+        {
+            MushroomWorld world = (MushroomWorld)getWorld();
+            world.openInstructions();
+        }
+    }  
 }
+
