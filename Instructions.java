@@ -9,6 +9,10 @@ public class Instructions extends World
     {
         super(1000, 700, 1);
 
+        MushroomBigNPC mushroom = new MushroomBigNPC();
+        addObject(mushroom, 500, 350); 
+        
+        
         returnX = playerX;
         returnY = playerY;
 
