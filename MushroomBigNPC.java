@@ -8,9 +8,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MushroomBigNPC extends Actor
 {
-    private static final int HEIGHT = 100;
-    private static final int WIDTH = 100;
+    private static final int BIG_HEIGHT = 100;
+    private static final int BIG_WIDTH = 100;
     
+    private GreenfootImage image1;
+    private GreenfootImage image2;
+    private GreenfootImage image3;
+    
+    public MushroomBigNPC()
+    {
+         image1 = new GreenfootImage("mushroom_big_image1.png");
+         image2 = new GreenfootImage("mushroom_big_image2.png");
+         image3 = new GreenfootImage("mushroom_big_image3.png");
+        
+    }
     
     public void act()
     {
