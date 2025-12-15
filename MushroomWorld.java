@@ -2,7 +2,7 @@ import greenfoot.*;
 
 public class MushroomWorld extends World {
     public MushroomWorld() {
-        super(800, 700, 1);
+        super(1000, 700, 1);
         
         // Sets background
         GreenfootImage background = new GreenfootImage("background.png");

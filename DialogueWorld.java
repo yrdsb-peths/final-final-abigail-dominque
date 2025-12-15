@@ -4,7 +4,7 @@ public class DialogueWorld extends World
 {
     public DialogueWorld()
     {
-        super(600, 600, 1);
+        super(1000, 700, 1);
 
         String[] testing = {
             "Hello, hello, hello.",
