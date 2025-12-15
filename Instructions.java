@@ -14,5 +14,12 @@ public class Instructions extends World
         
         MushroomBigNPC mushroom = new MushroomBigNPC();
         addObject(mushroom, getHeight() / 2, getWidth() / 2);
+        
+        String [] text1 = {
+            "Welcome to Fairyland!"
+        };
+        
+        DialogueBox txt1 = new DialogueBox(text1);
+        addObject(txt1, getWidth() / 2, 500);
     }
 }
