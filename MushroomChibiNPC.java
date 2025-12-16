@@ -24,8 +24,13 @@ public class MushroomChibiNPC extends Actor
         if (player != null)
         {
             MushroomWorld world = (MushroomWorld)getWorld();
-            world.openInstructions();
+    
+            // Quest finished → give lantern
+            if (world.hasAllFireflies() && !world.lanternAlreadyGiven())
+            {
+                world.giveLantern(player);
+            }
         }
-    }  
+    }
 }
 
