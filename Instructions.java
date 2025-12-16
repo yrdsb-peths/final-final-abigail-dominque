@@ -31,9 +31,13 @@ public class Instructions extends World
     {
         if(getObjects(DialogueBox.class).isEmpty())
         {
+
             MushroomWorld world = new MushroomWorld(returnX, returnY);
             world.startFireflyQuest();
             Greenfoot.setWorld(world);
+
+            Greenfoot.setWorld(new MushroomWorld(true, returnX, returnY));
+
         }
         
         if(Greenfoot.isKeyDown("space"))
