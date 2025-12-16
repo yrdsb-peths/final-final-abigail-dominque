@@ -34,4 +34,19 @@ public class MushroomBigNPC extends Actor
     {
         // Add your action code here.
     }
+    
+    public void setImage1()
+    {
+        setImage(image1);
+    }
+    
+    public void setImage2()
+    {
+        setImage(image2);
+    }
+    
+    public void setImage3()
+    {
+        setImage(image3);
+    }
 }
