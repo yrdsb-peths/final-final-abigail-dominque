@@ -8,10 +8,23 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Book extends Actor
 {
+    
+    private GreenfootImage book; 
+    
+    
     /**
      * Act - do whatever the Book wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
+    public Book()
+    {
+        // initiates and scales book image
+        book = new GreenfootImage("book.png");
+        book.scale(50,50);
+        setImage(book);
+    }
+    
     public void act()
     {
         // Add your action code here.
