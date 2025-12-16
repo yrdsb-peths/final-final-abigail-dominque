@@ -21,7 +21,7 @@ public class MushroomWorld extends World
         addObject(new MushroomHut(), 100, 200);
 
         mushroom = new MushroomChibiNPC();
-        addObject(mushroom, 130, 150);
+        addObject(mushroom, 80, 400);
 
         player = new Player();
         addObject(player, getWidth() / 2, getHeight() / 2);
