@@ -2,11 +2,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Player extends Actor
 {
-    /**
-     * Act - do whatever the Player wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    
     // Sets the players height and width
     private static final int PLAYER_WIDTH = 80;
     private static final int PLAYER_HEIGHT = 80;
@@ -43,6 +38,7 @@ public class Player extends Actor
     {
         movePlayer();
         checkNPCInteraction();
+        checkFireflyPickup();
     }
     // Player movements
     private void movePlayer()
@@ -102,6 +98,19 @@ public class Player extends Actor
         if (npc == null)
         {
             canTalk = true;
+        }
+    }
+    
+    private void checkFireflyPickup()
+    {
+        Firefly firefly = (Firefly)getOneIntersectingObject(Firefly.class);
+    
+        if (firefly != null)
+        {
+            MushroomWorld world = (MushroomWorld)getWorld();
+            world.collectFirefly();
+    
+            world.removeObject(firefly);
         }
     }
 }
