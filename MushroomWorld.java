@@ -9,6 +9,8 @@ public class MushroomWorld extends World
     // Save player position
     private int savedPlayerX;
     private int savedPlayerY;
+    
+    private boolean instructionsRead;
 
     // Firefly instance variables
     private FireflyCounter fireflyCounter;
@@ -16,7 +18,15 @@ public class MushroomWorld extends World
     // Normal constructor (first time entering world)
     public MushroomWorld()
     {
+        this(false, -1, -1);
+    }
+    
+    // Return constructor (after instructions)
+    public MushroomWorld(boolean instructionsRead, int playerX, int playerY)
+    {
         super(1000, 700, 1);
+       
+        this.instructionsRead = instructionsRead;
         
         // Sets background
         GreenfootImage background = new GreenfootImage("background.png");
@@ -34,6 +44,19 @@ public class MushroomWorld extends World
         player = new Player();
         addObject(player, getWidth() / 2, getHeight() / 2);
         
+        //restore position
+        if(playerX != -1 && playerY != -1)
+        {
+            player.setLocation(playerX +40, playerY);
+        }
+        
+        //Adds book after instructions
+        if(instructionsRead)
+        {
+            Book book = new Book();
+            addObject(book, 950, 50);
+        }
+    
         // Adds firefly counter
         fireflyCounter = new FireflyCounter();
         addObject(fireflyCounter, 120, 40);
@@ -49,13 +72,6 @@ public class MushroomWorld extends World
         
             addObject(new Firefly(), x, y);
         }
-    }
-    
-    // Return constructor (after instructions)
-    public MushroomWorld(int playerX, int playerY)
-    {
-        this(); // builds world normally
-        player.setLocation(playerX + 40, playerY); // restore position
     }
 
     // Called by Player when touching NPC
