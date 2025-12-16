@@ -6,9 +6,6 @@ public class MushroomWorld extends World
     private Player player;
     private MushroomChibiNPC mushroom;
 
-    // Hut's x-coordinate (so fireflies don't spawn over it)
-    private static final int hutX = 100;
-    
     // Save player position
     private int savedPlayerX;
     private int savedPlayerY;
@@ -27,7 +24,7 @@ public class MushroomWorld extends World
         setBackground(background);
         
         // Adds mushroom hut
-        addObject(new MushroomHut(), hutX, 200);
+        addObject(new MushroomHut(), 100, 200);
         
         // Adds mushroom
         mushroom = new MushroomChibiNPC();
@@ -44,9 +41,12 @@ public class MushroomWorld extends World
         // Adds three fireflies randomly
         for(int i = 0; i < 3; i++)
         {
-            int x = Greenfoot.getRandomNumber(getWidth() - hutX - 50) + hutX + 50;
-            int y = Greenfoot.getRandomNumber(getHeight() - 100) + 50;
+            int minX = 250;
+            int maxX = getWidth() - 25;
             
+            int x = Greenfoot.getRandomNumber(maxX - minX) + minX;
+            int y = Greenfoot.getRandomNumber(getHeight() - 100) + 50;
+        
             addObject(new Firefly(), x, y);
         }
     }
