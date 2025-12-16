@@ -19,6 +19,9 @@ public class Player extends Actor
     // Tracks way the player is facing
     private boolean facingRight = true;
     
+    // Prevents retrigger
+    private boolean canTalk = true;
+    
     // Sets Player image
     public Player()
     {
@@ -39,6 +42,7 @@ public class Player extends Actor
     public void act()
     {
         movePlayer();
+        checkNPCInteraction();
     }
     // Player movements
     private void movePlayer()
@@ -81,4 +85,24 @@ public class Player extends Actor
             setImage(idleImage);
         }
     }
+
+    private void checkNPCInteraction()
+    {
+        MushroomChibiNPC npc =
+            (MushroomChibiNPC) getOneIntersectingObject(MushroomChibiNPC.class);
+
+        if (npc != null && canTalk && Greenfoot.isKeyDown("space"))
+        {
+            canTalk = false;
+
+            MushroomWorld world = (MushroomWorld) getWorld();
+            world.openInstructions();
+        }
+
+        if (npc == null)
+        {
+            canTalk = true;
+        }
+    }
 }
+

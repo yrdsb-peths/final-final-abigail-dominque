@@ -1,33 +1,28 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
 public class Instructions extends World
 {
     private int returnX;
     private int returnY;
 
-    public Instructions(int playerX, int playerY)
+    public Instructions(int x, int y)
     {
         super(1000, 700, 1);
+        returnX = x;
+        returnY = y;
 
-        MushroomBigNPC mushroom = new MushroomBigNPC();
-        addObject(mushroom, 500, 350); 
-        
-        
-        returnX = playerX;
-        returnY = playerY;
-
-        String[] lines = {
-            "Welcome to Fairyland!",
+        String[] dialogue = {
+            "Hello!",
+            "Welcome to Fairyland.",
             "Use arrow keys to move.",
-            "Talk to characters to learn things."
+            "Press SPACE to talk."
         };
 
-        addObject(new DialogueBox(lines), getWidth() / 2, 300);
+        addObject(new DialogueBox(dialogue), getWidth()/2, getHeight()/2);
     }
 
     public void act()
     {
-        // When dialogue finishes, go back
         if (getObjects(DialogueBox.class).isEmpty())
         {
             Greenfoot.setWorld(new MushroomWorld(returnX, returnY));
