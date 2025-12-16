@@ -1,11 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Player here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Player extends Actor
 {
     /**
@@ -14,8 +8,8 @@ public class Player extends Actor
      */
     
     // Sets the players height and width
-    private static final int PLAYER_WIDTH = 64;
-    private static final int PLAYER_HEIGHT = 64;
+    private static final int PLAYER_WIDTH = 80;
+    private static final int PLAYER_HEIGHT = 80;
     
     // Sets image variables
     private GreenfootImage idleImage;

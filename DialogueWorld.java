@@ -1,17 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class DialogueWorld here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-
 public class DialogueWorld extends World
 {
     public DialogueWorld()
     {
-        super(600, 600, 1);
+        super(1000, 700, 1);
 
         String[] testing = {
             "Hello, hello, hello.",

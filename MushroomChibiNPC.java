@@ -1,16 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class MushroomChibiNPC here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class MushroomChibiNPC extends Actor
 {
     // Sets the players height and width
-    private static final int WIDTH = 64;
-    private static final int HEIGHT = 64;
+    private static final int WIDTH = 80;
+    private static final int HEIGHT = 80;
     
     
     private GreenfootImage idle; 
@@ -25,6 +19,13 @@ public class MushroomChibiNPC extends Actor
     
     public void act()
     {
-        // Add your action code here.
-    }
+        Player player = (Player)getOneIntersectingObject(Player.class);
+    
+        if (player != null)
+        {
+            MushroomWorld world = (MushroomWorld)getWorld();
+            world.openInstructions();
+        }
+    }  
 }
+
