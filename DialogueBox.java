@@ -45,9 +45,6 @@ public class DialogueBox extends Actor
         //Space to change the dialogue
         if(Greenfoot.isKeyDown("space"))
         {
-            //Controls speed
-            Greenfoot.delay(10);
-            
             if(!lineFinished)
             {
                 //Finishes sentence immediately
