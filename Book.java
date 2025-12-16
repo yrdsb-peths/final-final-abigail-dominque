@@ -27,6 +27,17 @@ public class Book extends Actor
     
     public void act()
     {
-        // Add your action code here.
+        if(Greenfoot.mouseClicked(this))
+        {
+            setImage("open_book.png");
+            openInstructions();
+        }
+    }
+    
+    private void openInstructions()
+    {
+        MushroomWorld world = (MushroomWorld)getWorld();
+        
+        world.openInstructions();
     }
 }
