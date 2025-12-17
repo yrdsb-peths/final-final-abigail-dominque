@@ -22,11 +22,6 @@ public class FireflyCounter extends Actor
     
     private void updateImage()
     {
-        setImage(new GreenfootImage(
-            "Fireflies: " + count + "/3",
-            24,
-            Color.YELLOW,
-            new Color(0, 0, 0, 0)
-            ));
+        setImage(new GreenfootImage("Fireflies: " + count + "/3", 24, Color.WHITE, new Color(0, 0, 0, 0)));
     }
 }
