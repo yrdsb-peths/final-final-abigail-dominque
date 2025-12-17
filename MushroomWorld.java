@@ -19,6 +19,8 @@ public class MushroomWorld extends World
     private boolean questStarted = false;
     private boolean questCompleted = false;
     
+    // Firefly light thing (lantern)
+    private boolean lanternGiven = false;
     // Normal constructor (first time entering world)
     public MushroomWorld()
     {
@@ -137,12 +139,20 @@ public class MushroomWorld extends World
 
     public void giveLantern(Player player)
     {
+        if(lanternGiven) return;
+        
         lanternGiven = true;
-    
+        
         // Remove counter
         removeObject(fireflyCounter);
-    
-        // Give lantern
-        addObject(new FireflyLantern(), player.getX(), player.getY() - 50);
+        
+        // Add light
+        addObject(new FireflyLight(player), player.getX(), player.getY());
+        
+        // Safety just in case fireflyCounter is null
+        if (fireflyCounter != null)
+    {
+        removeObject(fireflyCounter);
+    }
     }
 }
