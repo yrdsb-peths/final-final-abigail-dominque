@@ -85,21 +85,35 @@ public class Player extends Actor
     private void checkNPCInteraction()
     {
         MushroomChibiNPC npc =
-            (MushroomChibiNPC) getOneIntersectingObject(MushroomChibiNPC.class);
-
-        if (npc != null && canTalk && Greenfoot.isKeyDown("space"))
+            (MushroomChibiNPC)getOneIntersectingObject(MushroomChibiNPC.class);
+    
+        if (npc != null && canTalk)
         {
             canTalk = false;
-
-            MushroomWorld world = (MushroomWorld) getWorld();
-            world.openInstructions();
+    
+            MushroomWorld world = (MushroomWorld)getWorld();
+    
+            // Only trigger instructions the FIRST time
+            if (!world.hasTalkedToChibi())
+            {
+                world.setTalkedToChibi(true);
+                world.openInstructions();
+            }
+            // After fireflies → give lantern
+            else if (world.areFirefliesComplete() && !world.lanternAlreadyGiven())
+            {
+                world.giveLantern(this);
+            }
         }
-
+    
         if (npc == null)
         {
             canTalk = true;
         }
     }
+
+
+
     
     private void checkFireflyPickup()
     {

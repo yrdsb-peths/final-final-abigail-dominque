@@ -4,9 +4,8 @@ public class Instructions extends World
 {
     private int returnX;
     private int returnY;
-    
-    private int dialogueIndex = 0;
-    
+    private boolean dialogueFinished = false;
+
     private MushroomBigNPC mushroom;
 
     public Instructions(int x, int y)
@@ -23,38 +22,38 @@ public class Instructions extends World
         };
 
         mushroom = new MushroomBigNPC();
-        addObject(mushroom, 500, 350);         
+        addObject(mushroom, 500, 350);
+
         addObject(new DialogueBox(dialogue), getWidth()/2, getHeight()/2);
     }
 
     public void act()
     {
-        if (getObjects(DialogueBox.class).isEmpty())
-    {
-        Greenfoot.setWorld(new MushroomWorld(true, returnX, returnY));
-    }
-        
-        if(Greenfoot.isKeyDown("space"))
+        DialogueBox box = null;
+
+        if (!getObjects(DialogueBox.class).isEmpty())
         {
-            dialogueIndex++;
-            
-            if (dialogueIndex > 2)
-            {
-                dialogueIndex = 0;
-            }
-            
-            if (dialogueIndex == 0)
-            {
-                mushroom.setImage1();
-            }
-            else if (dialogueIndex == 1)
-            {
-                mushroom.setImage2();
-            }
-            else if (dialogueIndex == 2)
-            {
-                mushroom.setImage3();
-            }
+            box = getObjects(DialogueBox.class).get(0);
+        }
+
+        if (box != null)
+        {
+            int index = box.getLineIndex();
+
+            if (index == 0) mushroom.setImage1();
+            else if (index == 1) mushroom.setImage2();
+            else mushroom.setImage3();
+        }
+
+        if (!dialogueFinished && getObjects(DialogueBox.class).isEmpty())
+        {
+            dialogueFinished = true;
+
+            MushroomWorld world =
+                new MushroomWorld(true, returnX, returnY);
+
+            world.startFireflyQuest();
+            Greenfoot.setWorld(world);
         }
     }
 }

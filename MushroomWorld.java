@@ -4,12 +4,18 @@ import java.util.Random;
 public class MushroomWorld extends World
 {
     private Player player;
+    
+    // Chibi instance variable
     private MushroomChibiNPC mushroom;
-
+    
+    // Checks if you talked to the chibi
+    private boolean talkedToChibi = false;
+    
     // Save player position
     private int savedPlayerX;
     private int savedPlayerY;
     
+    // Checks if instructions were read
     private boolean instructionsRead;
 
     // Firefly instance variables
@@ -18,6 +24,8 @@ public class MushroomWorld extends World
     // Firefly quest variables
     private boolean questStarted = false;
     private boolean questCompleted = false;
+    private boolean fireflyQuestActive = false;
+    private boolean firefliesComplete = false;
     
     // Firefly light thing (lantern)
     private boolean lanternGiven = false;
@@ -62,23 +70,6 @@ public class MushroomWorld extends World
             Book book = new Book();
             addObject(book, 950, 50);
         }
-    
-        // Adds firefly counter
-        fireflyCounter = new FireflyCounter();
-        addObject(fireflyCounter, 120, 40);
-        
-        // Adds three fireflies randomly
-        for(int i = 0; i < 3; i++)
-        {
-            int minX = 250;
-            int maxX = getWidth() - 25;
-            
-            int x = Greenfoot.getRandomNumber(maxX - minX) + minX;
-            int y = Greenfoot.getRandomNumber(getHeight() - 100) + 50;
-        
-            addObject(new Firefly(), x, y);
-        }
-
     }
 
     // Called by Player when touching NPC
@@ -88,17 +79,15 @@ public class MushroomWorld extends World
         savedPlayerX = player.getX();
         savedPlayerY = player.getY();
 
-        Greenfoot.setWorld(
-            new Instructions(player.getX(), player.getY())
-        );
+        Greenfoot.setWorld(new Instructions(player.getX(), player.getY()));
     }
     
     // Starts the quest
     public void startFireflyQuest()
     {
-        if (questStarted) return;
+        if (fireflyQuestActive) return;
     
-        questStarted = true;
+        fireflyQuestActive = true;
     
         fireflyCounter = new FireflyCounter();
         addObject(fireflyCounter, 120, 40);
@@ -121,9 +110,19 @@ public class MushroomWorld extends World
     // Collects fireflies
     public void collectFirefly()
     {
-        if (fireflyCounter != null)
+        if (fireflyCounter == null) return;
+    
+        fireflyCounter.addFirefly();
+    
+        if (fireflyCounter.getCount() >= 3)
         {
-            fireflyCounter.addFirefly();
+            firefliesComplete = true;
+    
+            Label msg = new Label(
+                "You've collected all the fireflies! Go talk to the girl.",
+                24
+            );
+            addObject(msg, getWidth()/2, 30);
         }
     }
     
@@ -150,9 +149,30 @@ public class MushroomWorld extends World
         addObject(new FireflyLight(player), player.getX(), player.getY());
         
         // Safety just in case fireflyCounter is null
-        if (fireflyCounter != null)
+            if (fireflyCounter != null)
+        {
+            removeObject(fireflyCounter);
+        }
+    }
+    
+    public boolean isQuestStarted()
     {
-        removeObject(fireflyCounter);
+        return questStarted;
     }
+    
+    public boolean hasTalkedToChibi()
+    {
+        return talkedToChibi;
     }
+    
+    public void setTalkedToChibi(boolean value)
+    {
+        talkedToChibi = value;
+    }
+    
+    public boolean areFirefliesComplete()
+    {
+        return firefliesComplete;
+    }
+
 }

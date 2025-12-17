@@ -19,18 +19,7 @@ public class MushroomChibiNPC extends Actor
     
     public void act()
     {
-        Player player = (Player)getOneIntersectingObject(Player.class);
-    
-        if (player != null)
-        {
-            MushroomWorld world = (MushroomWorld)getWorld();
-    
-            // Quest finished → give lantern
-            if (world.hasAllFireflies() && !world.lanternAlreadyGiven())
-            {
-                world.giveLantern(player);
-            }
-        }
+        
     }
 }
 
