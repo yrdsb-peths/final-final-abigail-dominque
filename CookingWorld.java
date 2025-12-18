@@ -11,6 +11,7 @@ public class CookingWorld extends World
     private int returnX;
     private int returnY;
     
+    private Exit exit;
     
     public CookingWorld(int x, int y)
     {    
@@ -19,5 +20,18 @@ public class CookingWorld extends World
         
         returnX = x;
         returnY = y;
+        
+        exit = new Exit();
+        addObject(exit, 950, 50);
+    }
+    
+    public int getReturnX()
+    {
+        return returnX;
+    }
+    
+    public int getReturnY()
+    {
+        return returnY;
     }
 }

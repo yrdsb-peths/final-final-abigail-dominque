@@ -65,7 +65,7 @@ public class MushroomWorld extends World
         //restore position
         if(playerX != -1 && playerY != -1)
         {
-            player.setLocation(playerX +40, playerY);
+            player.setLocation(playerX + 150, playerY);
         }
         
         //Adds book after instructions
