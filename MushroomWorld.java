@@ -29,6 +29,7 @@ public class MushroomWorld extends World
     
     // Firefly light thing (lantern)
     private boolean lanternGiven = false;
+    private boolean lanternDialogueSeen = false;
     
     // Normal constructor (first time entering world)
     public MushroomWorld()
@@ -40,7 +41,7 @@ public class MushroomWorld extends World
     public MushroomWorld(boolean instructionsRead, int playerX, int playerY)
     {
         super(1000, 700, 1);
-       
+
         this.instructionsRead = instructionsRead;
         
         // Sets background
@@ -85,7 +86,11 @@ public class MushroomWorld extends World
         
         int stage = getDialogueStage();
         
-        Greenfoot.setWorld(new Instructions(stage, player.getX(), player.getY()));
+        if(stage == 2)
+        {
+            lanternDialogueSeen = true;
+        }
+        Greenfoot.setWorld(new Instructions(this, stage, player.getX(), player.getY()));
     }
     
     // Called by Player when touching CookingPot
@@ -199,5 +204,23 @@ public class MushroomWorld extends World
             return 2; // after collecting fireflies
     
         return 1; // reminder dialogue (during quest)
+    }
+    
+    public boolean hasSeenLanternDialogue()
+    {
+        return lanternDialogueSeen;
+    }
+    
+    public void setLanternDialogueSeen()
+    {
+        lanternDialogueSeen = true;
+    }
+    
+    public void setPlayerPosition(int x, int y)
+    {
+        if (player != null)
+        {
+            player.setLocation(x, y);
+        }
     }
 }

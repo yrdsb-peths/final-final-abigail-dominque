@@ -8,10 +8,12 @@ public class Instructions extends World
 
     private MushroomBigNPC mushroom;
     private MushroomWorld world;
+    private MushroomWorld returnWorld;
     
-    public Instructions(int stage, int x, int y)
+    public Instructions(MushroomWorld world, int stage, int x, int y)
     {
         super(1000, 700, 1);
+        this.returnWorld = world;
         returnX = x;
         returnY = y;
         
@@ -58,23 +60,27 @@ public class Instructions extends World
         {
             dialogueFinished = true;
     
-            MushroomWorld world =
-                new MushroomWorld(true, returnX, returnY);
+            // Create the return world
+            MushroomWorld world = new MushroomWorld(true, returnX, returnY);
     
-            // FIRST TIME TALK
+            // FIRST TIME TALK → start quest
             if (world.getDialogueStage() == 0)
             {
                 world.setTalkedToChibi(true);
                 world.startFireflyQuest();
             }
-            // AFTER FIRELIES
-            else if (world.getDialogueStage() == 2)
+    
+            // AFTER FIRELIES → give lantern
+            if (world.getDialogueStage() == 2 && !world.lanternAlreadyGiven())
             {
                 Player p = world.getObjects(Player.class).get(0);
                 world.giveLantern(p);
             }
     
+            // THIS MUST HAPPEN ONCE
             Greenfoot.setWorld(world);
         }
     }
+    
+    
 }

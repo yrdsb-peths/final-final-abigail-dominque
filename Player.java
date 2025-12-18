@@ -90,11 +90,22 @@ public class Player extends Actor
         if (npc != null && canTalk && Greenfoot.isKeyDown("space"))
         {
             canTalk = false;
-    
+        
             MushroomWorld world = (MushroomWorld)getWorld();
-            world.openInstructions();
+        
+            // Give lantern AFTER dialogue was shown
+            if (world.areFirefliesComplete()
+                && world.hasSeenLanternDialogue()
+                && !world.lanternAlreadyGiven())
+            {
+                world.giveLantern(this);
+            }
+            else
+            {
+                world.openInstructions();
+            }
         }
-    
+        
         if (npc == null)
         {
             canTalk = true;
