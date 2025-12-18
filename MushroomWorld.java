@@ -23,12 +23,13 @@ public class MushroomWorld extends World
     
     // Firefly quest variables
     private boolean questStarted = false;
-    private boolean questCompleted = false;
+    private boolean questCompleted = false; // MIGHT NOT NEED HTHIS BUT DON"T DELETE YET
     private boolean fireflyQuestActive = false;
     private boolean firefliesComplete = false;
     
     // Firefly light thing (lantern)
     private boolean lanternGiven = false;
+    
     // Normal constructor (first time entering world)
     public MushroomWorld()
     {
@@ -78,8 +79,10 @@ public class MushroomWorld extends World
         // Save player position before leaving
         savedPlayerX = player.getX();
         savedPlayerY = player.getY();
-
-        Greenfoot.setWorld(new Instructions(player.getX(), player.getY()));
+        
+        int stage = getDialogueStage();
+        
+        Greenfoot.setWorld(new Instructions(stage, player.getX(), player.getY()));
     }
     
     // Starts the quest
@@ -175,4 +178,14 @@ public class MushroomWorld extends World
         return firefliesComplete;
     }
 
+    public int getDialogueStage()
+    {
+        if (!talkedToChibi)
+            return 0; // first time (intro)
+    
+        if (firefliesComplete && !lanternGiven)
+            return 2; // after collecting fireflies
+    
+        return 1; // reminder dialogue (during quest)
+    }
 }
