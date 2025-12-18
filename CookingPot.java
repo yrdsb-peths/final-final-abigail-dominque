@@ -10,6 +10,7 @@ public class CookingPot extends Actor
 {
     private GreenfootImage pot;
     
+    //Initializes cooking pot
     public CookingPot()
     {
         pot = new GreenfootImage("cooking_pot.png");

@@ -54,10 +54,6 @@ public class MushroomWorld extends World
         mushroom = new MushroomChibiNPC();
         addObject(mushroom, 80, 400);
         
-        //Adds cooking pot
-        CookingPot pot = new CookingPot();
-        addObject(pot, 600, 300);
-        
         // Adds player
         player = new Player();
         addObject(player, getWidth() / 2, getHeight() / 2);
@@ -68,11 +64,14 @@ public class MushroomWorld extends World
             player.setLocation(playerX + 150, playerY);
         }
         
-        //Adds book after instructions
+        //Adds book and cooking pot after instructions
         if(instructionsRead)
         {
             Book book = new Book();
             addObject(book, 950, 50);
+            
+            CookingPot pot = new CookingPot();
+            addObject(pot, 600, 300);
         }
     }
 

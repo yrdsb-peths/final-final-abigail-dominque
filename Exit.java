@@ -11,13 +11,15 @@ public class Exit extends Actor
     
     private GreenfootImage exit;
     
+    //sets and scales Exit
     public Exit ()
     {
         GreenfootImage exit = new GreenfootImage("exit.png");
         exit.scale(100,100);
         setImage(exit);
     }
-    
+
+    // Switches world to previous MushroomWorld when clicked
     public void act()
     {
         if(Greenfoot.mouseClicked(this))
