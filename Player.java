@@ -39,6 +39,7 @@ public class Player extends Actor
         movePlayer();
         checkNPCInteraction();
         checkFireflyPickup();
+        checkCookingPot();
     }
     // Player movements
     private void movePlayer()
@@ -100,6 +101,14 @@ public class Player extends Actor
         }
     }
 
+    private void checkCookingPot()
+    {
+        if(isTouching(CookingPot.class))
+        {
+            ((MushroomWorld) getWorld()).startCooking();
+        }
+    }
+    
     private void checkFireflyPickup()
     {
         Firefly firefly = (Firefly)getOneIntersectingObject(Firefly.class);

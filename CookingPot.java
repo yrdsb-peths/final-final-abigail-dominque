@@ -8,10 +8,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class CookingPot extends Actor
 {
-    /**
-     * Act - do whatever the CookingPot wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    private GreenfootImage pot;
+    
+    //Initializes cooking pot
+    public CookingPot()
+    {
+        pot = new GreenfootImage("cooking_pot.png");
+        pot.scale(70,50);
+        setImage(pot);
+    }
+    
     public void act()
     {
         // Add your action code here.

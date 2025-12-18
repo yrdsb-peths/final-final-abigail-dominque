@@ -62,14 +62,17 @@ public class MushroomWorld extends World
         //restore position
         if(playerX != -1 && playerY != -1)
         {
-            player.setLocation(playerX +40, playerY);
+            player.setLocation(playerX + 150, playerY);
         }
         
-        //Adds book after instructions
+        //Adds book and cooking pot after instructions
         if(instructionsRead)
         {
             Book book = new Book();
             addObject(book, 950, 50);
+            
+            CookingPot pot = new CookingPot();
+            addObject(pot, 600, 300);
         }
     }
 
@@ -83,6 +86,15 @@ public class MushroomWorld extends World
         int stage = getDialogueStage();
         
         Greenfoot.setWorld(new Instructions(stage, player.getX(), player.getY()));
+    }
+    
+    // Called by Player when touching CookingPot
+    public void startCooking()
+    {
+        savedPlayerX = player.getX();
+        savedPlayerY = player.getY();
+        
+        Greenfoot.setWorld(new CookingWorld(player.getX(), player.getY()));
     }
     
     // Starts the quest
