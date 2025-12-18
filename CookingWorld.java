@@ -8,14 +8,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class CookingWorld extends World
 {
-
-    /**
-     * Constructor for objects of class CookingWorld.
-     * 
-     */
-    public CookingWorld()
+    private int returnX;
+    private int returnY;
+    
+    
+    public CookingWorld(int x, int y)
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        // Create a new world with 1000x700 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1); 
+        
+        returnX = x;
+        returnY = y;
     }
 }

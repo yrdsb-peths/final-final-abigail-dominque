@@ -54,6 +54,10 @@ public class MushroomWorld extends World
         mushroom = new MushroomChibiNPC();
         addObject(mushroom, 80, 400);
         
+        //Adds cooking pot
+        CookingPot pot = new CookingPot();
+        addObject(pot, 600, 300);
+        
         // Adds player
         player = new Player();
         addObject(player, getWidth() / 2, getHeight() / 2);
@@ -80,6 +84,15 @@ public class MushroomWorld extends World
         savedPlayerY = player.getY();
 
         Greenfoot.setWorld(new Instructions(player.getX(), player.getY()));
+    }
+    
+    // Called by Player when touching CookingPot
+    public void startCooking()
+    {
+        savedPlayerX = player.getX();
+        savedPlayerY = player.getY();
+        
+        Greenfoot.setWorld(new CookingWorld(player.getX(), player.getY()));
     }
     
     // Starts the quest
