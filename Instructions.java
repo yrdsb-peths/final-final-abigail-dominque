@@ -61,13 +61,14 @@ public class Instructions extends World
             dialogueFinished = true;
     
             // Create the return world
-            MushroomWorld world = new MushroomWorld(true, returnX, returnY);
-    
+            MushroomWorld world = returnWorld;
+            
             // FIRST TIME TALK → start quest
             if (world.getDialogueStage() == 0)
             {
                 world.setTalkedToChibi(true);
                 world.startFireflyQuest();
+                world.spawnBookIfNeeded();
             }
     
             // AFTER FIRELIES → give lantern

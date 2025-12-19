@@ -31,6 +31,8 @@ public class MushroomWorld extends World
     private boolean lanternGiven = false;
     private boolean lanternDialogueSeen = false;
     
+    private boolean bookSpawned = false;
+    
     // Normal constructor (first time entering world)
     public MushroomWorld()
     {
@@ -221,6 +223,16 @@ public class MushroomWorld extends World
         if (player != null)
         {
             player.setLocation(x, y);
+        }
+    }
+    
+    public void spawnBookIfNeeded()
+    {
+        if(!bookSpawned)
+        {
+            Book book = new Book();
+            addObject(book, getWidth() - 100, 60);
+            bookSpawned = true;
         }
     }
 }

@@ -13,16 +13,6 @@ public class Book extends Actor
         setImage(book);
     }
     
-    public void act()
-    {
-        // changes book image to an open book when clicked
-        if(Greenfoot.mouseClicked(this))
-        {
-            setImage("open_book.png");
-            openInstructions();
-        }
-    }
-    
     private void openInstructions()
     {
         //opens instructions world when clicked
