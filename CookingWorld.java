@@ -27,11 +27,12 @@ public class CookingWorld extends World
         returnX = x;
         returnY = y;
         
+        GreenfootImage background = new GreenfootImage("kitchen.jpg");
+        background.scale(1000,700);
+        setBackground(background);
+        
         exit = new Exit();
         addObject(exit, 950, 50);
-        
-        pot = new CookingPotTop();
-        addObject(pot, 500, 350);
         
         String[] text;
         text = new String[] {

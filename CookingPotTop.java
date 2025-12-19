@@ -17,7 +17,6 @@ public class CookingPotTop extends Actor
         top = new GreenfootImage("cooking_pot_top.png");
         top.scale(500,500);
         setImage(top);
-        
     }
     
     public void act()
