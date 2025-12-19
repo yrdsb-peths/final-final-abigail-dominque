@@ -254,7 +254,7 @@ public class MushroomWorld extends World
         if(!bookSpawned)
         {
             Book book = new Book();
-            addObject(book, getWidth() - 100, 60);
+            addObject(book, getWidth() - 60, 60);
             bookSpawned = true;
         }
     }
