@@ -21,6 +21,9 @@ public class MushroomWorld extends World
     // Firefly instance variables
     private FireflyCounter fireflyCounter;
     
+    // Message for player (when they complete firefly quest)
+    private Label fireflyCompleteMsg;
+    
     // Firefly quest variables
     private boolean questStarted = false;
     private boolean questCompleted = false; // MIGHT NOT NEED HTHIS BUT DON"T DELETE YET
@@ -79,6 +82,14 @@ public class MushroomWorld extends World
         }
     }
 
+    public void openControls()
+    {
+        savedPlayerX = player.getX();
+        savedPlayerY = player.getY();
+            
+        Greenfoot.setWorld(new PlayerControls(this, savedPlayerX, savedPlayerY));
+    }
+    
     // Called by Player when touching NPC
     public void openInstructions()
     {
@@ -140,11 +151,15 @@ public class MushroomWorld extends World
         {
             firefliesComplete = true;
     
-            Label msg = new Label(
-                "You've collected all the fireflies! Go talk to the girl.",
-                24
-            );
-            addObject(msg, getWidth()/2, 30);
+            // Only create once
+            if (fireflyCompleteMsg == null)
+            {
+                fireflyCompleteMsg = new Label(
+                    "You've collected all the fireflies! Go talk to the girl.",
+                    24
+                );
+                addObject(fireflyCompleteMsg, getWidth()/2, 30);
+            }
         }
     }
     
@@ -167,14 +182,22 @@ public class MushroomWorld extends World
         // Remove counter
         removeObject(fireflyCounter);
         
-        // Add light
-        addObject(new FireflyLight(player), player.getX(), player.getY());
-        
-        // Safety just in case fireflyCounter is null
-            if (fireflyCounter != null)
+        // Remove firefly counter safely
+        if (fireflyCounter != null)
         {
             removeObject(fireflyCounter);
+            fireflyCounter = null;
         }
+    
+        // Remove "go talk to the girl" message
+        if (fireflyCompleteMsg != null)
+        {
+            removeObject(fireflyCompleteMsg);
+            fireflyCompleteMsg = null;
+        }
+    
+        // Add lantern light
+        addObject(new FireflyLight(player), player.getX(), player.getY());
     }
     
     public boolean isQuestStarted()

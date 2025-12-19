@@ -13,11 +13,18 @@ public class Book extends Actor
         setImage(book);
     }
     
-    private void openInstructions()
+    private void openControls()
     {
         //opens instructions world when clicked
         MushroomWorld world = (MushroomWorld)getWorld();
-        
-        world.openInstructions();
+        world.openControls();
+    }
+    
+    public void act()
+    {
+        if(Greenfoot.mouseClicked(this))
+        {
+            openControls();
+        }
     }
 }
