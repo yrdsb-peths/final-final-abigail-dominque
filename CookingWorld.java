@@ -13,6 +13,8 @@ public class CookingWorld extends World
     
     private Exit exit;
     
+    private CookingPot pot;
+    
     public CookingWorld(int x, int y)
     {    
         // Create a new world with 1000x700 cells with a cell size of 1x1 pixels.
@@ -23,6 +25,9 @@ public class CookingWorld extends World
         
         exit = new Exit();
         addObject(exit, 950, 50);
+        
+        pot = new CookingPot();
+        addObject(pot, 500, 250);
     }
     
     public int getReturnX()
