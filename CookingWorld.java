@@ -13,7 +13,11 @@ public class CookingWorld extends World
     
     private Exit exit;
     
-    private CookingPot pot;
+    private CookingPotTop pot;
+    
+    private DialogueBox dialogue;
+    
+    private boolean recipesShown = false;
     
     public CookingWorld(int x, int y)
     {    
@@ -26,8 +30,38 @@ public class CookingWorld extends World
         exit = new Exit();
         addObject(exit, 950, 50);
         
-        pot = new CookingPot();
-        addObject(pot, 500, 250);
+        pot = new CookingPotTop();
+        addObject(pot, 500, 350);
+        
+        String[] text;
+        text = new String[] {
+            "Welcome to the kitchen!",
+            "Choose a recipe to begin."
+        };
+        
+        dialogue = new DialogueBox(text);
+        addObject(dialogue, 500, 600);
+    }
+    
+    public void act()
+    {
+        if(!recipesShown && dialogue != null && dialogue.isFinished())
+        {
+            showRecipies();
+            recipesShown = true;
+        }
+    }
+    
+    private void showRecipies()
+    {
+        Recipe1 recipe1 = new Recipe1();
+        addObject(recipe1, 200, 350);
+        
+        Recipe2 recipe2 = new Recipe2();
+        addObject (recipe2, 500, 350);
+        
+        Recipe3 recipe3 = new Recipe3();
+        addObject(recipe3, 800, 350);
     }
     
     public int getReturnX()
