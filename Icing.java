@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Icing extends Actor
+public class Icing extends Drag
 {
     /**
      * Act - do whatever the Icing wants to do. This method is called whenever
@@ -15,12 +15,12 @@ public class Icing extends Actor
     public Icing()
     {
         GreenfootImage icing = new GreenfootImage("icing.png");
-        icing.scale(150,150);
+        icing.scale(200,200);
         setImage(icing);
     }
     
     public void act()
     {
-        // Add your action code here.
+        
     }
 }

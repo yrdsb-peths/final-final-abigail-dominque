@@ -4,6 +4,8 @@ public class Recipe1World extends World
     private DialogueBox dialogue;
     
     private Exit exit;
+    
+    private boolean ingredientsAdded = false;
 
     public Recipe1World()
     {    
@@ -14,7 +16,7 @@ public class Recipe1World extends World
         addObject(exit, 950, 50);
         
         CookingPotTop pot = new CookingPotTop();
-        addObject(pot, 500, 350);
+        addObject(pot, 500, 400);
         
         String[] text;
         text = new String[] {
@@ -23,6 +25,30 @@ public class Recipe1World extends World
         };
         
         dialogue = new DialogueBox(text);
-        addObject(dialogue, 500, 600);
+        addObject(dialogue, 500, 100);
+    }
+    
+    public void act()
+    {
+        if(!ingredientsAdded && dialogue.isFinished())
+        {
+            showIngredients();
+            ingredientsAdded = true;
+        }
+    }
+    
+    private void showIngredients()
+    {
+        Icing icing = new Icing();
+        addObject(icing, 150, 200);
+        
+        Sugar sugar = new Sugar();
+        addObject(sugar, 150, 600);
+        
+        Flour flour = new Flour();
+        addObject(flour, 850, 600);
+        
+        Butter butter = new Butter();
+        addObject(butter, 850, 200);
     }
 }
