@@ -1,11 +1,4 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
-/**
- * Write a description of class CookingWorld here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class CookingWorld extends World
 {
     private int returnX;
@@ -31,7 +24,7 @@ public class CookingWorld extends World
         background.scale(1000,700);
         setBackground(background);
         
-        exit = new Exit();
+        exit = new Exit(new MushroomWorld(true, returnX, returnY));
         addObject(exit, 950, 50);
         
         String[] text;
