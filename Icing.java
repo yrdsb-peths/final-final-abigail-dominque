@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Icing extends Drag
+public class Icing extends Ingredient
 {
     /**
      * Act - do whatever the Icing wants to do. This method is called whenever
@@ -21,6 +21,9 @@ public class Icing extends Drag
     
     public void act()
     {
-        
+        if(!isAddedToPot() && Greenfoot.mousePressed(this))
+        {
+            addToPot();
+        }
     }
 }

@@ -1,11 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Recipe1World extends World
 {
-    private DialogueBox dialogue;
-    
-    private Exit exit;
+    private DialogueBox dialogue1;
     
     private boolean ingredientsAdded = false;
+    
+    private int ingredientsAddedCount = 0;
+    private final int TOTAL_INGREDIENTS = 4;
+    
+    private boolean cookiesMade = false;
+    private boolean lastDialogueShown = false;
 
     public Recipe1World()
     {    
@@ -18,23 +22,41 @@ public class Recipe1World extends World
         CookingPotTop pot = new CookingPotTop();
         addObject(pot, 500, 400);
         
-        String[] text;
-        text = new String[] {
+        String[] text1;
+        text1 = new String[] {
             "Let's make sugar cookies!",
-            "Drag the ingredients into the pot."
+            "Click the ingredients to put them in the pot."
         };
         
-        dialogue = new DialogueBox(text);
-        addObject(dialogue, 500, 100);
+        dialogue1 = new DialogueBox(text1);
+        addObject(dialogue1, 500, 100);
     }
     
     public void act()
     {
-        if(!ingredientsAdded && dialogue.isFinished())
+        if(!ingredientsAdded && dialogue1.isFinished())
         {
             showIngredients();
             ingredientsAdded = true;
         }
+        
+        if(cookiesMade && !lastDialogueShown)
+        {
+            showLastDialogue();
+            lastDialogueShown = true;
+        }
+    }
+    
+    private void showLastDialogue()
+    {
+        String[] text2;
+        text2 = new String[] {
+            "Good job, you baked sugar cookies!",
+            "Give them to your fairy friends."
+        };
+        
+        DialogueBox dialogue2 = new DialogueBox(text2);
+        addObject(dialogue2, 500, 100);
     }
     
     private void showIngredients()
@@ -50,5 +72,26 @@ public class Recipe1World extends World
         
         Butter butter = new Butter();
         addObject(butter, 850, 200);
+    }
+    
+    public void ingredientAdded()
+    {
+        ingredientsAddedCount++;
+        
+        if(ingredientsAddedCount == TOTAL_INGREDIENTS)
+        {
+            finishRecipe();
+        }
+    }
+    
+    private void finishRecipe()
+    {
+        removeObjects(getObjects(Ingredient.class));
+        removeObjects(getObjects(CookingPotTop.class));
+        
+        SugarCookies cookie = new SugarCookies();
+        addObject(cookie, 500, 400);
+        
+        cookiesMade = true;
     }
 }

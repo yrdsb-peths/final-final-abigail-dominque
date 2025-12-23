@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Flour extends Drag
+public class Flour extends Ingredient
 {
     /**
      * Act - do whatever the Flour wants to do. This method is called whenever
@@ -21,6 +21,9 @@ public class Flour extends Drag
     
     public void act()
     {
-        // Add your action code here.
+        if(!isAddedToPot() && Greenfoot.mousePressed(this))
+        {
+            addToPot();
+        }
     }
 }
