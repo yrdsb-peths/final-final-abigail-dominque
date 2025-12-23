@@ -11,12 +11,16 @@ public class Exit extends Actor
     
     private GreenfootImage exit;
     
+    private World worldTarget;
+    
     //sets and scales Exit
-    public Exit ()
+    public Exit (World world)
     {
         GreenfootImage exit = new GreenfootImage("exit.png");
         exit.scale(100,100);
         setImage(exit);
+        
+        worldTarget = world;
     }
 
     // Switches world to previous MushroomWorld when clicked
@@ -24,10 +28,7 @@ public class Exit extends Actor
     {
         if(Greenfoot.mouseClicked(this))
         {
-            Greenfoot.setWorld(new MushroomWorld(true, 
-                    ((CookingWorld) getWorld()).getReturnX(), (
-                    (CookingWorld) getWorld()).getReturnY()
-            ));
+            Greenfoot.setWorld(worldTarget);
         }
     }
 }

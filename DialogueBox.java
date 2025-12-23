@@ -6,6 +6,7 @@ public class DialogueBox extends Actor
     private int lineIndex = 0;
 
     private boolean canPressSpace = true;
+    private boolean isFinished = false;
 
     public DialogueBox(String[] dialogue)
     {
@@ -26,6 +27,7 @@ public class DialogueBox extends Actor
             }
             else
             {
+                isFinished = true;
                 getWorld().removeObject(this);
             }
         }
@@ -49,5 +51,10 @@ public class DialogueBox extends Actor
     public int getLineIndex()
     {
         return lineIndex;
+    }
+    
+    public boolean isFinished()
+    {
+        return isFinished;
     }
 }
