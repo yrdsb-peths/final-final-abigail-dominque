@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Eggs extends Ingredient
 {
+    // eggs can exist in Recipe2world and Recipe3World
     public Eggs(Recipe2World world)
     {
         super(world);
@@ -26,6 +27,7 @@ public class Eggs extends Ingredient
         setImage(eggs);
     }
     
+    // when clicked, set location to center of the pot
     public void act()
     {
         super.act();

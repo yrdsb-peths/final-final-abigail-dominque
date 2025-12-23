@@ -8,31 +8,37 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Recipe2World extends World
 {
+    // intro dialogue
     private DialogueBox dialogue1;
     
+    // tracks whether all the ingredient were added
     private boolean ingredientsAdded = false;
     
+    // tracks number of ingredients added
     private int ingredientsAddedCount = 0;
     private final int TOTAL_INGREDIENTS = 4;
     
+    // tracks whether recipe was made
     private boolean recipeMade = false;
+    
+    // tracks whether the ending dialogue was shown
     private boolean lastDialogueShown = false;
     
-    /**
-     * Constructor for objects of class Recipe2World.
-     * 
-     */
+    // Constructor for Recipe2World
     public Recipe2World()
     {    
         // Create a new world with 1000x700 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1);
         
+        // adds exit button
         Exit exit = new Exit(new CookingWorld(500,350));
         addObject(exit, 950, 50);
         
+        // adds cooking pot in middle
         CookingPotTop pot = new CookingPotTop();
         addObject(pot, 500, 400);
         
+        // intro text
         String[] text1;
         text1 = new String[] {
             "Let's make crepes!",
@@ -45,12 +51,14 @@ public class Recipe2World extends World
     
     public void act()
     {
+        // shows ingredient to add after intro dialogue
         if(!ingredientsAdded && dialogue1.isFinished())
         {
             showIngredients();
             ingredientsAdded = true;
         }
         
+        //shows ending dialogue after crepes are made
         if(recipeMade && !lastDialogueShown)
         {
             showLastDialogue();
@@ -58,6 +66,7 @@ public class Recipe2World extends World
         }
     }
     
+    //ending dialogue
     private void showLastDialogue()
     {
         String[] text2;
@@ -70,6 +79,7 @@ public class Recipe2World extends World
         addObject(dialogue2, 500, 100);
     }
     
+    //shows ingredient to add to pot
     private void showIngredients()
     {
         Syrup syrup = new Syrup(this);
@@ -85,6 +95,7 @@ public class Recipe2World extends World
         addObject(eggs, 850, 200);
     }
     
+    //finishes recipe when max ingredients added
     public void ingredientAdded()
     {
         ingredientsAddedCount++;
@@ -95,6 +106,7 @@ public class Recipe2World extends World
         }
     }
     
+    //removes ingredients and pot to show crepes
     private void finishRecipe()
     {
         removeObjects(getObjects(Ingredient.class));

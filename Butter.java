@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Butter extends Ingredient
 {
+    // butter can exist in Recipe1World only
     public Butter(Recipe1World world)
     {
         super(world);
@@ -17,6 +18,8 @@ public class Butter extends Ingredient
         setImage(butter);
     }
     
+    
+    // when clicked, set location to center of the pot
     public void act()
     {
         super.act(); 

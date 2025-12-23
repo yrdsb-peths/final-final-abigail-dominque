@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Syrup extends Ingredient
 {
+    // Syrup exists in Recipe2World
     public Syrup(Recipe2World world)
     {
         super(world);
@@ -16,6 +17,8 @@ public class Syrup extends Ingredient
         syrup.scale(150,150);
         setImage(syrup);
     }
+    
+    // when clicked, set location to center of the pot
     public void act()
     {
         super.act();

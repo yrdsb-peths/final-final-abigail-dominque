@@ -1,27 +1,37 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Recipe1World extends World
 {
+    // intro dialogue
     private DialogueBox dialogue1;
     
+    // tracks whether all the ingredient were added
     private boolean ingredientsAdded = false;
     
+    // tracks number of ingredients added
     private int ingredientsAddedCount = 0;
     private final int TOTAL_INGREDIENTS = 4;
     
+    // tracks whether recipe was made
     private boolean recipeMade = false;
+    
+    // tracks whether the ending dialogue was shown
     private boolean lastDialogueShown = false;
-
+    
+    //Constructor for Recipe1World
     public Recipe1World()
     {    
         // Create a new world with 1000x700 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1);
         
+        // adds exit option
         Exit exit = new Exit(new CookingWorld(500,350));
         addObject(exit, 950, 50);
         
+        // adds cooking pot in the middle
         CookingPotTop pot = new CookingPotTop();
         addObject(pot, 500, 400);
         
+        // intro text
         String[] text1;
         text1 = new String[] {
             "Let's make sugar cookies!",
@@ -34,12 +44,14 @@ public class Recipe1World extends World
     
     public void act()
     {
+        // shows ingredient to add after intro dialogue
         if(!ingredientsAdded && dialogue1.isFinished())
         {
             showIngredients();
             ingredientsAdded = true;
         }
         
+        //shows ending dialogue after cookies are made
         if(recipeMade && !lastDialogueShown)
         {
             showLastDialogue();
@@ -47,6 +59,7 @@ public class Recipe1World extends World
         }
     }
     
+    //ending dialogue
     private void showLastDialogue()
     {
         String[] text2;
@@ -59,6 +72,7 @@ public class Recipe1World extends World
         addObject(dialogue2, 500, 100);
     }
     
+    //shows ingredient to add to pot
     private void showIngredients()
     {
         Icing icing = new Icing(this);
@@ -74,6 +88,7 @@ public class Recipe1World extends World
         addObject(butter, 850, 200);
     }
     
+    //finishes recipe when max ingredients added
     public void ingredientAdded()
     {
         ingredientsAddedCount++;
@@ -84,6 +99,7 @@ public class Recipe1World extends World
         }
     }
     
+    //removes ingredients and pot to show cookies
     private void finishRecipe()
     {
         removeObjects(getObjects(Ingredient.class));

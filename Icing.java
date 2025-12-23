@@ -8,10 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Icing extends Ingredient
 {
-    /**
-     * Act - do whatever the Icing wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    // Icing can exist in Recipe1World
     public Icing(Recipe1World world)
     {
         super(world);
@@ -21,6 +18,7 @@ public class Icing extends Ingredient
         setImage(icing);
     }
     
+    // when clicked, set location to center of the pot
     public void act()
     {
         super.act();

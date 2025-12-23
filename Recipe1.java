@@ -10,14 +10,15 @@ public class Recipe1 extends Actor
 {
     private GreenfootImage recipe1;
     
+    //initializes recipe1
     public Recipe1()
     {
-        recipe1 = new GreenfootImage("recipe1.jpg");
-        recipe1.scale(200,200);
-        setImage(recipe1);
+        GreenfootImage cookies = new GreenfootImage("sugar_cookies.png");
+        cookies.scale(300,300);
+        setImage(cookies);
     }
     
-    //initializes recipe1
+    //switches world to Recipe1World when clicked
     public void act()
     {
         if (Greenfoot.mouseClicked(this))

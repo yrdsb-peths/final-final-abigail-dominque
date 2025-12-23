@@ -12,6 +12,7 @@ public class CookingWorld extends World
     
     private boolean recipesShown = false;
     
+    // constructor for CookingWorld
     public CookingWorld(int x, int y)
     {    
         // Create a new world with 1000x700 cells with a cell size of 1x1 pixels.
@@ -20,10 +21,12 @@ public class CookingWorld extends World
         returnX = x;
         returnY = y;
         
+        // sets bg image
         GreenfootImage background = new GreenfootImage("kitchen.jpg");
         background.scale(1000,700);
         setBackground(background);
         
+        // adds exit option
         exit = new Exit(new MushroomWorld(true, returnX, returnY));
         addObject(exit, 950, 50);
         
@@ -37,6 +40,7 @@ public class CookingWorld extends World
         addObject(dialogue, 500, 600);
     }
     
+    //shows recipe options after dialogue
     public void act()
     {
         if(!recipesShown && dialogue != null && dialogue.isFinished())
@@ -46,15 +50,16 @@ public class CookingWorld extends World
         }
     }
     
+    //shows recipe options to choose from
     private void showRecipies()
     {
-        SugarCookies recipe1 = new SugarCookies();
+        Recipe1 recipe1 = new Recipe1();
         addObject(recipe1, 200, 350);
         
-        Crepes recipe2 = new Crepes();
+        Recipe2 recipe2 = new Recipe2();
         addObject (recipe2, 500, 350);
         
-        CinnamonRolls recipe3 = new CinnamonRolls();
+        Recipe3 recipe3 = new Recipe3();
         addObject(recipe3, 800, 350);
     }
     

@@ -8,10 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Flour extends Ingredient
 {
-    /**
-     * Act - do whatever the Flour wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    // Flour can exist in Recipe1World, Recipe2World and Recipe3World
     public Flour(Recipe1World world)
     {
         super(world);
@@ -39,6 +36,7 @@ public class Flour extends Ingredient
         setImage(flour);
     }
     
+    // when clicked, set location to center of the pot
     public void act()
     {
         super.act();

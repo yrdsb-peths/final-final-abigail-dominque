@@ -10,10 +10,12 @@ public class Ingredient extends Actor
 {
     private boolean addedToPot = false;
     
+    // instance variable for each recipe world
     private Recipe1World recipe1World;
     private Recipe2World recipe2World;
     private Recipe3World recipe3World;
     
+    // constructor so it works in every recipe world
     public Ingredient(Recipe1World world)
     {
         recipe1World = world;
@@ -31,7 +33,8 @@ public class Ingredient extends Actor
     
     public void act()
     {
-        
+        // sets location of ingredient to the center of the 
+        // pot when clicked
         if(!addedToPot && Greenfoot.mousePressed(this))
         {
             addedToPot = true;

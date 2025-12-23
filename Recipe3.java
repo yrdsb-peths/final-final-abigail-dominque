@@ -13,11 +13,12 @@ public class Recipe3 extends Actor
     //initializes recipe3
     public Recipe3()
     {
-        recipe3 = new GreenfootImage("recipe3.png");
-        recipe3.scale(200,200);
-        setImage(recipe3);
+        GreenfootImage rolls = new GreenfootImage("cinnamon_rolls.png");
+        rolls.scale(300, 300);
+        setImage(rolls);
     }
     
+    //switches world to Recipe3World when clicked
     public void act()
     {
         if (Greenfoot.mouseClicked(this))

@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Sugar extends Ingredient
 {
-    
+    // Sugar exists in Recipe1World, Recipe2World and Recipe3World
     public Sugar(Recipe1World world)
     {
         super(world);
@@ -36,6 +36,7 @@ public class Sugar extends Ingredient
         setImage(sugar);
     }
     
+    // when clicked, set location to center of the pot
     public void act()
     {
         super.act();

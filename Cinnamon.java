@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Cinnamon extends Ingredient
 {
+    //cinnamon exists in recipe3world
     public Cinnamon(Recipe3World world)
     {
         super(world);
@@ -16,6 +17,8 @@ public class Cinnamon extends Ingredient
         cinnamon.scale(150,150);
         setImage(cinnamon);
     }
+    
+    // when clicked, set location to center of the pot
     public void act()
     {
         super.act(); 
