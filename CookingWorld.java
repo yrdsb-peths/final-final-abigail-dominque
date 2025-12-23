@@ -48,13 +48,13 @@ public class CookingWorld extends World
     
     private void showRecipies()
     {
-        Recipe1 recipe1 = new Recipe1();
+        SugarCookies recipe1 = new SugarCookies();
         addObject(recipe1, 200, 350);
         
-        Recipe2 recipe2 = new Recipe2();
+        Crepes recipe2 = new Crepes();
         addObject (recipe2, 500, 350);
         
-        Recipe3 recipe3 = new Recipe3();
+        CinnamonRolls recipe3 = new CinnamonRolls();
         addObject(recipe3, 800, 350);
     }
     

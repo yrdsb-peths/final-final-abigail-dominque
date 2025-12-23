@@ -1,26 +1,24 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Butter here.
+ * Write a description of class Syrup here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Butter extends Ingredient
+public class Syrup extends Ingredient
 {
-    public Butter(Recipe1World world)
+    public Syrup(Recipe2World world)
     {
         super(world);
         
-        GreenfootImage butter = new GreenfootImage("butter.png");
-        butter.scale(150,150);
-        setImage(butter);
+        GreenfootImage syrup = new GreenfootImage("syrup.png");
+        syrup.scale(150,150);
+        setImage(syrup);
     }
-    
     public void act()
     {
-        super.act(); 
-        
+        super.act();
         
         if(!isAddedToPot() && Greenfoot.mousePressed(this))
         {

@@ -8,7 +8,7 @@ public class Recipe1World extends World
     private int ingredientsAddedCount = 0;
     private final int TOTAL_INGREDIENTS = 4;
     
-    private boolean cookiesMade = false;
+    private boolean recipeMade = false;
     private boolean lastDialogueShown = false;
 
     public Recipe1World()
@@ -40,7 +40,7 @@ public class Recipe1World extends World
             ingredientsAdded = true;
         }
         
-        if(cookiesMade && !lastDialogueShown)
+        if(recipeMade && !lastDialogueShown)
         {
             showLastDialogue();
             lastDialogueShown = true;
@@ -61,16 +61,16 @@ public class Recipe1World extends World
     
     private void showIngredients()
     {
-        Icing icing = new Icing();
+        Icing icing = new Icing(this);
         addObject(icing, 150, 200);
         
-        Sugar sugar = new Sugar();
+        Sugar sugar = new Sugar(this);
         addObject(sugar, 150, 600);
         
-        Flour flour = new Flour();
+        Flour flour = new Flour(this);
         addObject(flour, 850, 600);
         
-        Butter butter = new Butter();
+        Butter butter = new Butter(this);
         addObject(butter, 850, 200);
     }
     
@@ -92,6 +92,6 @@ public class Recipe1World extends World
         SugarCookies cookie = new SugarCookies();
         addObject(cookie, 500, 400);
         
-        cookiesMade = true;
+        recipeMade = true;
     }
 }

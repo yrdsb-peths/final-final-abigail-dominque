@@ -1,22 +1,21 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Butter here.
+ * Write a description of class Cinnamon here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Butter extends Ingredient
+public class Cinnamon extends Ingredient
 {
-    public Butter(Recipe1World world)
+    public Cinnamon(Recipe3World world)
     {
         super(world);
         
-        GreenfootImage butter = new GreenfootImage("butter.png");
-        butter.scale(150,150);
-        setImage(butter);
+        GreenfootImage cinnamon = new GreenfootImage("cinnamon.png");
+        cinnamon.scale(150,150);
+        setImage(cinnamon);
     }
-    
     public void act()
     {
         super.act(); 

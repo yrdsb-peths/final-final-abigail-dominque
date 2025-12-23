@@ -10,31 +10,51 @@ public class Ingredient extends Actor
 {
     private boolean addedToPot = false;
     
+    private Recipe1World recipe1World;
+    private Recipe2World recipe2World;
+    private Recipe3World recipe3World;
+    
+    public Ingredient(Recipe1World world)
+    {
+        recipe1World = world;
+    }
+    
+    public Ingredient(Recipe2World world)
+    {
+        recipe2World = world;
+    }
+    
+    public Ingredient(Recipe3World world)
+    {
+        recipe3World = world;
+    }
+    
     public void act()
     {
-        System.out.println("Ingredient ACT running");
         
-        if(Greenfoot.mousePressed(this))
+        if(!addedToPot && Greenfoot.mousePressed(this))
         {
-            System.out.println("Ingredient clicked");
+            addedToPot = true;
+            setLocation(500,400);
             
-            Recipe1World world = (Recipe1World) getWorld();
-            world.ingredientAdded();
-            
-            getWorld().removeObject(this);
+            if(recipe1World != null)
+            {
+                recipe1World.ingredientAdded();
+            }
+            else if(recipe2World != null)
+            {
+                recipe2World.ingredientAdded();
+            }
+            else if(recipe3World != null)
+            {
+                recipe3World.ingredientAdded();
+            }
         }
     }
     
-    public void addToPot()
+    public boolean addToPot()
     {
-        if(addedToPot) return;
-        
-        addedToPot = true;
-        
-        setLocation(500,400);
-        
-        Recipe1World world = (Recipe1World) getWorld();
-        world.ingredientAdded();
+        return addedToPot;
     }
     
     public boolean isAddedToPot()
