@@ -2,8 +2,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class MushroomBigNPC extends Actor
 {
-    private static final int BIG_HEIGHT = 200;
-    private static final int BIG_WIDTH = 200;
+    private static final int BIG_HEIGHT = 300;
+    private static final int BIG_WIDTH = 400;
     
     private GreenfootImage image1;
     private GreenfootImage image2;
