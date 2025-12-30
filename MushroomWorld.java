@@ -50,7 +50,7 @@ public class MushroomWorld extends World
         this.instructionsRead = instructionsRead;
         
         // Sets background
-        GreenfootImage background = new GreenfootImage("background.png");
+        GreenfootImage background = new GreenfootImage("mushroom_background.png");
         background.scale(getWidth(), getHeight());
         setBackground(background);
         

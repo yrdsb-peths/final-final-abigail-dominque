@@ -15,6 +15,10 @@ public class IntroWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1); 
         
+        GreenfootImage background = new GreenfootImage("introworld_1.png");
+        background.scale(getWidth(), getHeight());
+        setBackground(background);
+        
         String[] introDialogue = {
           "Basically we got our zlawg emil",
           "He's lowkey lie missing his memories brah",

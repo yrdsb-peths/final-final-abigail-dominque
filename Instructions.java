@@ -49,7 +49,7 @@ public class Instructions extends World
         mushroom = new MushroomBigNPC();
         addObject(mushroom, 500, 350);
 
-        addObject(new DialogueBox(dialogue), getWidth()/2, 600);
+        addObject(new DialogueBox(dialogue), getWidth() / 2, 600);
     }
 
     public void act()
