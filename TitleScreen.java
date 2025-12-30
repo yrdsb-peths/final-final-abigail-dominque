@@ -26,7 +26,7 @@ public class TitleScreen extends World
         //if play label is clicked, the world will switch 
         if (Greenfoot.mouseClicked(play))
         {
-            Greenfoot.setWorld(new MushroomWorld());
+            Greenfoot.setWorld(new IntroWorld());
         }
     }
     
