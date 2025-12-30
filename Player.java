@@ -46,7 +46,7 @@ public class Player extends Actor
     {
         boolean moving = false;
         
-        if(Greenfoot.isKeyDown("left"))
+        if(Greenfoot.isKeyDown("a"))
         {
             setLocation(getX() - 3, getY());
             setImage(leftImage);
@@ -54,7 +54,7 @@ public class Player extends Actor
             moving = true;
         }
         
-        if(Greenfoot.isKeyDown("right"))
+        if(Greenfoot.isKeyDown("d"))
         {
             setLocation(getX() + 3, getY());
             setImage(rightImage);
@@ -62,7 +62,7 @@ public class Player extends Actor
             moving = true;
         }
         
-        if(Greenfoot.isKeyDown("up"))
+        if(Greenfoot.isKeyDown("w"))
         {
             setLocation(getX(), getY() - 3);
             setImage(rightImage);
@@ -70,7 +70,7 @@ public class Player extends Actor
             moving = true;
         }
         
-        if(Greenfoot.isKeyDown("down"))
+        if(Greenfoot.isKeyDown("s"))
         {
             setLocation(getX(), getY() + 3);
             setImage(leftImage);

@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class TitleScreen extends World
 {
     //Creates title label
-    Label titleLabel = new Label("Fairyland", 130);
+    Label titleLabel = new Label("nostalgia sum", 70);
     
     //Creates play button
     Label play = new Label ("Play", 80);
