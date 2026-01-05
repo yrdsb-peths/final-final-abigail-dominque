@@ -22,27 +22,27 @@ public class Instructions extends World
         if(stage == 0)
         {
             dialogue = new String[] {
-            "Hello!",
-            "Welcome to Fairyland.",
-            "Use arrow keys to move.",
-            "Press SPACE to talk."
+                "Welcome to dreamscape... My name is Nita... one of the many dreamguides\nyou'll find in this domain...",
+                "As a dreamdiver, your goal is to help our fellow guides complete\ntheir objectives, and retrieve this patient's memories...",
+                "As per protocol, please collect three lumenflies so that I\nmay create a lumenguide for you...",
+                "Lumenflies will attach themselves to dreamguides\nso that you may easily identify them..."
             };
         }
         else if(stage == 1)
         {
             dialogue = new String[] {
-                "You're still looking for fireflies.",
-                "They glow deeper in the forest.",
-                "Please bring me all three."
+                "Have you collected all the lumenflies..?",
+                "You may find them throughout this plane of the dreamscape...",
+                "Please bring me all three..."
             };
         }
         else
         {
             dialogue = new String[] {
-                "You found them all!",
+                "You found them all...",
                 "Their light is beautiful...",
-                "Here — take this lantern.",
-                "May it guide you."
+                "Take these lumenflies, and this book...",
+                "If you ever find yourself lost, these objects will guide the way..."
             };
         }
 
