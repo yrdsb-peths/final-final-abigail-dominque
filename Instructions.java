@@ -24,8 +24,8 @@ public class Instructions extends World
             dialogue = new String[] {
                 "Welcome to dreamscape... My name is Nita... one of the many dreamguides\nyou'll find in this domain...",
                 "As a dreamdiver, your goal is to help our fellow guides complete\ntheir objectives, and retrieve this patient's memories...",
-                "As per protocol, please collect three lumenflies so that I/nmay create a lumenguide for you...",
-                "Lumenflies will attach themselves to dreamguides/nso that you may easily identify them..."
+                "As per protocol, please collect three lumenflies so that I\nmay create a lumenguide for you...",
+                "Lumenflies will attach themselves to dreamguides\nso that you may easily identify them..."
             };
         }
         else if(stage == 1)

@@ -163,7 +163,7 @@ public class MushroomWorld extends World
             
             if(fireflyCompleteMsg == null)
             {
-                fireflyCompleteMsg = new Label("You've collected all the fireflies! Talk to the guide for more information.", 24);
+                fireflyCompleteMsg = new Label("You've collected all the fireflies!\nTalk to Nita for more information.", 24);
                 addObject(fireflyCompleteMsg, getWidth()/2, 30);
             }
             
