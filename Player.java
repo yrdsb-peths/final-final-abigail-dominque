@@ -40,6 +40,7 @@ public class Player extends Actor
         checkNPCInteraction();
         checkFireflyPickup();
         checkCookingPot();
+        checkDoor();
     }
     // Player movements
     private void movePlayer()
@@ -116,7 +117,17 @@ public class Player extends Actor
     {
         if(isTouching(CookingPot.class))
         {
-            ((MushroomWorld) getWorld()).startCooking();
+            ((FamilyWorld) getWorld()).startCooking();
+        }
+    }
+    
+    private void checkDoor()
+    {
+        if(isTouching(Door.class))
+        {
+            FamilyWorld world = new FamilyWorld();
+            
+            Greenfoot.setWorld(world);
         }
     }
     
