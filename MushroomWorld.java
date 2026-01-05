@@ -80,6 +80,13 @@ public class MushroomWorld extends World
             CookingPot pot = new CookingPot();
             addObject(pot, 600, 300);
         }
+        
+        //Adds door after lantern is given
+        if(instructionsRead && lanternGiven == true)
+        {
+            Door door = new Door();
+            addObject(door, 200, 200);
+        }
     }
 
     public void openControls()
@@ -144,22 +151,23 @@ public class MushroomWorld extends World
     public void collectFirefly()
     {
         if (fireflyCounter == null) return;
-    
+        
         fireflyCounter.addFirefly();
-    
-        if (fireflyCounter.getCount() >= 3)
+        
+        int count = fireflyCounter.getCount();
+        
+        //checks if quest is completed
+        if(count == 3 && !firefliesComplete)
         {
             firefliesComplete = true;
-    
-            // Only create once
-            if (fireflyCompleteMsg == null)
+            
+            if(fireflyCompleteMsg == null)
             {
-                fireflyCompleteMsg = new Label(
-                    "You've collected all the fireflies! Talk to the guide for more information.",
-                    24
-                );
+                fireflyCompleteMsg = new Label("You've collected all the fireflies! Talk to the guide for more information.", 24);
                 addObject(fireflyCompleteMsg, getWidth()/2, 30);
             }
+            
+            addObject(fireflyCompleteMsg, getWidth()/2, 30);
         }
     }
     
@@ -198,6 +206,12 @@ public class MushroomWorld extends World
     
         // Add lantern light
         addObject(new FireflyLight(player), player.getX(), player.getY());
+        
+        //adds door after lantern is given
+        lanternGiven = true;
+        Door door = new Door();
+        addObject(door, 200, 200);
+        
     }
     
     public boolean isQuestStarted()
