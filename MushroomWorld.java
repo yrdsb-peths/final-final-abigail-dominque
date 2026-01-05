@@ -61,10 +61,6 @@ public class MushroomWorld extends World
         mushroom = new MushroomChibiNPC();
         addObject(mushroom, 80, 400);
         
-        // Adds player
-        player = new Player();
-        addObject(player, getWidth() / 2, getHeight() / 2);
-        
         //restore position
         if(playerX != -1 && playerY != -1)
         {
@@ -76,9 +72,6 @@ public class MushroomWorld extends World
         {
             Book book = new Book();
             addObject(book, 950, 50);
-            
-            CookingPot pot = new CookingPot();
-            addObject(pot, 600, 300);
         }
         
         //Adds door after lantern is given
@@ -87,6 +80,10 @@ public class MushroomWorld extends World
             Door door = new Door();
             addObject(door, 200, 200);
         }
+        
+        // Adds player
+        player = new Player();
+        addObject(player, getWidth() / 2, getHeight() / 2);
     }
 
     public void openControls()
@@ -112,16 +109,6 @@ public class MushroomWorld extends World
         }
         Greenfoot.setWorld(new Instructions(this, stage, player.getX(), player.getY()));
     }
-    
-    // Called by Player when touching CookingPot
-    public void startCooking()
-    {
-        savedPlayerX = player.getX();
-        savedPlayerY = player.getY();
-        
-        Greenfoot.setWorld(new CookingWorld(player.getX(), player.getY()));
-    }
-    
     // Starts the quest
     public void startFireflyQuest()
     {
