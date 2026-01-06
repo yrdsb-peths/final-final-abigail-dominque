@@ -61,12 +61,6 @@ public class MushroomWorld extends World
         mushroom = new MushroomChibiNPC();
         addObject(mushroom, 80, 400);
         
-        //restore position
-        if(playerX != -1 && playerY != -1)
-        {
-            player.setLocation(playerX + 150, playerY);
-        }
-        
         //Adds book and cooking pot after instructions
         if(instructionsRead)
         {

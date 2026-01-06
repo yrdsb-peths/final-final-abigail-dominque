@@ -125,9 +125,8 @@ public class Player extends Actor
     {
         if(isTouching(Door.class))
         {
-            FamilyWorld world = new FamilyWorld();
-            
-            Greenfoot.setWorld(world);
+            World world = getWorld();
+            Greenfoot.setWorld(new FamilyWorld(getX(), getY()));
         }
     }
     

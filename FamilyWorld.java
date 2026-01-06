@@ -14,7 +14,7 @@ public class FamilyWorld extends World
     private int savedPlayerX;
     private int savedPlayerY;
     
-    public FamilyWorld()
+    public FamilyWorld(int playerX, int playerY)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1); 
@@ -24,6 +24,12 @@ public class FamilyWorld extends World
         
         player = new Player();
         addObject(player, getWidth() / 2, getHeight() / 2);
+        
+        //restore position
+        if(playerX != -1 && playerY != -1)
+        {
+            player.setLocation(playerX + 150, playerY);
+        }
     }
     
     // Called by Player when touching CookingPot
