@@ -117,7 +117,7 @@ public class MushroomWorld extends World
         fireflyQuestActive = true;
     
         fireflyCounter = new FireflyCounter();
-        addObject(fireflyCounter, 120, 40);
+        addObject(fireflyCounter, 120, 30);
     
         spawnFireflies();
     }
