@@ -17,14 +17,18 @@ public class Recipe1World extends World
     // tracks whether the ending dialogue was shown
     private boolean lastDialogueShown = false;
     
+    private World worldPrevious;
+    
     //Constructor for Recipe1World
-    public Recipe1World()
+    public Recipe1World(World previous)
     {    
         // Create a new world with 1000x700 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1);
         
+        worldPrevious = previous;
+        
         // adds exit option
-        Exit exit = new Exit(new CookingWorld(500,350));
+        Exit exit = new Exit(worldPrevious);
         addObject(exit, 950, 50);
         
         // adds cooking pot in the middle

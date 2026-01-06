@@ -12,12 +12,15 @@ public class CookingWorld extends World
     
     private boolean recipesShown = false;
     
+    private World worldPrevious;
+    
     // constructor for CookingWorld
-    public CookingWorld(int x, int y)
+    public CookingWorld(World previous, int x, int y)
     {    
         // Create a new world with 1000x700 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1); 
         
+        worldPrevious = previous; 
         returnX = x;
         returnY = y;
         
@@ -27,7 +30,7 @@ public class CookingWorld extends World
         setBackground(background);
         
         // adds exit option
-        exit = new Exit(new MushroomWorld(true, returnX, returnY));
+        exit = new Exit(worldPrevious);
         addObject(exit, 950, 50);
         
         String[] text;
