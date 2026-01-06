@@ -10,16 +10,14 @@ public class IntroWorld extends World
     public IntroWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1000, 700, 1); 
-        backgrounds = new GreenfootImage[3];
-
+        super(1000, 700, 1);
+        
+        backgrounds = new GreenfootImage[4];
+        
         backgrounds[0] = new GreenfootImage("introworld_1.png");
-        backgrounds[1] = new GreenfootImage("introworld_1.jpg");
-        backgrounds[2] = new GreenfootImage("introworld_3.jpg");
-
-        GreenfootImage background = new GreenfootImage("introworld_1.png");
-        background.scale(getWidth(), getHeight());
-        setBackground(background);
+        backgrounds[1] = new GreenfootImage("introworld_2.png");
+        backgrounds[2] = new GreenfootImage("introworld_3.png");
+        backgrounds[3] = new GreenfootImage("introworld_4.png");
         
         for (int i = 0; i < backgrounds.length; i++)
         {
@@ -27,10 +25,12 @@ public class IntroWorld extends World
         }
 
         setBackground(backgrounds[0]);
+        
         String[] introDialogue = {
-          "Basically we got our zlawg emil",
-          "He's lowkey lie missing his memories brah",
-          "Help help help zim",
+          "Missing memories and headaches...",
+          "It seems as if you're affected by the ",
+          "help help zim",
+          "i said help",
         };
         
         dialogue = new DialogueBox(introDialogue);
