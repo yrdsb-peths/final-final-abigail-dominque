@@ -34,8 +34,8 @@ public class FamilyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1); 
         
-        CookingPot pot = new CookingPot();
-        addObject(pot, 600, 300);
+        chef = new ChefChibiNPC();
+        addObject(chef, 200, 200);
         
         player = new Player();
         addObject(player, getWidth() / 2, getHeight() / 2);
@@ -45,9 +45,6 @@ public class FamilyWorld extends World
         {
             player.setLocation(playerX, playerY);
         }
-        
-        chef = new ChefChibiNPC();
-        addObject(chef, 200, 200);
     }
     
     // Called by Player when touching CookingPot
@@ -124,5 +121,11 @@ public class FamilyWorld extends World
         // Optionally, add sugar cookie image to player
         SugarCookies food = new SugarCookies();
         addObject(food, player.getX(), player.getY());
+    }
+    
+    public void spawnCookingPot()
+    {
+        CookingPot pot = new CookingPot();
+        addObject(pot, 300, 300);
     }
 }

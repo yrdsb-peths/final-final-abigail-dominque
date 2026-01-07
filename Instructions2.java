@@ -66,23 +66,8 @@ public class Instructions2 extends World
     
             // Create the return world
             FamilyWorld world = returnWorld;
-            /*
-            // FIRST TIME TALK → start quest
-            if (world.getDialogueStage() == 0)
-            {
-                world.setTalkedToChibi(true);
-                world.startFireflyQuest();
-                world.spawnBookIfNeeded();
-            }
-    
-            // AFTER FIRELIES → give lantern
-            if (world.getDialogueStage() == 2 && !world.lanternAlreadyGiven())
-            {
-                Player p = world.getObjects(Player.class).get(0);
-                world.giveLantern(p);
-            }
-            */
-            // THIS MUST HAPPEN ONCE
+            returnWorld.spawnCookingPot();
+            
             Greenfoot.setWorld(world);
         }
     }
