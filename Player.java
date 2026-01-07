@@ -44,6 +44,7 @@ public class Player extends Actor
         checkFireflyPickup();
         checkCookingPot();
         checkDoor();
+        checkChefInteraction();
     }
     // Player movements
     private void movePlayer()
@@ -149,31 +150,28 @@ public class Player extends Actor
     private void checkChefInteraction()
     {
         ChefChibiNPC npc = (ChefChibiNPC)getOneIntersectingObject(ChefChibiNPC.class);
-    
-        if (npc != null && canTalk && Greenfoot.isKeyDown("space"))
+
+        if (npc != null && canTalk2 && Greenfoot.isKeyDown("space"))
         {
             canTalk2 = false;
-        
+    
             FamilyWorld world = (FamilyWorld)getWorld();
-        
-            // Gives food to player after they cook UNIFINISHED
-            /*
-            if (world.areFirefliesComplete()
-                && world.hasSeenLanternDialogue()
-                && !world.lanternAlreadyGiven())
+    
+            // If quest not started, start instructions cutscene
+            if (!world.isQuestStarted())
             {
-                world.giveLantern(this);
+                world.talkToChef(); // this opens Instructions2
             }
-            else
+            // If quest started and cookie made
+            else if (world.isQuestStarted() && world.isQuestCompleted())
             {
-                world.openInstructions2();
+                world.talkToChef(); // opens post-cooking dialogue
             }
-            */
         }
-        
+    
         if (npc == null)
         {
-            canTalk = true;
+            canTalk2 = true;
         }
     }
 }

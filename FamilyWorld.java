@@ -27,6 +27,8 @@ public class FamilyWorld extends World
     
     private boolean talkedToChibi = false;
     
+    private boolean playerFoodMade = false;
+    
     public FamilyWorld(int playerX, int playerY)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -45,7 +47,7 @@ public class FamilyWorld extends World
         }
         
         chef = new ChefChibiNPC();
-        addObject(chef, 900, 650);
+        addObject(chef, 200, 200);
     }
     
     // Called by Player when touching CookingPot
@@ -70,15 +72,14 @@ public class FamilyWorld extends World
     {
         if(!talkedToChef)
         {
-            // First time talking
+            // First time talking → show stage 0 dialogue
             talkedToChef = true;
-            stage = 1;
+            stage = 0; // <-- first time dialogue
             instructionsRead = true;
-            
-            // Opens the instructions
+    
             openInstructions(stage);
-            
-            // Start cooking quest
+    
+            // Start cooking quest AFTER dialogue is complete
             questStarted = true;
         }
         else if(questStarted && !questCompleted)
@@ -93,8 +94,8 @@ public class FamilyWorld extends World
             stage = 2;
             openInstructions(stage);
         }
-        
     }
+
     public void openInstructions(int stage)
     {
         // Save player position before leaving
@@ -102,5 +103,26 @@ public class FamilyWorld extends World
         savedPlayerY = player.getY();
         
         Greenfoot.setWorld(new Instructions2(this, stage, player.getX(), player.getY()));
+    }
+    
+    private boolean sugarCookieMade = false;
+
+    public boolean isQuestStarted()
+    {
+        return questStarted;
+    }
+    
+    public boolean isQuestCompleted()
+    {
+        return playerFoodMade;
+    }
+    
+    public void completeSugarCookie()
+    {
+        playerFoodMade = true;
+    
+        // Optionally, add sugar cookie image to player
+        SugarCookies food = new SugarCookies();
+        addObject(food, player.getX(), player.getY());
     }
 }

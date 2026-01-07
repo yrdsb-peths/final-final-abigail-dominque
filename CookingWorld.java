@@ -75,4 +75,13 @@ public class CookingWorld extends World
     {
         return returnY;
     }
+    
+    public void finishCooking(String recipe)
+    {
+        if (recipe.equals("SugarCookie"))
+        {
+            ((FamilyWorld)worldPrevious).completeSugarCookie();
+        }
+    }
+
 }
