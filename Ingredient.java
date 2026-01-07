@@ -12,23 +12,11 @@ public class Ingredient extends Actor
     
     // instance variable for each recipe world
     private Recipe1World recipe1World;
-    private Recipe2World recipe2World;
-    private Recipe3World recipe3World;
     
     // constructor so it works in every recipe world
     public Ingredient(Recipe1World world)
     {
         recipe1World = world;
-    }
-    
-    public Ingredient(Recipe2World world)
-    {
-        recipe2World = world;
-    }
-    
-    public Ingredient(Recipe3World world)
-    {
-        recipe3World = world;
     }
     
     public void act()
@@ -43,14 +31,6 @@ public class Ingredient extends Actor
             if(recipe1World != null)
             {
                 recipe1World.ingredientAdded();
-            }
-            else if(recipe2World != null)
-            {
-                recipe2World.ingredientAdded();
-            }
-            else if(recipe3World != null)
-            {
-                recipe3World.ingredientAdded();
             }
         }
     }

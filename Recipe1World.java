@@ -17,10 +17,11 @@ public class Recipe1World extends World
     // tracks whether the ending dialogue was shown
     private boolean lastDialogueShown = false;
     
-    private World worldPrevious;
+    //saves previous world
+    private CookingWorld worldPrevious;
     
     //Constructor for Recipe1World
-    public Recipe1World(World previous)
+    public Recipe1World(CookingWorld previous)
     {    
         // Create a new world with 1000x700 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1);
@@ -113,5 +114,7 @@ public class Recipe1World extends World
         addObject(cookie, 500, 400);
         
         recipeMade = true;
+        
+        worldPrevious.getFamilyWorld().giveSugarCookies();
     }
 }

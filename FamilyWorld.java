@@ -1,18 +1,16 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class FamilyWorld here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class FamilyWorld extends World
 {
-    private Player player;
+    
     
     // Save player position
     private int savedPlayerX;
     private int savedPlayerY;
+    
+    private Player player;
+    private boolean sugarCookiesGiven;
+    private PlayerWithFood cookies;
     
     public FamilyWorld(int playerX, int playerY)
     {    
@@ -32,6 +30,16 @@ public class FamilyWorld extends World
         }
     }
     
+    public void started()
+    {
+        if(sugarCookiesGiven == true && cookies == null && player != null)
+        {
+            player = getObjects(Player.class).get(0);
+            cookies = new PlayerWithFood(player);
+            addObject(cookies, player.getX(), player.getY());
+        }
+    }
+    
     // Called by Player when touching CookingPot
     public void startCooking()
     {
@@ -44,4 +52,13 @@ public class FamilyWorld extends World
         Greenfoot.setWorld(new CookingWorld(this, savedPlayerX, savedPlayerY));
     }
     
+    public void giveSugarCookies()
+    {
+        sugarCookiesGiven = true;
+    }
+    
+    public boolean hasSugarCookies()
+    {
+        return sugarCookiesGiven;
+    }
 }

@@ -18,24 +18,6 @@ public class Flour extends Ingredient
         setImage(flour);
     }
     
-    public Flour(Recipe2World world)
-    {
-        super(world);
-        
-        GreenfootImage flour = new GreenfootImage("flour.png");
-        flour.scale(200,200);
-        setImage(flour);
-    }
-    
-    public Flour(Recipe3World world)
-    {
-        super(world);
-        
-        GreenfootImage flour = new GreenfootImage("flour.png");
-        flour.scale(200,200);
-        setImage(flour);
-    }
-    
     // when clicked, set location to center of the pot
     public void act()
     {

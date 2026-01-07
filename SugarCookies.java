@@ -19,6 +19,6 @@ public class SugarCookies extends Actor
     
     public void act()
     {
-        
+    
     }
 }
