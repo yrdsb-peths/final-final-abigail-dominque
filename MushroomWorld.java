@@ -55,7 +55,7 @@ public class MushroomWorld extends World
         setBackground(background);
         
         // Adds mushroom hut
-        addObject(new MushroomHut(), 100, 200);
+        addObject(new MushroomHut(), 150, 200);
         
         // Adds mushroom
         mushroom = new MushroomChibiNPC();
