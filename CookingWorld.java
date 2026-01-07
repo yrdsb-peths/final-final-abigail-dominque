@@ -11,7 +11,7 @@ public class CookingWorld extends World
     private DialogueBox dialogue;
     
     private boolean recipesShown = false;
-    
+
     // constructor for CookingWorld
     public CookingWorld(int x, int y)
     {    

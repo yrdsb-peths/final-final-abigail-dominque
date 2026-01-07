@@ -103,6 +103,7 @@ public class MushroomWorld extends World
         }
         Greenfoot.setWorld(new Instructions(this, stage, player.getX(), player.getY()));
     }
+    
     // Starts the quest
     public void startFireflyQuest()
     {

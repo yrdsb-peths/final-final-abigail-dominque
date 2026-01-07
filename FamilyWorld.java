@@ -14,6 +14,19 @@ public class FamilyWorld extends World
     private int savedPlayerX;
     private int savedPlayerY;
     
+    // Spawns the chibi
+    private ChefChibiNPC chef;
+    
+    private boolean chefIntro = false;
+    
+    private boolean talkedToChef = false;
+    private boolean instructionsRead = false;
+    private boolean questStarted = false;
+    private boolean questCompleted = false;
+    private int stage = 0;
+    
+    private boolean talkedToChibi = false;
+    
     public FamilyWorld(int playerX, int playerY)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -30,6 +43,9 @@ public class FamilyWorld extends World
         {
             player.setLocation(playerX + 150, playerY);
         }
+        
+        chef = new ChefChibiNPC();
+        addObject(chef, 900, 650);
     }
     
     // Called by Player when touching CookingPot
@@ -41,4 +57,47 @@ public class FamilyWorld extends World
         Greenfoot.setWorld(new CookingWorld(player.getX(), player.getY()));
     }
     
+    public void spawnBook()
+    {
+        Book book = new Book();
+        addObject(book, getWidth() - 60, 60);
+    }
+    
+    public void talkToChef()
+    {
+        if(!talkedToChef)
+        {
+            // First time talking
+            talkedToChef = true;
+            stage = 1;
+            instructionsRead = true;
+            
+            // Opens the instructions
+            openInstructions(stage);
+            
+            // Start cooking quest
+            questStarted = true;
+        }
+        else if(questStarted && !questCompleted)
+        {
+            // Quest is active but not yet completed → reminder dialogue
+            stage = 1;
+            openInstructions(stage);
+        }
+        else if(questCompleted)
+        {
+            // Quest already done → show completion message
+            stage = 2;
+            openInstructions(stage);
+        }
+        
+    }
+    public void openInstructions(int stage)
+    {
+        // Save player position before leaving
+        savedPlayerX = player.getX();
+        savedPlayerY = player.getY();
+        
+        Greenfoot.setWorld(new Instructions2(this, stage, player.getX(), player.getY()));
+    }
 }

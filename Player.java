@@ -14,8 +14,11 @@ public class Player extends Actor
     // Tracks way the player is facing
     private boolean facingRight = true;
     
-    // Prevents retrigger
+    // Prevents retrigger for MushroomWorld
     private boolean canTalk = true;
+    
+    // Prevents retrigger for FamilyWorld
+    private boolean canTalk2 = true;
     
     // Sets Player image
     public Player()
@@ -140,6 +143,37 @@ public class Player extends Actor
             world.collectFirefly();
     
             world.removeObject(firefly);
+        }
+    }
+    
+    private void checkChefInteraction()
+    {
+        ChefChibiNPC npc = (ChefChibiNPC)getOneIntersectingObject(ChefChibiNPC.class);
+    
+        if (npc != null && canTalk && Greenfoot.isKeyDown("space"))
+        {
+            canTalk2 = false;
+        
+            FamilyWorld world = (FamilyWorld)getWorld();
+        
+            // Gives food to player after they cook UNIFINISHED
+            /*
+            if (world.areFirefliesComplete()
+                && world.hasSeenLanternDialogue()
+                && !world.lanternAlreadyGiven())
+            {
+                world.giveLantern(this);
+            }
+            else
+            {
+                world.openInstructions2();
+            }
+            */
+        }
+        
+        if (npc == null)
+        {
+            canTalk = true;
         }
     }
 }
