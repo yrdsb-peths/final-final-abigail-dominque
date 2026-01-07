@@ -7,10 +7,19 @@ public class DialogueBox extends Actor
 
     private boolean canPressSpace = true;
     private boolean isFinished = false;
-    
+
+    // Greenfoot fonts
+    private greenfoot.Font dialogueFont;
+    private greenfoot.Font promptFont;
+
     public DialogueBox(String[] dialogue)
     {
         lines = dialogue;
+
+        // Set monospace fonts
+        dialogueFont = new greenfoot.Font("Monospaced", 20); // bold dialogue
+        promptFont = new greenfoot.Font("Monospaced", 15);         // "Press SPACE" message
+
         showLine();
     }
 
@@ -40,22 +49,21 @@ public class DialogueBox extends Actor
 
     private void showLine()
     {
-        // Create a larger image so we can draw two lines
         GreenfootImage img = new GreenfootImage(900, 150);
-    
+
         img.setColor(Color.WHITE);
         img.fill();
-    
+
         img.setColor(Color.BLACK);
-    
-        // Top message
-        img.setFont(new Font(20));
+
+        // Use monospace font for "Press SPACE"
+        img.setFont(promptFont);
         img.drawString("Press SPACE to continue", 345, 130);
-    
-        // Dialogue line
-        img.setFont(new Font(30));
+
+        // Use monospace font for dialogue
+        img.setFont(dialogueFont);
         img.drawString(lines[lineIndex], 20, 30);
-    
+
         setImage(img);
     }
 
@@ -63,7 +71,7 @@ public class DialogueBox extends Actor
     {
         return lineIndex;
     }
-    
+
     public boolean isFinished()
     {
         return isFinished;
