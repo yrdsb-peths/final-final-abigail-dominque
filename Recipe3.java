@@ -23,7 +23,8 @@ public class Recipe3 extends Actor
     {
         if (Greenfoot.mouseClicked(this))
         {
-            Greenfoot.setWorld(new Recipe3World());
+            World currentWorld = getWorld();
+            Greenfoot.setWorld(new Recipe3World(currentWorld));
         }
     }
 }

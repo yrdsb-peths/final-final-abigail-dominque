@@ -41,7 +41,7 @@ public class FamilyWorld extends World
         //restore position
         if(playerX != -1 && playerY != -1)
         {
-            player.setLocation(playerX + 150, playerY);
+            player.setLocation(playerX, playerY);
         }
         
         chef = new ChefChibiNPC();
@@ -54,7 +54,10 @@ public class FamilyWorld extends World
         savedPlayerX = player.getX();
         savedPlayerY = player.getY();
         
-        Greenfoot.setWorld(new CookingWorld(player.getX(), player.getY()));
+        //slightly moves player so the pot is not triggered again 
+        player.setLocation(player.getX(), player.getY() + 50);
+        
+        Greenfoot.setWorld(new CookingWorld(this, savedPlayerX, savedPlayerY));
     }
     
     public void spawnBook()

@@ -9,6 +9,9 @@ public class MushroomBigNPC extends Actor
     private GreenfootImage image2;
     private GreenfootImage image3;
     
+    private int index = 0;
+    private boolean canToggle = true;
+    
     public MushroomBigNPC()
     {
          //Loads and scales new images
@@ -26,8 +29,34 @@ public class MushroomBigNPC extends Actor
     
     public void act()
     {
-        // Add your action code here.
+        if(Greenfoot.isKeyDown("space") && canToggle)
+        {
+            toggleImage();
+            canToggle = false;
+        }
+        
+        if(!Greenfoot.isKeyDown("space"))
+        {
+            canToggle = true;
+        }
     }
+    
+    private void toggleImage()
+    {
+        index = (index + 1) % 3;
+        
+        if (index == 1)
+        {
+            setImage1();
+        }
+        
+        if(index == 2 || index == 3)
+        {
+            setImage2();
+        }
+        
+    }
+    
     
     public void setImage1()
     {
