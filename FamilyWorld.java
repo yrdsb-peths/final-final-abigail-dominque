@@ -40,7 +40,7 @@ public class FamilyWorld extends World
         //restore position
         if(playerX != -1 && playerY != -1)
         {
-            player.setLocation(playerX, playerY);
+            player.setLocation(playerX, playerY + 100);
         }
     }
     
