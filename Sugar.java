@@ -18,24 +18,6 @@ public class Sugar extends Ingredient
         setImage(sugar);
     }
     
-    public Sugar(Recipe2World world)
-    {
-        super(world);
-        
-        GreenfootImage sugar = new GreenfootImage("sugar.png");
-        sugar.scale(200,200);
-        setImage(sugar);
-    }
-    
-    public Sugar(Recipe3World world)
-    {
-        super(world);
-        
-        GreenfootImage sugar = new GreenfootImage("sugar.png");
-        sugar.scale(200,200);
-        setImage(sugar);
-    }
-    
     // when clicked, set location to center of the pot
     public void act()
     {

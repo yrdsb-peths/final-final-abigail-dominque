@@ -1,14 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class FamilyWorld here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class FamilyWorld extends World
 {
-    private Player player;
+    
     
     // Save player position
     private int savedPlayerX;
@@ -28,6 +22,10 @@ public class FamilyWorld extends World
     private boolean talkedToChibi = false;
     
     private boolean playerFoodMade = false;
+
+    private Player player;
+    private boolean sugarCookiesGiven;
+    private PlayerWithFood cookies;
     
     public FamilyWorld(int playerX, int playerY)
     {    
@@ -44,6 +42,16 @@ public class FamilyWorld extends World
         if(playerX != -1 && playerY != -1)
         {
             player.setLocation(playerX, playerY);
+        }
+    }
+    
+    public void started()
+    {
+        if(sugarCookiesGiven == true && cookies == null && player != null)
+        {
+            player = getObjects(Player.class).get(0);
+            cookies = new PlayerWithFood(player);
+            addObject(cookies, player.getX(), player.getY());
         }
     }
     
@@ -128,4 +136,15 @@ public class FamilyWorld extends World
         CookingPot pot = new CookingPot();
         addObject(pot, 300, 300);
     }
+
+    public void giveSugarCookies()
+    {
+        sugarCookiesGiven = true;
+    }
+    
+    public boolean hasSugarCookies()
+    {
+        return sugarCookiesGiven;
+    }
 }
+    

@@ -13,14 +13,16 @@ public class CookingWorld extends World
     private boolean recipesShown = false;
 
     private World worldPrevious;
-    
+
+    private FamilyWorld familyWorld;
+
     // constructor for CookingWorld
-    public CookingWorld(World previous, int x, int y)
+    public CookingWorld(FamilyWorld previous, int x, int y)
     {    
         // Create a new world with 1000x700 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1); 
         
-        worldPrevious = previous; 
+        familyWorld = previous; 
         returnX = x;
         returnY = y;
         
@@ -30,13 +32,13 @@ public class CookingWorld extends World
         setBackground(background);
         
         // adds exit option
-        exit = new Exit(worldPrevious);
+        exit = new Exit(familyWorld);
         addObject(exit, 950, 50);
         
         String[] text;
         text = new String[] {
             "Welcome to the kitchen!",
-            "Choose a recipe to begin."
+            "Click sugar cookies to begin"
         };
         
         dialogue = new DialogueBox(text);
@@ -57,13 +59,12 @@ public class CookingWorld extends World
     private void showRecipies()
     {
         Recipe1 recipe1 = new Recipe1();
-        addObject(recipe1, 200, 350);
-        
-        Recipe2 recipe2 = new Recipe2();
-        addObject (recipe2, 500, 350);
-        
-        Recipe3 recipe3 = new Recipe3();
-        addObject(recipe3, 800, 350);
+        addObject(recipe1, 500, 350);
+    }
+    
+    public FamilyWorld getFamilyWorld()
+    {
+        return familyWorld;
     }
     
     public int getReturnX()
