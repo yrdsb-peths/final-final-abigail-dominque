@@ -143,5 +143,24 @@ public class FamilyWorld extends World
     {
         return sugarCookiesGiven;
     }
+    
+    public void chefReceivesCookies()
+    {
+        if (!questCompleted)
+        {
+            questCompleted = true;
+            stage = 3; // New stage for after giving cookies
+            openInstructions(stage); // Opens a new dialogue sequence
+    
+            spawnFireDoor(); // Create the door immediately after dialogue is done
+        }
+    }
+    
+    public void spawnFireDoor()
+    {
+        FireDoor door = new FireDoor();
+        addObject(door, 800, 350); // Wherever you want the door to appear
+    }
+
 }
     

@@ -38,6 +38,20 @@ public class SugarCookies extends Actor
     
     private void checkChefInteraction()
     {
-
+        // If this cookie version isn't following the player, ignore
+        if (player == null) return;
+    
+        ChefChibiNPC chef = (ChefChibiNPC)getOneIntersectingObject(ChefChibiNPC.class);
+    
+        if (chef != null)
+        {
+            // Call FamilyWorld method to start new dialogue
+            FamilyWorld fw = (FamilyWorld)getWorld();
+            fw.chefReceivesCookies();
+    
+            // Remove cookies after giving them
+            getWorld().removeObject(this);
+        }
     }
+
 }

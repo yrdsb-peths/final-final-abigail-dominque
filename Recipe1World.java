@@ -44,7 +44,7 @@ public class Recipe1World extends World
         };
         
         dialogue1 = new DialogueBox(text1);
-        addObject(dialogue1, 500, 100);
+        addObject(dialogue1, 500, 600);
     }
     
     public void act()
@@ -75,7 +75,7 @@ public class Recipe1World extends World
         };
         
         DialogueBox dialogue2 = new DialogueBox(text2);
-        addObject(dialogue2, 500, 100);
+        addObject(dialogue2, 500, 600);
     }
     
     //shows ingredient to add to pot
@@ -112,7 +112,7 @@ public class Recipe1World extends World
         removeObjects(getObjects(CookingPotTop.class));
         
         SugarCookies cookies = new SugarCookies();
-        addObject(cookies, 500, 400);
+        addObject(cookies, 500, 500);
         
         recipeMade = true;
         
