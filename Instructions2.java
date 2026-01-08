@@ -26,27 +26,22 @@ public class Instructions2 extends World
         if(stage == 0)
         {
             dialogue = new String[] {
-                "Welcome to dreamscape... My name is Nita... one of the many dreamguides\nyou'll find in this domain...",
-                "As a dreamdiver, your goal is to help our fellow guides complete\ntheir objectives, and retrieve this patient's memories...",
-                "As per protocol, please collect three lumenflies so that I\nmay create a lumenguide for you...",
-                "Lumenflies will attach themselves to dreamguides\nso that you may easily identify them..."
+                "welcome to the best place on earth",
+                "everyone start gooning",
             };
         }
         else if(stage == 1)
         {
             dialogue = new String[] {
-                "Have you collected all the lumenflies..?",
-                "You may find them throughout this plane of the dreamscape...",
-                "Please bring me all three..."
+                "raise one hand if you love to live",
+                "me personally i love to live",
             };
         }
         else
         {
             dialogue = new String[] {
-                "You found them all...",
-                "Their light is beautiful...",
-                "Take these lumenflies, and this book...",
-                "If you ever find yourself lost, these objects will guide the way..."
+                "start cooking you hard nut",
+                "who said you could stop working",
             };
         }
 
