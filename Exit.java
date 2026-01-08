@@ -16,8 +16,8 @@ public class Exit extends Actor
     //sets and scales Exit
     public Exit (World world)
     {
-        GreenfootImage exit = new GreenfootImage("exit.png");
-        exit.scale(100,100);
+        GreenfootImage exit = new GreenfootImage("exit_button.png");
+        exit.scale(70,70);
         setImage(exit);
         
         worldTarget = world;
