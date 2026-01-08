@@ -29,18 +29,15 @@ public class SugarCookies extends Actor
     
     public void act()
     {
-<<<<<<< Updated upstream
         if(player != null && player.getWorld() != null)
         {
             setLocation(player.getX(), player.getY());
         }
-=======
         checkChefInteraction();
     }
     
     private void checkChefInteraction()
     {
-        
->>>>>>> Stashed changes
+
     }
 }
