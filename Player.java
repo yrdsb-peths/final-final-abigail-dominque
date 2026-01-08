@@ -45,6 +45,7 @@ public class Player extends Actor
         checkCookingPot();
         checkDoor();
         checkChefInteraction();
+        checkCookies();
     }
     // Player movements
     private void movePlayer()
@@ -145,6 +146,11 @@ public class Player extends Actor
     
             world.removeObject(firefly);
         }
+    }
+    
+    private void checkCookies()
+    {
+        
     }
     
     private void checkChefInteraction()

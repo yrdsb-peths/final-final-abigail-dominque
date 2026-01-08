@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class SugarCookies extends Actor
 {
-    // sets image of sugar cookies
+    private Player player; 
+    
     public SugarCookies()
     {
         GreenfootImage cookies = new GreenfootImage("sugar_cookies.png");
@@ -16,9 +17,21 @@ public class SugarCookies extends Actor
         setImage(cookies);
     }
     
+    public SugarCookies(Player player)
+    {
+        this.player = player;
+        
+        GreenfootImage cookies = new GreenfootImage("sugar_cookies.png");
+        cookies.scale(50,50);
+        setImage(cookies);
+    }
+    
     
     public void act()
     {
-    
+        if(player != null && player.getWorld() != null)
+        {
+            setLocation(player.getX(), player.getY());
+        }
     }
 }

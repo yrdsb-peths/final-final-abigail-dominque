@@ -70,7 +70,8 @@ public class Recipe1World extends World
         String[] text2;
         text2 = new String[] {
             "Good job, you baked sugar cookies!",
-            "Give them to your fairy friends."
+            "Give them to your fairy friends.",
+            "Keep clicking exit to continue..."
         };
         
         DialogueBox dialogue2 = new DialogueBox(text2);
@@ -110,8 +111,8 @@ public class Recipe1World extends World
         removeObjects(getObjects(Ingredient.class));
         removeObjects(getObjects(CookingPotTop.class));
         
-        SugarCookies cookie = new SugarCookies();
-        addObject(cookie, 500, 400);
+        SugarCookies cookies = new SugarCookies();
+        addObject(cookies, 500, 400);
         
         recipeMade = true;
         

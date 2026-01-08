@@ -25,7 +25,6 @@ public class FamilyWorld extends World
 
     private Player player;
     private boolean sugarCookiesGiven;
-    private PlayerWithFood cookies;
     
     public FamilyWorld(int playerX, int playerY)
     {    
@@ -41,17 +40,7 @@ public class FamilyWorld extends World
         //restore position
         if(playerX != -1 && playerY != -1)
         {
-            player.setLocation(playerX, playerY);
-        }
-    }
-    
-    public void started()
-    {
-        if(sugarCookiesGiven == true && cookies == null && player != null)
-        {
-            player = getObjects(Player.class).get(0);
-            cookies = new PlayerWithFood(player);
-            addObject(cookies, player.getX(), player.getY());
+            player.setLocation(playerX, playerY + 100);
         }
     }
     
@@ -139,6 +128,14 @@ public class FamilyWorld extends World
 
     public void giveSugarCookies()
     {
+        if(!sugarCookiesGiven)
+        {
+            sugarCookiesGiven = true;
+            
+            SugarCookies cookies = new SugarCookies(player);
+            addObject(cookies, player.getX(), player.getY());
+        }
+        
         sugarCookiesGiven = true;
     }
     
