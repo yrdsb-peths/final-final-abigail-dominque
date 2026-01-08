@@ -110,9 +110,6 @@ public class Recipe1World extends World
         removeObjects(getObjects(Ingredient.class));
         removeObjects(getObjects(CookingPotTop.class));
         
-        SugarCookies cookie = new SugarCookies();
-        addObject(cookie, 500, 400);
-        
         recipeMade = true;
         
         worldPrevious.getFamilyWorld().giveSugarCookies();

@@ -12,8 +12,6 @@ public class CookingWorld extends World
     
     private boolean recipesShown = false;
 
-    private World worldPrevious;
-
     private FamilyWorld familyWorld;
 
     // constructor for CookingWorld
@@ -22,7 +20,7 @@ public class CookingWorld extends World
         // Create a new world with 1000x700 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1); 
         
-        familyWorld = previous; 
+        familyWorld = previous;
         returnX = x;
         returnY = y;
         
@@ -81,7 +79,7 @@ public class CookingWorld extends World
     {
         if (recipe.equals("SugarCookie"))
         {
-            ((FamilyWorld)worldPrevious).completeSugarCookie();
+            familyWorld.completeSugarCookie();
         }
     }
 
