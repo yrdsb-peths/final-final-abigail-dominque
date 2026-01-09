@@ -201,8 +201,6 @@ public class FamilyWorld extends World
     
     public void spawnFireDoor()
     {
-        pot.setLocation(1000, 700);
-        
         // spawns fire door
         FireDoor door = new FireDoor();
         addObject(door, 800, 350);
