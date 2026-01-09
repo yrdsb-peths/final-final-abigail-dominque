@@ -2,8 +2,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class FamilyWorld extends World
 {
-    
-    
     // Save player position
     private int savedPlayerX;
     private int savedPlayerY;
@@ -20,16 +18,24 @@ public class FamilyWorld extends World
     private int stage = 0;
     
     private boolean talkedToChibi = false;
-    
-    private boolean playerFoodMade = false;
 
     private Player player;
     private boolean sugarCookiesGiven;
+    private boolean sugarCookieMade = false;
+    
+    //for the reminder text after instructions
+    private CookingText reminder;
+    private boolean reminderTextShown = false;
     
     public FamilyWorld(int playerX, int playerY)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1); 
+        
+        // Sets background
+        GreenfootImage background = new GreenfootImage("mushroom_background.png");
+        background.scale(getWidth(), getHeight());
+        setBackground(background);
         
         chef = new ChefChibiNPC();
         addObject(chef, 200, 200);
@@ -84,6 +90,9 @@ public class FamilyWorld extends World
         }
         else if(questCompleted)
         {
+            //removes reminder message
+            removeReminder();
+            
             // Quest already done → show completion message
             stage = 2;
             openInstructions(stage);
@@ -99,7 +108,7 @@ public class FamilyWorld extends World
         Greenfoot.setWorld(new Instructions2(this, stage, player.getX(), player.getY()));
     }
     
-    private boolean sugarCookieMade = false;
+    
 
     public boolean isQuestStarted()
     {
@@ -108,16 +117,22 @@ public class FamilyWorld extends World
     
     public boolean isQuestCompleted()
     {
-        return playerFoodMade;
+        return questCompleted;
     }
     
     public void completeSugarCookie()
     {
-        playerFoodMade = true;
+        questCompleted = true;
     
         // Optionally, add sugar cookie image to player
         SugarCookies food = new SugarCookies();
         addObject(food, player.getX(), player.getY());
+        
+        if (reminder != null)
+        {
+            removeObject(reminder);
+            reminder = null;
+        }
     }
     
     public void spawnCookingPot()
@@ -144,15 +159,37 @@ public class FamilyWorld extends World
         return sugarCookiesGiven;
     }
     
+    public void showReminderText()
+    {
+        if (!reminderTextShown && questStarted && !questCompleted)
+        {
+            reminder = new CookingText();
+            addObject(reminder, 500, 100);
+            reminderTextShown = true;
+        }
+    }
+    
     public void chefReceivesCookies()
     {
         if (!questCompleted)
         {
             questCompleted = true;
+            
+            removeReminder(); 
+            
             stage = 3; // New stage for after giving cookies
             openInstructions(stage); // Opens a new dialogue sequence
     
             spawnFireDoor(); // Create the door immediately after dialogue is done
+        }
+    }
+    
+    private void removeReminder()
+    {
+        if (reminder != null)
+        {
+            removeObject(reminder);
+            reminder = null;
         }
     }
     
