@@ -61,6 +61,13 @@ public class Instructions2 extends World
             if (returnWorld.isQuestStarted() && !returnWorld.hasSugarCookies())
             {
                 returnWorld.showReminderText();
+
+            }
+            
+             if (returnWorld.removePotAfterText)
+            {
+                returnWorld.removeCookingPot();
+                returnWorld.removePotAfterText = false;
             }
             // Create the return world
             FamilyWorld world = returnWorld;

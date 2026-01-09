@@ -28,6 +28,7 @@ public class FamilyWorld extends World
     private boolean reminderTextShown = false;
     
     private CookingPot pot;
+    public boolean removePotAfterText = false;
     
     public FamilyWorld(int playerX, int playerY)
     {    
@@ -97,6 +98,8 @@ public class FamilyWorld extends World
         {
             //removes reminder message
             removeReminder();
+        
+            removePotAfterText = true;
             
             // Quest already done → show completion message
             stage = 2;
@@ -131,11 +134,8 @@ public class FamilyWorld extends World
         SugarCookies food = new SugarCookies();
         addObject(food, player.getX(), player.getY());
         
-        if (reminder != null)
-        {
-            removeObject(reminder);
-            reminder = null;
-        }
+        removeReminder();
+        removeCookingPot();
     }
     
     public void spawnCookingPot()
@@ -182,6 +182,7 @@ public class FamilyWorld extends World
             questCompleted = true;
             stage = 2; // New stage for after giving cookies
             removeReminder(); 
+            removeCookingPot();
             
             stage = 3; // New stage for after giving cookies
             openInstructions(stage); // Opens a new dialogue sequence
@@ -198,6 +199,16 @@ public class FamilyWorld extends World
             reminder = null;
         }
     }
+    
+    public void removeCookingPot()
+    {
+        if (pot != null)
+        {
+            removeObject(pot);
+            pot = null;
+        }   
+    }
+    
     
     public void spawnFireDoor()
     {
