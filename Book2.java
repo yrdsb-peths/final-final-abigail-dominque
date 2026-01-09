@@ -1,19 +1,21 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Book2 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Book2 extends Actor
 {
-    /**
-     * Act - do whatever the Book2 wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    private GreenfootImage book; 
+    
+    public Book2()
+    {
+        // initiates and scales book image
+        book = new GreenfootImage("book.png");
+        book.scale(50,50);
+        setImage(book);
+    }
+    
+    
+    
     public void act()
     {
-        // Add your action code here.
+        
     }
 }
