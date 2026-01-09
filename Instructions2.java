@@ -58,13 +58,14 @@ public class Instructions2 extends World
         if (!dialogueFinished && getObjects(DialogueBox.class).isEmpty())
         {
             dialogueFinished = true;
-            
+            if (returnWorld.isQuestStarted() && !returnWorld.hasSugarCookies())
+            {
+                returnWorld.showReminderText();
+            }
             // Create the return world
             FamilyWorld world = returnWorld;
             returnWorld.spawnCookingPot();
             Greenfoot.setWorld(world);
         }
     }
-    
-    
 }

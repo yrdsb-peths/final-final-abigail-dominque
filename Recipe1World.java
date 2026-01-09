@@ -105,7 +105,7 @@ public class Recipe1World extends World
         }
     }
     
-    //removes ingredients and pot to show cookies
+    // removes ingredients and pot to show cookies
     private void finishRecipe()
     {
         removeObjects(getObjects(Ingredient.class));
@@ -113,7 +113,7 @@ public class Recipe1World extends World
         
         SugarCookies cookies = new SugarCookies();
         addObject(cookies, 500, 300);
-        
+
         recipeMade = true;
         
         worldPrevious.getFamilyWorld().giveSugarCookies();
