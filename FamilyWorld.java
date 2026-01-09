@@ -20,11 +20,11 @@ public class FamilyWorld extends World
     private int stage = 0;
     
     private boolean talkedToChibi = false;
-    
-    private boolean playerFoodMade = false;
 
     private Player player;
     private boolean sugarCookiesGiven;
+    
+    private CookingPot pot;
     
     public FamilyWorld(int playerX, int playerY)
     {    
@@ -56,7 +56,7 @@ public class FamilyWorld extends World
         Greenfoot.setWorld(new CookingWorld(this, savedPlayerX, savedPlayerY));
     }
     
-    public void spawnBook()
+    public void spawnBook2()
     {
         Book book = new Book();
         addObject(book, getWidth() - 60, 60);
@@ -108,12 +108,12 @@ public class FamilyWorld extends World
     
     public boolean isQuestCompleted()
     {
-        return playerFoodMade;
+        return questCompleted;
     }
     
     public void completeSugarCookie()
     {
-        playerFoodMade = true;
+        questCompleted = true;
     
         // Optionally, add sugar cookie image to player
         SugarCookies food = new SugarCookies();
@@ -122,7 +122,7 @@ public class FamilyWorld extends World
     
     public void spawnCookingPot()
     {
-        CookingPot pot = new CookingPot();
+        pot = new CookingPot();
         addObject(pot, 300, 300);
     }
 
@@ -151,15 +151,17 @@ public class FamilyWorld extends World
             questCompleted = true;
             stage = 2; // New stage for after giving cookies
             openInstructions(stage); // Opens a new dialogue sequence
-    
             spawnFireDoor(); // Create the door immediately after dialogue is done
         }
     }
     
     public void spawnFireDoor()
     {
+        pot.setLocation(1000, 700);
+        
+        // Spawn fire door
         FireDoor door = new FireDoor();
-        addObject(door, 800, 350); // Wherever you want the door to appear
+        addObject(door, 800, 350);
     }
 }
     

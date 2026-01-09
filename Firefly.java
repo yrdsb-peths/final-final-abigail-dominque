@@ -6,7 +6,7 @@ public class Firefly extends Actor
     public Firefly()
     {
         GreenfootImage firefly = new GreenfootImage("firefly.png");
-        firefly.scale(24, 24);
+        firefly.scale(40, 40);
         setImage(firefly);
     }
 }

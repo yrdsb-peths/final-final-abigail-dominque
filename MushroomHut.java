@@ -2,8 +2,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class MushroomHut extends Actor
 {
-    private static final int HUT_WIDTH = 400;
-    private static final int HUT_HEIGHT = 400;
+    private static final int HUT_WIDTH = 600;
+    private static final int HUT_HEIGHT = 500;
     
     public MushroomHut()
     {

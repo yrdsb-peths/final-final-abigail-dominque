@@ -55,7 +55,7 @@ public class MushroomWorld extends World
         setBackground(background);
         
         // Adds mushroom hut
-        addObject(new MushroomHut(), 100, 200);
+        addObject(new MushroomHut(), 170, 200);
         
         // Adds mushroom
         mushroom = new MushroomChibiNPC();
@@ -145,11 +145,9 @@ public class MushroomWorld extends World
             
             if(fireflyCompleteMsg == null)
             {
-                fireflyCompleteMsg = new Label("You've collected all the fireflies!\nTalk to Nita for more information.", 24);
-                addObject(fireflyCompleteMsg, getWidth()/2, 30);
+                FireflyHint hint = new FireflyHint();
+                addObject(hint, getWidth() / 2, 30);
             }
-            
-            addObject(fireflyCompleteMsg, getWidth()/2, 30);
         }
     }
     

@@ -45,7 +45,6 @@ public class Player extends Actor
         checkCookingPot();
         checkDoor();
         checkChefInteraction();
-        checkCookies();
     }
     // Player movements
     private void movePlayer()
@@ -148,11 +147,6 @@ public class Player extends Actor
         }
     }
     
-    private void checkCookies()
-    {
-        
-    }
-    
     private void checkChefInteraction()
     {
         ChefChibiNPC npc = (ChefChibiNPC)getOneIntersectingObject(ChefChibiNPC.class);
@@ -180,5 +174,14 @@ public class Player extends Actor
             canTalk2 = true;
         }
     }
+    
+    private void checkFireDoor()
+        {
+            if(isTouching(FireDoor.class))
+            {
+                World world = getWorld();
+                Greenfoot.setWorld(new GameWorld(getX(), getY()));
+            }
+        }
 }
 
