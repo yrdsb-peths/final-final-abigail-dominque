@@ -149,7 +149,7 @@ public class FamilyWorld extends World
         if (!questCompleted)
         {
             questCompleted = true;
-            stage = 3; // New stage for after giving cookies
+            stage = 2; // New stage for after giving cookies
             openInstructions(stage); // Opens a new dialogue sequence
     
             spawnFireDoor(); // Create the door immediately after dialogue is done
@@ -161,6 +161,5 @@ public class FamilyWorld extends World
         FireDoor door = new FireDoor();
         addObject(door, 800, 350); // Wherever you want the door to appear
     }
-
 }
     
