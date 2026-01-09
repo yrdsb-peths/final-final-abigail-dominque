@@ -37,9 +37,11 @@ public class FamilyWorld extends World
         background.scale(getWidth(), getHeight());
         setBackground(background);
         
+        // adds chef npc
         chef = new ChefChibiNPC();
         addObject(chef, 200, 200);
         
+        // adds the player
         player = new Player();
         addObject(player, getWidth() / 2, getHeight() / 2);
         
@@ -64,6 +66,7 @@ public class FamilyWorld extends World
     
     public void spawnBook()
     {
+        // spawns book 
         Book book = new Book();
         addObject(book, getWidth() - 60, 60);
     }
@@ -108,8 +111,6 @@ public class FamilyWorld extends World
         Greenfoot.setWorld(new Instructions2(this, stage, player.getX(), player.getY()));
     }
     
-    
-
     public boolean isQuestStarted()
     {
         return questStarted;
@@ -137,12 +138,14 @@ public class FamilyWorld extends World
     
     public void spawnCookingPot()
     {
+        // spawns cooking pot
         CookingPot pot = new CookingPot();
         addObject(pot, 300, 300);
     }
 
     public void giveSugarCookies()
     {
+        // makes food follow the player
         if(!sugarCookiesGiven)
         {
             sugarCookiesGiven = true;
@@ -161,6 +164,7 @@ public class FamilyWorld extends World
     
     public void showReminderText()
     {
+        // shows reminder text
         if (!reminderTextShown && questStarted && !questCompleted)
         {
             reminder = new CookingText();
@@ -171,6 +175,7 @@ public class FamilyWorld extends World
     
     public void chefReceivesCookies()
     {
+        // after completing the final dialogue, removes reminder and adds door to next world
         if (!questCompleted)
         {
             questCompleted = true;
@@ -186,6 +191,7 @@ public class FamilyWorld extends World
     
     private void removeReminder()
     {
+        // removes reminder
         if (reminder != null)
         {
             removeObject(reminder);
@@ -195,6 +201,7 @@ public class FamilyWorld extends World
     
     public void spawnFireDoor()
     {
+        // spawns fire door
         FireDoor door = new FireDoor();
         addObject(door, 800, 350); // Wherever you want the door to appear
     }
