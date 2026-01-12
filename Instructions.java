@@ -52,8 +52,14 @@ public class Instructions extends World
 
         mushroom = new MushroomBigNPC();
         addObject(mushroom, 500, 350);
-
-        addObject(new DialogueBox(dialogue), getWidth() / 2, 600);
+        
+        String[] nitaSounds = {
+            "mushroom1.mp3",
+            "mushroom2.mp3",
+            "mushroom3.mp3",
+            "mushroom4.mp3",
+        };
+        addObject(new DialogueBox(dialogue, nitaSounds), getWidth() / 2, 600);
     }
 
     public void act()

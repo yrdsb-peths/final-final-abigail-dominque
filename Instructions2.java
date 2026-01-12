@@ -47,8 +47,14 @@ public class Instructions2 extends World
 
         chef = new ChefBigNPC();
         addObject(chef, 500, 350);
-
-        addObject(new DialogueBox(dialogue), getWidth() / 2, 600);
+        
+        String[] chefSounds = {
+            "chef3.mp3",
+            "chef2.mp3",
+            "chef1.mp3",
+            "chef4.mp3",
+        };
+        addObject(new DialogueBox(dialogue, chefSounds), getWidth() / 2, 600);
     }
 
     public void act()

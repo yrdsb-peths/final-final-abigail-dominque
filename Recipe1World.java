@@ -43,7 +43,14 @@ public class Recipe1World extends World
             "Click the ingredients to put them in the pot."
         };
         
-        dialogue1 = new DialogueBox(text1);
+        String[] chefSounds = {
+            "chef1.mp3",
+            "chef2.mp3",
+            "chef3.mp3",
+            "chef4.mp3",
+        };
+        
+        dialogue1 = new DialogueBox(text1, chefSounds);
         addObject(dialogue1, 500, 600);
     }
     
@@ -74,7 +81,13 @@ public class Recipe1World extends World
             "Keep clicking exit to continue..."
         };
         
-        DialogueBox dialogue2 = new DialogueBox(text2);
+        String[] chefSounds = {
+            "chef2.mp3",
+            "chef1.mp3",
+            "chef4.mp3",
+            "chef3.mp3",
+        };
+        DialogueBox dialogue2 = new DialogueBox(text2, chefSounds);
         addObject(dialogue2, 500, 600);
     }
     

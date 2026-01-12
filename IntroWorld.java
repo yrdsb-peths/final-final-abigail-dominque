@@ -35,7 +35,14 @@ public class IntroWorld extends World
           "..."
         };
         
-        dialogue = new DialogueBox(introDialogue);
+        String[] playerSounds = {
+            "player1.mp3",
+            "player2.mp3",
+            "player3.mp3",
+            "player4.mp3",
+        };
+        
+        dialogue = new DialogueBox(introDialogue, playerSounds);
         addObject(dialogue, getWidth() / 2, 600);
     }
     

@@ -12,10 +12,21 @@ public class DialogueBox extends Actor
     private greenfoot.Font dialogueFont;
     private greenfoot.Font promptFont;
 
-    public DialogueBox(String[] dialogue)
+    // Sound for the people :)
+    private String[] voiceSounds;
+    private GreenfootSound[] voiceClips;
+    
+    public DialogueBox(String[] dialogue, String[] voiceSounds)
     {
         lines = dialogue;
-
+        this.voiceSounds = voiceSounds;
+        
+        voiceClips = new GreenfootSound[voiceSounds.length];
+        for (int i = 0; i < voiceSounds.length; i++) {
+            voiceClips[i] = new GreenfootSound(voiceSounds[i]);
+            voiceClips[i].setVolume(100); // volume
+        }
+    
         // Set monospace fonts
         dialogueFont = new greenfoot.Font("Monospaced", 20); // bold dialogue
         promptFont = new greenfoot.Font("Monospaced", 15);         // "Press SPACE" message
@@ -55,6 +66,9 @@ public class DialogueBox extends Actor
         img.fill();
 
         img.setColor(Color.BLACK);
+        
+        int r = Greenfoot.getRandomNumber(voiceClips.length);
+        voiceClips[r].play();
 
         // Use monospace font for "Press SPACE"
         img.setFont(promptFont);

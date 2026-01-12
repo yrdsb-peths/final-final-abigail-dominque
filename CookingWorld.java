@@ -39,7 +39,14 @@ public class CookingWorld extends World
             "Click sugar cookies to begin"
         };
         
-        dialogue = new DialogueBox(text);
+        String[] chefSounds = {
+            "chef1.mp3",
+            "chef2.mp3",
+            "chef3.mp3",
+            "chef4.mp3",
+            "chef5.mp3",
+        };
+        dialogue = new DialogueBox(text, chefSounds);
         addObject(dialogue, 500, 600);
     }
     

@@ -15,8 +15,14 @@ public class PlayerControls extends World
             "When you're finished reading, press escape to leave!",
             "..."
         };
-            
-        addObject(new DialogueBox(dialogue), getWidth()/2, getHeight()/2);
+        
+        String[] playerSounds = {
+            "chef1.mp3",
+            "chef1.mp3",
+            "chef1.mp3",
+            "chef1.mp3",
+        };
+        addObject(new DialogueBox(dialogue, playerSounds), getWidth()/2, getHeight()/2);
     }
     
     public void act()
