@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Player extends Actor
 {
     // Sets the players height and width
-    private static final int PLAYER_WIDTH = 80;
-    private static final int PLAYER_HEIGHT = 80;
+    private static final int PLAYER_WIDTH = 250;
+    private static final int PLAYER_HEIGHT = 250;
     
     // Sets image variables
     private GreenfootImage idleImage;
@@ -45,7 +45,9 @@ public class Player extends Actor
         checkCookingPot();
         checkDoor();
         checkChefInteraction();
+        checkFireDoor();
     }
+    
     // Player movements
     private void movePlayer()
     {
@@ -176,12 +178,12 @@ public class Player extends Actor
     }
     
     private void checkFireDoor()
+    {
+        if(isTouching(FireDoor.class))
         {
-            if(isTouching(FireDoor.class))
-            {
-                World world = getWorld();
-                Greenfoot.setWorld(new GameWorld(getX(), getY()));
-            }
+            World world = getWorld();
+            Greenfoot.setWorld(new GameWorld(getX(), getY()));
         }
+    }
 }
 

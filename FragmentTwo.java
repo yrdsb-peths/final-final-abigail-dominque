@@ -1,11 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class FragmentOne extends Actor
+public class FragmentTwo extends Actor
 {
-    
     private GreenfootImage fragment; 
     
-    public FragmentOne()
+    public FragmentTwo()
     {
         // initiates and scales book image
         fragment = new GreenfootImage("recipe1.jpg");

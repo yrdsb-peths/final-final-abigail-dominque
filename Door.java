@@ -19,6 +19,8 @@ public class Door extends Actor
         door.scale(100, 100);
         setImage(door);
     }
+    
+    
     public void act()
     {
         // Add your action code here.
