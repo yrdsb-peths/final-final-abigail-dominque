@@ -15,9 +15,7 @@ public class Book extends Actor
     
     private void openControls()
     {
-        //opens instructions world when clicked
-        MushroomWorld world = (MushroomWorld)getWorld();
-        world.openControls();
+        Greenfoot.setWorld(new PlayerControls(getWorld(), 1000, 700));
     }
     
     public void act()

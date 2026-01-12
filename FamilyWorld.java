@@ -30,6 +30,8 @@ public class FamilyWorld extends World
     private CookingPot pot;
     public boolean removePotAfterText = false;
     
+    private boolean cookingInProgress = false;
+    
     public FamilyWorld(int playerX, int playerY)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -48,6 +50,11 @@ public class FamilyWorld extends World
         player = new Player();
         addObject(player, getWidth() / 2, getHeight() / 2);
         
+        Book book = new Book();
+        addObject(book, 950, 50);
+        
+        cookingInProgress = false;
+        
         //restore position
         if(playerX != -1 && playerY != -1)
         {
@@ -58,11 +65,18 @@ public class FamilyWorld extends World
     // Called by Player when touching CookingPot
     public void startCooking()
     {
+        if (cookingInProgress)
+        {   
+            return;
+        }
+        
+        cookingInProgress = true;
+        
         savedPlayerX = player.getX();
         savedPlayerY = player.getY();
         
         //slightly moves player so the pot is not triggered again 
-        player.setLocation(player.getX(), player.getY() + 50);
+        player.setLocation(player.getX(), player.getY() + 200);
         
         Greenfoot.setWorld(new CookingWorld(this, savedPlayerX, savedPlayerY));
     }
@@ -136,12 +150,15 @@ public class FamilyWorld extends World
         
         removeReminder();
         removeCookingPot();
+        
+        FragmentOne frag = new FragmentOne();
+        addObject(frag, 800, 50);
     }
     
     public void spawnCookingPot()
     {
         pot = new CookingPot();
-        addObject(pot, 300, 300);
+        addObject(pot, 600, 300);
     }
 
     public void giveSugarCookies()
@@ -183,6 +200,9 @@ public class FamilyWorld extends World
             stage = 2; // New stage for after giving cookies
             removeReminder(); 
             removeCookingPot();
+            
+            FragmentOne frag = new FragmentOne();
+            addObject(frag, 800, 50);
             
             stage = 3; // New stage for after giving cookies
             openInstructions(stage); // Opens a new dialogue sequence

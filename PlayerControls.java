@@ -2,9 +2,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class PlayerControls extends World
 {
-    private MushroomWorld returnWorld;
+    private World returnWorld;
     
-    public PlayerControls(MushroomWorld world, int x, int y)
+    public PlayerControls(World world, int x, int y)
     {    
         super(1000, 700, 1); 
         this.returnWorld = world;

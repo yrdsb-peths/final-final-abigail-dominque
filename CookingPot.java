@@ -10,6 +10,9 @@ public class CookingPot extends Actor
 {
     private GreenfootImage pot;
     
+    // prevents collision retrigger
+    private boolean used = false;
+    
     //Initializes cooking pot
     public CookingPot()
     {
@@ -20,6 +23,19 @@ public class CookingPot extends Actor
     
     public void act()
     {
-        // Add your action code here.
+        if(used)
+        {
+            return;
+        }
+        
+        Player player = (Player) getOneIntersectingObject(Player.class);
+        
+        if (player != null)
+        {
+            used = true;
+            
+            FamilyWorld world = (FamilyWorld) getWorld();
+            world.startCooking();
+        }
     }
 }
