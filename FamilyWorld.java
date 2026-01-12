@@ -50,6 +50,7 @@ public class FamilyWorld extends World
         player = new Player();
         addObject(player, getWidth() / 2, getHeight() / 2);
         
+        // adds the instructions book
         Book book = new Book();
         addObject(book, 950, 50);
         
