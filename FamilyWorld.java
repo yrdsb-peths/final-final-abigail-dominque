@@ -141,20 +141,20 @@ public class FamilyWorld extends World
         return questCompleted;
     }
     
-    public void completeSugarCookie()
-    {
-        questCompleted = true;
+    //public void completeSugarCookie()
+    //{
+        //questCompleted = true;
     
         // Optionally, add sugar cookie image to player
-        SugarCookies food = new SugarCookies();
-        addObject(food, player.getX(), player.getY());
+        //SugarCookies food = new SugarCookies();
+        //addObject(food, player.getX(), player.getY());
         
-        removeReminder();
-        removeCookingPot();
+        //removeReminder();
+        //removeCookingPot();
         
-        FragmentOne frag = new FragmentOne();
-        addObject(frag, 800, 50);
-    }
+        //FragmentOne frag = new FragmentOne();
+        //addObject(frag, 800, 50);
+    //}
     
     public void spawnCookingPot()
     {
@@ -192,20 +192,20 @@ public class FamilyWorld extends World
         }
     }
     
-    public void chefReceivesCookies()
+    public void chefReceivesCookiesFromPlayer()
     {
         // after completing the final dialogue, removes reminder and adds door to next world
         if (!questCompleted)
         {
             questCompleted = true;
-            stage = 2; // New stage for after giving cookies
+            stage = 3; // New stage for after giving cookies
+            
             removeReminder(); 
             removeCookingPot();
             
             FragmentOne frag = new FragmentOne();
             addObject(frag, 800, 50);
             
-            stage = 3; // New stage for after giving cookies
             openInstructions(stage); // Opens a new dialogue sequence
             spawnFireDoor(); // Create the door immediately after dialogue is done
         }

@@ -77,7 +77,7 @@ public class Recipe1World extends World
         String[] text2;
         text2 = new String[] {
             "Good job, you baked sugar cookies!",
-            "Give them to your fairy friends.",
+            "Give them to pitbull.",
             "Keep clicking exit to continue..."
         };
         

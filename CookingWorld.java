@@ -86,7 +86,7 @@ public class CookingWorld extends World
     {
         if (recipe.equals("SugarCookie"))
         {
-            familyWorld.completeSugarCookie();
+            familyWorld.giveSugarCookies();
         }
     }
 
