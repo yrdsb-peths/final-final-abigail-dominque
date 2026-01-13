@@ -29,7 +29,7 @@ public class Instructions2 extends World
                 "Hi there, it's nice to meet you! My name is pitbull and I am the \nmost famous chef in the Dreamscape!",
                 "My high rated restaurants span the scope of dreams, making sure every \ndreamguide can eat a tasty meal.",
                 "Including me! I, a fellow dreamguide, could really use a meal...",
-                "I want some sweet, delictable and soft sugar cookies... with pink icing. \nIf you make them for me, I will reward you with the most precious \ncurrency in this world... a memory fragment!",
+                "I want some sweet, delectable and soft sugar cookies... with pink icing. \nIf you make them for me, I will reward you with the most precious \ncurrency in this world... a memory fragment!",
                 "Quick!!! Make them now!!! Quick!!!!!!!!"
             };
         }
@@ -52,7 +52,7 @@ public class Instructions2 extends World
         }
 
         chef = new ChefBigNPC();
-        addObject(chef, 500, 350);
+        addObject(chef, 500, 300);
         
         String[] chefSounds = {
             "chef3.mp3",

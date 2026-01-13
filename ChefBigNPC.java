@@ -3,11 +3,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class ChefBigNPC extends Actor
 {
     private static final int BIG_HEIGHT = 500;
-    private static final int BIG_WIDTH = 633;
+    private static final int BIG_WIDTH = 670;
     
     private GreenfootImage image1;
     private GreenfootImage image2;
-    private GreenfootImage image3;
     
     private int index = 0;
     private boolean canToggle = true;
@@ -15,13 +14,11 @@ public class ChefBigNPC extends Actor
     public ChefBigNPC()
     {
          //Loads and scales new images
-         image1 = new GreenfootImage("mushroom_big_image1.png");
-         image2 = new GreenfootImage("mushroom_big_image2.png");
-         image3 = new GreenfootImage("mushroom_big_image3.png");
+         image1 = new GreenfootImage("chef1.png");
+         image2 = new GreenfootImage("chef2.png");
          
          image1.scale(BIG_HEIGHT, BIG_WIDTH);
          image2.scale(BIG_HEIGHT, BIG_WIDTH);
-         image3.scale(BIG_HEIGHT, BIG_WIDTH);
          
          //Sets intial image
          setImage(image1);
@@ -67,9 +64,5 @@ public class ChefBigNPC extends Actor
     {
         setImage(image2);
     }
-    
-    public void setImage3()
-    {
-        setImage(image3);
-    }
+
 }

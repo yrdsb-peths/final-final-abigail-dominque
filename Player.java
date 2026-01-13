@@ -202,7 +202,8 @@ public class Player extends Actor
     {
         if(isTouching(FireDoor.class))
         {
-            World world = getWorld();
+            FamilyWorld world = (FamilyWorld)getWorld();
+            world.stopMusic(); // stops the music
             Greenfoot.setWorld(new GameWorld(getX(), getY()));
         }
     }

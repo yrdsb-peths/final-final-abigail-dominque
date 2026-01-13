@@ -4,10 +4,7 @@ public class FamilyWorld extends World
 {
     // BACKGROUND MUSIC
     private GreenfootSound bgMusic = new GreenfootSound("familyworld_music.mp3");
-    private int currentVolume = 0;
-    private int targetVolume = 60;
-    private boolean fadingIn = false;
-    private boolean fadingOut = false;
+    
     // Save player position
     private int savedPlayerX;
     private int savedPlayerY;
@@ -46,12 +43,9 @@ public class FamilyWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1); 
-        
-        // Starts playing the music!
-        fadeInMusic();
-        
+ 
         // Background music
-        bgMusic.setVolume(60);
+        bgMusic.setVolume(40);
         bgMusic.playLoop();
         
         // Sets background
@@ -80,24 +74,6 @@ public class FamilyWorld extends World
             player.setLocation(playerX - 50, playerY + 100);
         }
     }
-    
-    // Plays music
-    public void act()
-    {
-        if (fadingIn && currentVolume < targetVolume) {
-            currentVolume++;
-            bgMusic.setVolume(currentVolume);
-        }
-        else if (fadingOut && currentVolume > 0) {
-            currentVolume--;
-            bgMusic.setVolume(currentVolume);
-    
-            if (currentVolume == 0) {
-                bgMusic.stop();
-                fadingOut = false;
-            }
-        }
-    }
 
     // Called by Player when touching CookingPot
     public void startCooking()
@@ -115,13 +91,12 @@ public class FamilyWorld extends World
         //slightly moves player so the pot is not triggered again 
         player.setLocation(player.getX(), player.getY() + 200);
         
-        fadeOutMusic();
         Greenfoot.setWorld(new CookingWorld(this, savedPlayerX, savedPlayerY));
     }
     
     public void spawnBook2()
     {
-        // spawns book 
+        // spawns book
         Book book = new Book();
         addObject(book, getWidth() - 60, 60);
     }
@@ -261,31 +236,14 @@ public class FamilyWorld extends World
     }
     
     // Stops and starts music when entering and leaving world
-    public void stopped() 
+    public void stopMusic() 
     {
-        bgMusic.pause();
+        bgMusic.stop();
     }
     
     public void started() 
     {
         bgMusic.playLoop();
-    }
-    
-    // Fades music in
-    public void fadeInMusic() 
-    {
-        bgMusic.setVolume(0);
-        bgMusic.playLoop();
-        currentVolume = 0;
-        fadingIn = true;
-        fadingOut = false;
-    }
-    
-    // Fades music out
-    public void fadeOutMusic() 
-    {
-        fadingOut = true;
-        fadingIn = false;
     }
 }
     
