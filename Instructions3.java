@@ -10,7 +10,7 @@ public class Instructions3 extends World
     private GameWorld world;
     private GameWorld returnWorld;
     
-    private DialogueBox dialogueBox; 
+    private DialogueBox dialogueBox;
     
     public Instructions3(GameWorld world, int stage, int x, int y)
     {
@@ -70,8 +70,10 @@ public class Instructions3 extends World
         if (!dialogueFinished && dialogueBox != null && dialogueBox.isFinished())
         {
             dialogueFinished = true;
+            
+            returnWorld.setStage(returnWorld.getStage() + 1);
         }
-    
+        
         if (dialogueFinished && Greenfoot.isKeyDown("space"))
         {
             Greenfoot.setWorld(returnWorld);

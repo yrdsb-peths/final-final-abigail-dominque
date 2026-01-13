@@ -214,7 +214,7 @@ public class Player extends Actor
         {
             canTalkGoat = false;
             GameWorld world = (GameWorld) getWorld();
-            world.openInstructions(world.getStage());   // choose stage 0, 1, or 2 here
+            world.openInstructions(world.getStage()); // choose stage 0, 1, or 2 here
         }
         
         if (npc == null)
