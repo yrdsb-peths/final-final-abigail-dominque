@@ -2,12 +2,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class GameWorld extends World
 {
+    // Variable for the NPC
     private GoatChibiNPC goat;
     
     private Player player;
     
+    // As long as this is true the enemies will be on screen
     private boolean activateEnemy = true;
     
+    private int stage = 0;
     public GameWorld(int playerX, int playerY)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -47,5 +50,20 @@ public class GameWorld extends World
     public Player getPlayer()
     {
         return player;
+    }
+    
+    public void openInstructions(int stage)
+    {
+        Greenfoot.setWorld(new Instructions3(this, stage, player.getX(), player.getY()));
+    }
+
+    public int getStage() 
+    { 
+        return stage; 
+    }
+    
+    public void setStage(int newStage) 
+    { 
+        stage = newStage; 
     }
 }

@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Player extends Actor
 {
     // Sets the players height and width
-    private static final int PLAYER_WIDTH = 250;
-    private static final int PLAYER_HEIGHT = 250;
+    private static final int PLAYER_WIDTH = 200;
+    private static final int PLAYER_HEIGHT = 200;
     
     // Sets image variables
     private GreenfootImage idleImage;
@@ -46,6 +46,7 @@ public class Player extends Actor
         checkDoor();
         checkChefInteraction();
         checkFireDoor();
+        checkGoatInteraction();
     }
     
     // Player movements
@@ -183,6 +184,17 @@ public class Player extends Actor
         {
             World world = getWorld();
             Greenfoot.setWorld(new GameWorld(getX(), getY()));
+        }
+    }
+    
+    private void checkGoatInteraction()
+    {
+        GoatChibiNPC npc = (GoatChibiNPC)getOneIntersectingObject(GoatChibiNPC.class);
+        
+        if (npc != null && Greenfoot.isKeyDown("space"))
+        {
+            GameWorld world = (GameWorld) getWorld();
+            world.openInstructions(0);   // choose stage 0, 1, or 2 here
         }
     }
 }
