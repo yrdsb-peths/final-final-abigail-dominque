@@ -54,6 +54,7 @@ public class Player extends Actor
         checkChefInteraction();
         checkFireDoor();
         checkGoatInteraction();
+        checkFragmentTwo();
     }
     
     // Player movements
@@ -220,6 +221,17 @@ public class Player extends Actor
         if (npc == null)
         {
             canTalkGoat = true;
+        }
+    }
+    
+    private void checkFragmentTwo()
+    {
+        FragmentTwo frag = (FragmentTwo)getOneIntersectingObject(FragmentTwo.class);
+        
+        if (frag != null)
+        {
+            GameWorld world = (GameWorld)getWorld();
+            world.openCutsceneTwo();
         }
     }
 }
