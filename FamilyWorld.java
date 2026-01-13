@@ -46,14 +46,14 @@ public class FamilyWorld extends World
         chef = new ChefChibiNPC();
         addObject(chef, 200, 200);
         
-        // adds the player
-        player = new Player();
-        addObject(player, getWidth() / 2, getHeight() / 2);
-        
         // adds the instructions book
         Book book = new Book();
         addObject(book, 950, 50);
-        
+
+        // adds the player
+        player = new Player();
+        addObject(player, getWidth() / 2, getHeight() / 2);
+                
         cookingInProgress = false;
         
         //restore position
