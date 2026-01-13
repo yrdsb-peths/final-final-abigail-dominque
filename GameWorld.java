@@ -10,8 +10,10 @@ public class GameWorld extends World
     // As long as this is true the enemies will be on screen
     private boolean activateEnemy = true;
     
+    // Checks if the player has talked to the chibi
     private boolean talkedToChibi = false;
     
+    // Checks what stage it is
     private int stage = 0;
     public GameWorld(int playerX, int playerY)
     {    
@@ -53,21 +55,26 @@ public class GameWorld extends World
         addObject(player, getWidth() / 2, getHeight() / 2);
     }
     
+    // Return the player variable (for location, etc.)
     public Player getPlayer()
     {
         return player;
     }
     
+    // Opens the instructions so the player knows what to do
     public void openInstructions(int stage)
     {
         Greenfoot.setWorld(new Instructions3(this, stage, player.getX(), player.getY()));
+        talkedToChibi = true;
     }
     
+    // Gets the stage
     public int getStage()
     {
         return stage;
     }
     
+    // Sets the stage
     public void setStage(int newStage)
     {
         stage = newStage;
@@ -79,17 +86,13 @@ public class GameWorld extends World
         addObject(frag, 100, 200);
     }
     
-    //opens cutscene2
+    // Opens cutscene2
     public void openCutsceneTwo()
     {
         Greenfoot.setWorld(new CutsceneTwo());
     }
 
-    public void getTalkedToChibi()
-    {
-        talkedToChibi = true;
-        return talkedToChibi;
-    }
+    // Spawns the last fragment
     public void spawnFragment()
     {
         if(talkedToChibi)

@@ -2,14 +2,19 @@ import greenfoot.*;
 
 public class Instructions3 extends World
 {
+    // Return coordinates after you leave the world
     private int returnX;
     private int returnY;
+    
+    // Checks if the dialogue is finished
     private boolean dialogueFinished = false;
 
+    // Variables for the NPC and world so you can return
     private GoatBigNPC goat;
     private GameWorld world;
     private GameWorld returnWorld;
     
+    // Variable for dialogue so you don't gotta keep initializing
     private DialogueBox dialogueBox;
     
     public Instructions3(GameWorld world, int stage, int x, int y)
@@ -19,10 +24,12 @@ public class Instructions3 extends World
         returnX = x;
         returnY = y;
         
+        // bg
         GreenfootImage background = new GreenfootImage("mushroom_background.png");
         background.scale(getWidth(), getHeight());
         setBackground(background);
         
+        // dialogue
         String[] dialogue;
         
         if(stage == 0)
