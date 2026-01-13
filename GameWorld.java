@@ -57,13 +57,4 @@ public class GameWorld extends World
         Greenfoot.setWorld(new Instructions3(this, stage, player.getX(), player.getY()));
     }
 
-    public int getStage() 
-    { 
-        return stage; 
-    }
-    
-    public void setStage(int newStage) 
-    { 
-        stage = newStage; 
-    }
 }
