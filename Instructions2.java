@@ -26,8 +26,11 @@ public class Instructions2 extends World
         if(stage == 0)
         {
             dialogue = new String[] {
-                "welcome to the best place on earth",
-                "everyone start gooning",
+                "Hi there, it's nice to meet you! My name is pitbull and I am the \nmost famous chef in the Dreamscape!",
+                "My high rated restaurants span the scope of dreams, making sure every \ndreamguide can eat a tasty meal.",
+                "Including me! I, a fellow dreamguide, could really use a meal...",
+                "I want some sweet, delictable and soft sugar cookies... with pink icing. \nIf you make them for me, I will reward you with the most precious \ncurrency in this world... a memory fragment!",
+                "Quick!!! Make them now!!! Quick!!!!!!!!"
             };
         }
         else if(stage == 1)
@@ -40,8 +43,11 @@ public class Instructions2 extends World
         else
         {
             dialogue = new String[] {
-                "start cooking you hard nut",
-                "who said you could stop working",
+                "Let's see what we've got here...",
+                "Woah! These are some scrumptious cookies... The best I've ever \neaten, after mine of course...",
+                "Great job! This is just what I've been craving...",
+                "Here's your memory fragment, make sure to take care of it. It is \nthe key to regaining ones memories.",
+                "Bye bye! Make sure to visit again! Maybe I'll cook you \nsomething next time...\n... maybe"
             };
         }
 
