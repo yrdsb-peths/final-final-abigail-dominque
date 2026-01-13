@@ -2,6 +2,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class FamilyWorld extends World
 {
+    // BACKGROUND MUSIC
+    private GreenfootSound bgMusic = new GreenfootSound("familyworld_music.mp3");
+    private int currentVolume = 0;
+    private int targetVolume = 60;
+    private boolean fadingIn = false;
+    private boolean fadingOut = false;
     // Save player position
     private int savedPlayerX;
     private int savedPlayerY;
@@ -9,17 +15,21 @@ public class FamilyWorld extends World
     // Spawns the chibi
     private ChefChibiNPC chef;
     
+    // Instructions that chef gives to player
     private boolean chefIntro = false;
-    
     private boolean talkedToChef = false;
     private boolean instructionsRead = false;
     private boolean questStarted = false;
     private boolean questCompleted = false;
     private int stage = 0;
-    
+
+    // Checks if you've talked to the chibi so it can add the pot
     private boolean talkedToChibi = false;
 
+    // Player variable
     private Player player;
+    
+    // Checks if sugar cookies are made (for the quest)
     private boolean sugarCookiesGiven;
     private boolean sugarCookieMade = false;
     
@@ -27,15 +37,22 @@ public class FamilyWorld extends World
     private CookingText reminder;
     private boolean reminderTextShown = false;
     
+    // Cooking pot variables
     private CookingPot pot;
     public boolean removePotAfterText = false;
-    
     private boolean cookingInProgress = false;
-    
+
     public FamilyWorld(int playerX, int playerY)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1); 
+        
+        // Starts playing the music!
+        fadeInMusic();
+        
+        // Background music
+        bgMusic.setVolume(60);
+        bgMusic.playLoop();
         
         // Sets background
         GreenfootImage background = new GreenfootImage("mushroom_background.png");
@@ -53,7 +70,8 @@ public class FamilyWorld extends World
         // adds the player
         player = new Player();
         addObject(player, getWidth() / 2, getHeight() / 2);
-                
+          
+        // Checks if player is cooking
         cookingInProgress = false;
         
         //restore position
@@ -63,6 +81,24 @@ public class FamilyWorld extends World
         }
     }
     
+    // Plays music
+    public void act()
+    {
+        if (fadingIn && currentVolume < targetVolume) {
+            currentVolume++;
+            bgMusic.setVolume(currentVolume);
+        }
+        else if (fadingOut && currentVolume > 0) {
+            currentVolume--;
+            bgMusic.setVolume(currentVolume);
+    
+            if (currentVolume == 0) {
+                bgMusic.stop();
+                fadingOut = false;
+            }
+        }
+    }
+
     // Called by Player when touching CookingPot
     public void startCooking()
     {
@@ -79,6 +115,7 @@ public class FamilyWorld extends World
         //slightly moves player so the pot is not triggered again 
         player.setLocation(player.getX(), player.getY() + 200);
         
+        fadeOutMusic();
         Greenfoot.setWorld(new CookingWorld(this, savedPlayerX, savedPlayerY));
     }
     
@@ -215,12 +252,40 @@ public class FamilyWorld extends World
         }   
     }
     
-    
+    // Spawns the door to the next world when you've completed the quest
     public void spawnFireDoor()
     {
         // spawns fire door
         FireDoor door = new FireDoor();
         addObject(door, 800, 350);
+    }
+    
+    // Stops and starts music when entering and leaving world
+    public void stopped() 
+    {
+        bgMusic.pause();
+    }
+    
+    public void started() 
+    {
+        bgMusic.playLoop();
+    }
+    
+    // Fades music in
+    public void fadeInMusic() 
+    {
+        bgMusic.setVolume(0);
+        bgMusic.playLoop();
+        currentVolume = 0;
+        fadingIn = true;
+        fadingOut = false;
+    }
+    
+    // Fades music out
+    public void fadeOutMusic() 
+    {
+        fadingOut = true;
+        fadingIn = false;
     }
 }
     

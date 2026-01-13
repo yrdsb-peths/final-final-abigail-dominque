@@ -2,8 +2,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class TitleScreen extends World
 {
-    //Creates title label
-    Label titleLabel = new Label("best game ever (nostlag)", 70);
+    // Creates play button
+    GreenfootImage playButton;
     
     //Creates play button
     Label play = new Label ("Play", 80);
@@ -16,22 +16,12 @@ public class TitleScreen extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1); 
         
-        addObject(titleLabel, getWidth() / 2, 200);
-        addObject(play, getWidth() / 2, 400);
-        prepare();
+        GreenfootImage background = new GreenfootImage("title_screen.png");
+        background.scale(getWidth(), getHeight());
+        setBackground(background);
+
+        PlayButton button = new PlayButton();
+        addObject(button, 200, 200);
     }
-    
-    public void act()
-    {
-        //if play label is clicked, the world will switch 
-        if (Greenfoot.mouseClicked(play))
-        {
-            Greenfoot.setWorld(new IntroWorld());
-        }
-    }
-    
-    private void prepare()
-    {
-        
-    }
+
 }
