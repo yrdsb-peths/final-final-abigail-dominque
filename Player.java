@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Player extends Actor
 {
     // Sets the players height and width
-    private static final int PLAYER_WIDTH = 200;
-    private static final int PLAYER_HEIGHT = 200;
+    private static final int PLAYER_WIDTH = 230;
+    private static final int PLAYER_HEIGHT = 230;
     
     // Sets image variables
     private GreenfootImage idleImage;
@@ -19,6 +19,10 @@ public class Player extends Actor
     
     // Prevents retrigger for FamilyWorld
     private boolean canTalk2 = true;
+    
+    //Prevent retrigger for pot
+    private boolean canCook = true;
+    
     
     // Sets Player image
     public Player()
@@ -122,9 +126,15 @@ public class Player extends Actor
 
     private void checkCookingPot()
     {
-        if(isTouching(CookingPot.class))
+        if(isTouching(CookingPot.class) && Greenfoot.isKeyDown("space"))
         {
+            canCook = false;
             ((FamilyWorld) getWorld()).startCooking();
+        }
+        
+        if(!isTouching(CookingPot.class))
+        {
+            canCook = true;
         }
     }
     
@@ -166,9 +176,15 @@ public class Player extends Actor
                 world.talkToChef(); // this opens Instructions2
             }
             // If quest started and cookie made
-            else if (world.isQuestStarted() && world.isQuestCompleted())
+            else if (world.isQuestStarted() && !world.isQuestCompleted() && world.hasSugarCookies())
             {
-                world.talkToChef(); // opens post-cooking dialogue
+                world.chefReceivesCookiesFromPlayer(); // opens post-cooking dialogue
+            }
+            
+            // quest is completed, post quest dialogue
+            else if (world.isQuestCompleted())
+            {
+                world.talkToChef();
             }
         }
     
