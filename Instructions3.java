@@ -78,6 +78,9 @@ public class Instructions3 extends World
         {
             Greenfoot.setWorld(returnWorld);
             returnWorld.getPlayer().setLocation(returnX, returnY);
+            
+            //adds fragment two after instructions are done
+            returnWorld.spawnFragmentTwo();
         }
     }
 }

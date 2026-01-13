@@ -4,6 +4,8 @@ public class FragmentTwo extends Actor
 {
     private GreenfootImage fragment; 
     
+    private boolean used = false; 
+    
     public FragmentTwo()
     {
         // initiates and scales book image
@@ -15,14 +17,23 @@ public class FragmentTwo extends Actor
     public void openInstructions()
     {
         // Open the world with the fragment image
-        Greenfoot.setWorld(new FragmentOneImage(getWorld()));
+        Greenfoot.setWorld(new CutsceneTwo());
     }
     
     public void act()
     {
-        if(Greenfoot.mouseClicked(this))
+        if(used)
         {
-            openInstructions();
+            return;
+        }
+        
+        Player player = (Player) getOneIntersectingObject(Player.class);
+        
+        if (player != null)
+        {
+            used = true;
+            
+            GameWorld world = (GameWorld) getWorld();
         }
     }
 }

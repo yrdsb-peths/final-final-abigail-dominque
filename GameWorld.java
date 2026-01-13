@@ -42,6 +42,10 @@ public class GameWorld extends World
         Enemy enemy7 = new Enemy();
         addObject(enemy7, 0, 300);
         
+        // adds the instructions book
+        Book book = new Book();
+        addObject(book, 950, 50);
+        
         // adds the player
         player = new Player();
         addObject(player, getWidth() / 2, getHeight() / 2);
@@ -65,6 +69,18 @@ public class GameWorld extends World
     public void setStage(int newStage)
     {
         stage = newStage;
+    }
+    
+    public void spawnFragmentTwo()
+    {
+        FragmentTwo frag = new FragmentTwo();
+        addObject(frag, 100, 200);
+    }
+    
+    //opens cutscene2
+    public void openCutsceneTwo()
+    {
+        Greenfoot.setWorld(new CutsceneTwo());
     }
 
 }

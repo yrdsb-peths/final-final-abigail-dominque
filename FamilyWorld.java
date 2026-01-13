@@ -141,21 +141,6 @@ public class FamilyWorld extends World
         return questCompleted;
     }
     
-    //public void completeSugarCookie()
-    //{
-        //questCompleted = true;
-    
-        // Optionally, add sugar cookie image to player
-        //SugarCookies food = new SugarCookies();
-        //addObject(food, player.getX(), player.getY());
-        
-        //removeReminder();
-        //removeCookingPot();
-        
-        //FragmentOne frag = new FragmentOne();
-        //addObject(frag, 800, 50);
-    //}
-    
     public void spawnCookingPot()
     {
         pot = new CookingPot();
