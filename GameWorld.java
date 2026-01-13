@@ -6,6 +6,8 @@ public class GameWorld extends World
     
     private Player player;
     
+    private boolean activateEnemy = true;
+    
     public GameWorld(int playerX, int playerY)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -15,8 +17,35 @@ public class GameWorld extends World
         goat = new GoatChibiNPC();
         addObject(goat, 800, 500);
         
+        // Adds the enemies to the world
+        Enemy enemy1 = new Enemy();
+        addObject(enemy1, 500, 200);
+        
+        Enemy enemy2 = new Enemy();
+        addObject(enemy2, 300, 500);
+        
+        Enemy enemy3 = new Enemy();
+        addObject(enemy3, 233, 129);
+        
+        Enemy enemy4 = new Enemy();
+        addObject(enemy4, 210, 580);
+        
+        Enemy enemy5 = new Enemy();
+        addObject(enemy5, 467, 580);
+        
+        Enemy enemy6 = new Enemy();
+        addObject(enemy6, 676, 676);
+        
+        Enemy enemy7 = new Enemy();
+        addObject(enemy7, 0, 300);
+        
         // adds the player
         player = new Player();
         addObject(player, getWidth() / 2, getHeight() / 2);
+    }
+    
+    public Player getPlayer()
+    {
+        return player;
     }
 }
