@@ -61,8 +61,6 @@ public class Instructions3 extends World
         addObject(dialogueBox, getWidth() /2, 600);
         
     }
-
-    
     
     public void act()
     {

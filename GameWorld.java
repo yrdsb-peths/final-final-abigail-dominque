@@ -10,6 +10,8 @@ public class GameWorld extends World
     // As long as this is true the enemies will be on screen
     private boolean activateEnemy = true;
     
+    private boolean talkedToChibi = false;
+    
     private int stage = 0;
     public GameWorld(int playerX, int playerY)
     {    
@@ -67,4 +69,17 @@ public class GameWorld extends World
         stage = newStage;
     }
 
+    public void getTalkedToChibi()
+    {
+        talkedToChibi = true;
+        return talkedToChibi;
+    }
+    public void spawnFragment()
+    {
+        if(talkedToChibi)
+        {
+            FragmentTwo fragment = new FragmentTwo();
+            addObject(fragment, 200, 200);
+        }
+    }
 }
