@@ -23,6 +23,9 @@ public class Player extends Actor
     //Prevent retrigger for pot
     private boolean canCook = true;
     
+    //prevents retrigger for goat
+    private boolean canTalkGoat = true;
+    
     
     // Sets Player image
     public Player()
@@ -126,7 +129,7 @@ public class Player extends Actor
 
     private void checkCookingPot()
     {
-        if(isTouching(CookingPot.class) && Greenfoot.isKeyDown("space"))
+        if(isTouching(CookingPot.class) && canCook && Greenfoot.isKeyDown("space"))
         {
             canCook = false;
             ((FamilyWorld) getWorld()).startCooking();
@@ -207,10 +210,16 @@ public class Player extends Actor
     {
         GoatChibiNPC npc = (GoatChibiNPC)getOneIntersectingObject(GoatChibiNPC.class);
         
-        if (npc != null && Greenfoot.isKeyDown("space"))
+        if (npc != null && canTalkGoat && Greenfoot.isKeyDown("space"))
         {
+            canTalkGoat = false;
             GameWorld world = (GameWorld) getWorld();
-            world.openInstructions(0);   // choose stage 0, 1, or 2 here
+            world.openInstructions(world.getStage());   // choose stage 0, 1, or 2 here
+        }
+        
+        if (npc == null)
+        {
+            canTalkGoat = true;
         }
     }
 }

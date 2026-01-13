@@ -10,6 +10,8 @@ public class Instructions3 extends World
     private GameWorld world;
     private GameWorld returnWorld;
     
+    private DialogueBox dialogueBox; 
+    
     public Instructions3(GameWorld world, int stage, int x, int y)
     {
         super(1000, 700, 1);
@@ -54,12 +56,27 @@ public class Instructions3 extends World
             "chef1.mp3",
             "chef4.mp3",
         };
-        addObject(new DialogueBox(dialogue, chefSounds), getWidth() / 2, 600);
+        
+        dialogueBox = new DialogueBox(dialogue, chefSounds);
+        addObject(dialogueBox, getWidth() /2, 600);
+        
     }
 
+    
+    
     public void act()
     {
-        
+        // exits out of dialogue when done talking
+        if (!dialogueFinished && dialogueBox != null && dialogueBox.isFinished())
+        {
+            dialogueFinished = true;
+        }
+    
+        if (dialogueFinished && Greenfoot.isKeyDown("space"))
+        {
+            Greenfoot.setWorld(returnWorld);
+            returnWorld.getPlayer().setLocation(returnX, returnY);
+        }
     }
 }
 
