@@ -2,8 +2,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class ChefBigNPC extends Actor
 {
-    private static final int BIG_HEIGHT = 426;
-    private static final int BIG_WIDTH = 480;
+    private static final int BIG_HEIGHT = 526;
+    private static final int BIG_WIDTH = 580;
     
     private GreenfootImage image1;
     private GreenfootImage image2;
