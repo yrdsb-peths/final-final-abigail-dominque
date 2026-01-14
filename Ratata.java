@@ -12,7 +12,7 @@ public class Ratata extends Actor
     public Ratata()
     {
         // Loads and scales image 
-        idle = new GreenfootImage("mushroom_chibi.png");
+        idle = new GreenfootImage("rat.png");
         idle.scale(WIDTH, HEIGHT);
         setImage(idle);
     }
