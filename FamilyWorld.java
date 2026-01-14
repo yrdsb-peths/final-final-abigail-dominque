@@ -76,6 +76,10 @@ public class FamilyWorld extends World
         chef = new ChefChibiNPC();
         addObject(chef, 200, 500);
         
+        // Adds the lumenfly onto the chef
+        Firefly lumen = new Firefly();
+        addObject(lumen, 230, 410);
+        
         // adds the instructions book
         Book book = new Book();
         addObject(book, 950, 50);

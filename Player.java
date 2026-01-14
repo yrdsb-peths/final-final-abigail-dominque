@@ -146,7 +146,8 @@ public class Player extends Actor
     {
         if(isTouching(Door.class))
         {
-            World world = getWorld();
+            MushroomWorld world = (MushroomWorld)getWorld();
+            world.stopMusic();
             Greenfoot.setWorld(new FamilyWorld(getX(), getY()));
         }
     }

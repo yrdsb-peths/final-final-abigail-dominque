@@ -5,6 +5,9 @@ public class MushroomWorld extends World
 {
     private Player player;
     
+    // BACKGROUND MUSIC
+    private GreenfootSound bgMusic = new GreenfootSound("mushroom_music.mp3");
+    
     // Chibi instance variable
     private MushroomChibiNPC mushroom;
     
@@ -46,7 +49,11 @@ public class MushroomWorld extends World
     public MushroomWorld(boolean instructionsRead, int playerX, int playerY)
     {
         super(1000, 700, 1);
-
+        
+        // Background music
+        bgMusic.setVolume(60);
+        bgMusic.playLoop();
+        
         this.instructionsRead = instructionsRead;
         
         // Sets background
@@ -55,11 +62,11 @@ public class MushroomWorld extends World
         setBackground(background);
         
         // Adds mushroom hut
-        addObject(new MushroomHut(), 170, 200);
+        addObject(new MushroomHut(), 240, 200);
         
         // Adds mushroom
         mushroom = new MushroomChibiNPC();
-        addObject(mushroom, 80, 400);
+        addObject(mushroom, 80, 450);
         
         //Adds book and cooking pot after instructions
         if(instructionsRead)
@@ -72,7 +79,7 @@ public class MushroomWorld extends World
         if(instructionsRead && lanternGiven == true)
         {
             Door door = new Door();
-            addObject(door, 200, 200);
+            addObject(door, 500, 500);
         }
         
         // Adds player
@@ -112,7 +119,7 @@ public class MushroomWorld extends World
         fireflyQuestActive = true;
     
         fireflyCounter = new FireflyCounter();
-        addObject(fireflyCounter, 120, 30);
+        addObject(fireflyCounter, 80, 670);
     
         spawnFireflies();
     }
@@ -176,22 +183,23 @@ public class MushroomWorld extends World
             removeObject(fireflyCounter);
             fireflyCounter = null;
         }
-    
-        // Remove "go talk to the girl" message
-        if (fireflyCompleteMsg != null)
-        {
-            removeObject(fireflyCompleteMsg);
-            fireflyCompleteMsg = null;
-        }
+
     
         // Add lantern light
         addObject(new FireflyLight(player), player.getX(), player.getY());
         
         //adds door after lantern is given
         lanternGiven = true;
-        Door door = new Door();
-        addObject(door, 200, 200);
         
+        // Remove "go talk to the girl" message
+        if (lanternGiven == true)
+        {
+            removeObject(fireflyCompleteMsg);
+        }
+        
+        // Spawns the new door
+        Door door = new Door();
+        addObject(door, 240, 230);
     }
     
     public boolean isQuestStarted()
@@ -251,5 +259,16 @@ public class MushroomWorld extends World
             addObject(book, getWidth() - 60, 60);
             bookSpawned = true;
         }
+    }
+    
+    // Stops and starts music when entering and leaving world
+    public void stopMusic() 
+    {
+        bgMusic.stop();
+    }
+    
+    public void started() 
+    {
+        bgMusic.playLoop();
     }
 }

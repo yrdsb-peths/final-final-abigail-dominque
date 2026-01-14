@@ -16,7 +16,7 @@ public class Door extends Actor
     public Door()
     {
         GreenfootImage door = new GreenfootImage ("door.png");
-        door.scale(100, 100);
+        door.scale(450, 450);
         setImage(door);
     }
     
