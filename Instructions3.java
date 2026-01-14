@@ -35,22 +35,23 @@ public class Instructions3 extends World
         if(stage == 0)
         {
             dialogue = new String[] {
-                "welcome to the best place on earth",
-                "everyone start gooning",
+                "HAHAHAH THESE DAWGS ARE CRAZYYYY DAWGGG",
+                "GUESS YOUR PATIENT REALLY DON'T LIKE DAWGS HAHAHAHAAHAHA",
+                "AAAAAAAACKKK WHY DON'T YOU TRY YOUR HAND AT DODGING THEM BLUDDYO",
+                "THE FRAGMENT IS RIGHT THERE AAAHAHAHAHAHAHA",
+                "MAYBE YOU'LL HAVE BETTER LUCK DODGING THEM THAN ME YAAHOOOO"
             };
         }
         else if(stage == 1)
         {
             dialogue = new String[] {
-                "raise one hand if you love to live",
-                "me personally i love to live",
+                "HAAAHAAAAHAAAA"
             };
         }
         else
         {
             dialogue = new String[] {
-                "start cooking you hard nut",
-                "who said you could stop working",
+                "WOOOOOHHOOOOOO"
             };
         }
 
@@ -58,10 +59,11 @@ public class Instructions3 extends World
         addObject(goat, 500, 350);
         
         String[] chefSounds = {
-            "chef3.mp3",
-            "chef2.mp3",
-            "chef1.mp3",
-            "chef4.mp3",
+            "goat1.mp3",
+            "goat2.mp3",
+            "goat1.mp3",
+            "goat2.mp3",
+            "goat1.mp3"
         };
         
         dialogueBox = new DialogueBox(dialogue, chefSounds);

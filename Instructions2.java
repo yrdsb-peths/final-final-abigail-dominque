@@ -27,8 +27,8 @@ public class Instructions2 extends World
         {
             dialogue = new String[] {
                 "Hi there... hahaha... it's nice to meet you! My name is Norve... heh... \nand I'm the most famous chef in the Dreamscape!",
-                "Just look how many people are here! Haha...huh? No we don't \nmake pizzas here... why would you even think that...haha...this \nplace aint a pizza restaurant...;-;",
-                "Well... haha how about you make me a meal haha ;-; for saying \nsomething so insulting in my own restaurant (michelin star) (on foenem) ",
+                "Just look how many people are here! Haha...huh? No... we don't \nmake pizzas here... why would you even think that...haha...\nthis place aint a pizza restaurant...;-;",
+                "Well... haha how about you make me a meal haha ;-; for saying \nsomething so insulting in my own restaurant (michelin star) (on bluh) ",
                 "I want some sweet, delectable and soft sugar cookies... with pink icing... haha... \nIf you make them for me, maybe I'll give you that memory fragment \nyou're looking for... haha",
                 "No rush or anything...hahahahahahaha..."
             };
@@ -36,8 +36,7 @@ public class Instructions2 extends World
         else if(stage == 1)
         {
             dialogue = new String[] {
-                "raise one hand if you love to live",
-                "me personally i love to live",
+                "Hahahahahahahaha....no rush..."
             };
         }
         else
@@ -46,8 +45,10 @@ public class Instructions2 extends World
                 "Let's see what we've got here... hawhawhaw",
                 "Well I'll be! These are some scrumptious cookies... haha... The best \nI've ever eaten... after mine of course...",
                 "Good effort... but it seems no one will be able to best me \nin this field... haha... ha...",
-                "Here's your memory fragment... good luck finding the rest...haha...\nYou've successfully obtained one of the key's to regain one's memories.",
-                "Bye bye! Make sure to visit again! Maybe I'll cook you \nsomething next time...\n... maybe..."
+                "Thankfully your patient didn't eat these... hahaha... why don't we leave the baking to me... ha ha ha",
+                "Here's your memory fragment... good luck finding the rest...haha...\nYou've successfully obtained one of the keys to regain one's memories.",
+                "Bye bye haha...",
+                "Make sure to visit again! You outta hone your baking skills...haha\nMaybe I'll cook you \nsomething next time...if you improve...haha\n... maybe..."
             };
         }
 
@@ -59,6 +60,8 @@ public class Instructions2 extends World
             "chef2.mp3",
             "chef1.mp3",
             "chef4.mp3",
+            "chef6.mp3",
+            "chef5.mp3"
         };
         addObject(new DialogueBox(dialogue, chefSounds), getWidth() / 2, 600);
     }

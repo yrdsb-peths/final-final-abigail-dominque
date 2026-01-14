@@ -39,18 +39,16 @@ public class Recipe1World extends World
         // intro text
         String[] text1;
         text1 = new String[] {
-            "Let's make sugar cookies!",
-            "Click the ingredients to put them in the pot."
+            "Wassup",
+            "We boutta make some cookies"
         };
         
-        String[] chefSounds = {
-            "chef1.mp3",
-            "chef2.mp3",
-            "chef3.mp3",
-            "chef4.mp3",
+        String[] ratataSounds = {
+            "rat2.mp3",
+            "rat1.mp3"
         };
         
-        dialogue1 = new DialogueBox(text1, chefSounds);
+        dialogue1 = new DialogueBox(text1, ratataSounds);
         addObject(dialogue1, 500, 600);
     }
     
@@ -76,16 +74,17 @@ public class Recipe1World extends World
     {
         String[] text2;
         text2 = new String[] {
-            "Good job, you baked sugar cookies!",
-            "Give them to pitbull.",
-            "Keep clicking exit to continue..."
+            "Bro these better be good gon be honest",
+            "But lie I won't be surprised if they ain't",
+            "If chef Norve don't like them you're dun",
+            "Okay I guess you can leave now ;-;"
         };
         
         String[] chefSounds = {
-            "chef2.mp3",
-            "chef1.mp3",
-            "chef4.mp3",
-            "chef3.mp3",
+            "rat1.mp3",
+            "rat2.mp3",
+            "rat3.mp3",
+            "rat2.mp3"
         };
         DialogueBox dialogue2 = new DialogueBox(text2, chefSounds);
         addObject(dialogue2, 500, 600);
