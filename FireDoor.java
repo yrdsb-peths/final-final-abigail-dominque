@@ -10,7 +10,7 @@ public class FireDoor extends Actor
 {
     public FireDoor()
     {
-        GreenfootImage img = new GreenfootImage("door.png");
+        GreenfootImage img = new GreenfootImage("firedoor.png");
         img.scale(300, 400);
         setImage(img);
     }

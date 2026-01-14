@@ -55,23 +55,27 @@ public class FamilyWorld extends World
         
         // adds randoms into the world because the chef is so cheeky
         FamilyWorldNPC npc = new FamilyWorldNPC();
-        addObject(npc, 500, 380);
+        addObject(npc, 291, 144);
         
         FamilyWorldNPC2 npc1 = new FamilyWorldNPC2();
-        addObject(npc1, 240, 350);
+        addObject(npc1, 416, 127);
         
         FamilyWorldNPC npc2 = new FamilyWorldNPC();
-        addObject(npc2, 900, 370);
+        addObject(npc2, 477, 207);
         
         FamilyWorldNPC2 npc3 = new FamilyWorldNPC2();
-        addObject(npc3, 800, 370);
+        addObject(npc3, 623, 194);
         
         FamilyWorldNPC npc4 = new FamilyWorldNPC();
-        addObject(npc4, 700, 340);
+        addObject(npc4, 184, 262);
         
         FamilyWorldNPC2 npc5 = new FamilyWorldNPC2();
-        addObject(npc5, 670, 340);
+        addObject(npc5, 372, 259);
         
+        // PLACEHLODER
+        // PLACEHLODER
+        // PLACEHLODER
+        // PLACEHLODER
         // adds chef npc
         chef = new ChefChibiNPC();
         addObject(chef, 200, 500);
