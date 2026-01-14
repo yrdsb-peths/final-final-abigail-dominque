@@ -54,23 +54,25 @@ public class FamilyWorld extends World
         setBackground(background);
         
         // adds randoms into the world because the chef is so cheeky
+        FamilyWorldNPC2 npc5 = new FamilyWorldNPC2();
+        addObject(npc5, 538, 255);
+        
         FamilyWorldNPC npc = new FamilyWorldNPC();
-        addObject(npc, 291, 144);
+        addObject(npc, 420, 257);
         
         FamilyWorldNPC2 npc1 = new FamilyWorldNPC2();
-        addObject(npc1, 416, 127);
+        addObject(npc1, 502, 389);
         
         FamilyWorldNPC npc2 = new FamilyWorldNPC();
-        addObject(npc2, 477, 207);
+        addObject(npc2, 590, 333);
         
         FamilyWorldNPC2 npc3 = new FamilyWorldNPC2();
-        addObject(npc3, 623, 194);
+        addObject(npc3, 743, 325);
         
         FamilyWorldNPC npc4 = new FamilyWorldNPC();
-        addObject(npc4, 184, 262);
+        addObject(npc4, 312, 396);
         
-        FamilyWorldNPC2 npc5 = new FamilyWorldNPC2();
-        addObject(npc5, 372, 259);
+        
         
         // PLACEHLODER
         // PLACEHLODER
@@ -100,6 +102,11 @@ public class FamilyWorld extends World
         {
             player.setLocation(playerX - 50, playerY + 100);
         }
+    }
+    
+    public void act()
+    {
+        
     }
 
     // Called by Player when touching CookingPot
