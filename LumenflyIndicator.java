@@ -6,7 +6,7 @@ public class LumenflyIndicator extends Actor
     public LumenflyIndicator()
     {
         GreenfootImage firefly = new GreenfootImage("firefly_light.png");
-        firefly.scale(40, 40);
+        firefly.scale(100, 100);
         setImage(firefly);
     }
 }

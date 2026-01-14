@@ -31,6 +31,9 @@ public class GameWorld extends World
         goat = new GoatChibiNPC();
         addObject(goat, 800, 500);
         
+        // Adds lumenfly onto head
+        LumenflyIndicator lumen = new LumenflyIndicator();
+        addObject(lumen, 850, 500);
         // Adds the enemies to the world
         Enemy enemy1 = new Enemy();
         addObject(enemy1, 500, 200);
