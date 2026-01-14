@@ -77,7 +77,7 @@ public class FamilyWorld extends World
         addObject(chef, 200, 500);
         
         // Adds the lumenfly onto the chef
-        Firefly lumen = new Firefly();
+        LumenflyIndicator lumen = new LumenflyIndicator();
         addObject(lumen, 230, 410);
         
         // adds the instructions book
