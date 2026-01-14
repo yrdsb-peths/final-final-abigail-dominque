@@ -49,13 +49,13 @@ public class FamilyWorld extends World
         bgMusic.playLoop();
         
         // Sets background
-        GreenfootImage background = new GreenfootImage("mushroom_background.png");
+        GreenfootImage background = new GreenfootImage("familyworld_bg.jpg");
         background.scale(getWidth(), getHeight());
         setBackground(background);
         
         // adds chef npc
         chef = new ChefChibiNPC();
-        addObject(chef, 200, 200);
+        addObject(chef, 200, 500);
         
         // adds the instructions book
         Book book = new Book();

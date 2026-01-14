@@ -2,6 +2,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class GameWorld extends World
 {
+    // BACKGROUND MUSIC
+    private GreenfootSound bgMusic = new GreenfootSound("gameworld_music.mp3");
+    
     // Variable for the NPC
     private GoatChibiNPC goat;
     
@@ -19,6 +22,10 @@ public class GameWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1); 
+        
+        // Background music
+        bgMusic.setVolume(40);
+        bgMusic.playLoop();
         
         // adds goat npc
         goat = new GoatChibiNPC();
@@ -100,5 +107,16 @@ public class GameWorld extends World
             FragmentTwo fragment = new FragmentTwo();
             addObject(fragment, 200, 200);
         }
+    }
+    
+    // Stops and starts music when entering and leaving world
+    public void stopMusic() 
+    {
+        bgMusic.stop();
+    }
+    
+    public void started() 
+    {
+        bgMusic.playLoop();
     }
 }
