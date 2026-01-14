@@ -53,6 +53,25 @@ public class FamilyWorld extends World
         background.scale(getWidth(), getHeight());
         setBackground(background);
         
+        // adds randoms into the world because the chef is so cheeky
+        FamilyWorldNPC npc = new FamilyWorldNPC();
+        addObject(npc, 500, 380);
+        
+        FamilyWorldNPC2 npc1 = new FamilyWorldNPC2();
+        addObject(npc1, 240, 350);
+        
+        FamilyWorldNPC npc2 = new FamilyWorldNPC();
+        addObject(npc2, 900, 370);
+        
+        FamilyWorldNPC2 npc3 = new FamilyWorldNPC2();
+        addObject(npc3, 800, 370);
+        
+        FamilyWorldNPC npc4 = new FamilyWorldNPC();
+        addObject(npc4, 700, 340);
+        
+        FamilyWorldNPC2 npc5 = new FamilyWorldNPC2();
+        addObject(npc5, 670, 340);
+        
         // adds chef npc
         chef = new ChefChibiNPC();
         addObject(chef, 200, 500);
@@ -156,7 +175,7 @@ public class FamilyWorld extends World
     public void spawnCookingPot()
     {
         pot = new CookingPot();
-        addObject(pot, 600, 300);
+        addObject(pot, 900, 600);
     }
 
     public void giveSugarCookies()
@@ -184,7 +203,7 @@ public class FamilyWorld extends World
         if (!reminderTextShown && questStarted && !questCompleted)
         {
             reminder = new CookingText();
-            addObject(reminder, 500, 100);
+            addObject(reminder, 500, 50);
             reminderTextShown = true;
         }
     }

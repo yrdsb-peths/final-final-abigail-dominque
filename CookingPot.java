@@ -16,8 +16,8 @@ public class CookingPot extends Actor
     //Initializes cooking pot
     public CookingPot()
     {
-        pot = new GreenfootImage("cooking_pot.png");
-        pot.scale(70,50);
+        pot = new GreenfootImage("bowl.png");
+        pot.scale(100,100);
         setImage(pot);
     }
     

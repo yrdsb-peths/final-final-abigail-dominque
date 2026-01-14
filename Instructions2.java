@@ -26,11 +26,11 @@ public class Instructions2 extends World
         if(stage == 0)
         {
             dialogue = new String[] {
-                "Hi there, it's nice to meet you! My name is pitbull and I am the \nmost famous chef in the Dreamscape!",
-                "My high rated restaurants span the scope of dreams, making sure every \ndreamguide can eat a tasty meal.",
-                "Including me! I, a fellow dreamguide, could really use a meal...",
-                "I want some sweet, delectable and soft sugar cookies... with pink icing. \nIf you make them for me, I will reward you with the most precious \ncurrency in this world... a memory fragment!",
-                "Quick!!! Make them now!!! Quick!!!!!!!!"
+                "Hi there... hahaha... it's nice to meet you! My name is Norve... heh... \nand I'm the most famous chef in the Dreamscape!",
+                "Just look how many people are here! Haha...huh? No we don't \nmake pizzas here... why would you even think that...haha...this \nplace aint a pizza restaurant...;-;",
+                "Well... haha how about you make me a meal haha ;-; for saying \nsomething so insulting in my own restaurant (michelin star) (on foenem) ",
+                "I want some sweet, delectable and soft sugar cookies... with pink icing... haha... \nIf you make them for me, maybe I'll give you that memory fragment \nyou're looking for... haha",
+                "No rush or anything...hahahahahahaha..."
             };
         }
         else if(stage == 1)
@@ -43,11 +43,11 @@ public class Instructions2 extends World
         else
         {
             dialogue = new String[] {
-                "Let's see what we've got here...",
-                "Woah! These are some scrumptious cookies... The best I've ever \neaten, after mine of course...",
-                "Great job! This is just what I've been craving...",
-                "Here's your memory fragment, make sure to take care of it. It is \nthe key to regaining ones memories.",
-                "Bye bye! Make sure to visit again! Maybe I'll cook you \nsomething next time...\n... maybe"
+                "Let's see what we've got here... hawhawhaw",
+                "Well I'll be! These are some scrumptious cookies... haha... The best \nI've ever eaten... after mine of course...",
+                "Good effort... but it seems no one will be able to best me \nin this field... haha... ha...",
+                "Here's your memory fragment... good luck finding the rest...haha...\nYou've successfully obtained one of the key's to regain one's memories.",
+                "Bye bye! Make sure to visit again! Maybe I'll cook you \nsomething next time...\n... maybe..."
             };
         }
 

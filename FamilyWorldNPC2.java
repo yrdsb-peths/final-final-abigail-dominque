@@ -1,6 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class FamilyWorldNPC extends Actor
+public class FamilyWorldNPC2 extends Actor
 {
     // Sets the players height and width
     private static final int WIDTH = 250;
@@ -8,10 +8,10 @@ public class FamilyWorldNPC extends Actor
     
     private GreenfootImage idle; 
     
-    public FamilyWorldNPC()
+    public FamilyWorldNPC2()
     {
         // Loads and scales image 
-        idle = new GreenfootImage("npc1.png");
+        idle = new GreenfootImage("npc2.png");
         idle.scale(WIDTH, HEIGHT);
         setImage(idle);
     }
