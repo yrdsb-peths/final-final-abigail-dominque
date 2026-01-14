@@ -15,7 +15,7 @@ public class GoatChibiNPC extends Actor
     public void act()
     {
         GreenfootImage goat = new GreenfootImage("goat_chibi.png");
-        goat.scale(200, 200);
+        goat.scale(250, 250);
         setImage(goat);
     }
 }
