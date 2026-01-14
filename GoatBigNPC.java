@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class GoatBigNPC extends Actor
 {
     private static final int BIG_HEIGHT = 500;
-    private static final int BIG_WIDTH = 633;
+    private static final int BIG_WIDTH = 500;
     
     private GreenfootImage image1;
     private GreenfootImage image2;
@@ -15,9 +15,9 @@ public class GoatBigNPC extends Actor
     public GoatBigNPC()
     {
          //Loads and scales new images
-         image1 = new GreenfootImage("mushroom_big_image1.png");
-         image2 = new GreenfootImage("mushroom_big_image2.png");
-         image3 = new GreenfootImage("mushroom_big_image3.png");
+         image1 = new GreenfootImage("goat1.png");
+         image2 = new GreenfootImage("goat2.png");
+         image3 = new GreenfootImage("goat3.png");
          
          image1.scale(BIG_HEIGHT, BIG_WIDTH);
          image2.scale(BIG_HEIGHT, BIG_WIDTH);
@@ -45,16 +45,8 @@ public class GoatBigNPC extends Actor
     {
         index = (index + 1) % 3;
         
-        if (index == 1)
-        {
-            setImage1();
-        }
-        
-        if(index == 2 || index == 3)
-        {
-            setImage2();
-        }
-        
+        GreenfootImage[] images = {image1, image2, image3};
+        setImage(images[index]);
     }
     
     
