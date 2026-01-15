@@ -56,7 +56,7 @@ public class Instructions3 extends World
         }
 
         goat = new GoatBigNPC();
-        addObject(goat, 500, 350);
+        addObject(goat, 500, 250);
         
         String[] chefSounds = {
             "goat1.mp3",

@@ -31,6 +31,11 @@ public class GameWorld extends World
         goat = new GoatChibiNPC();
         addObject(goat, 800, 500);
         
+        //sets background
+        GreenfootImage bg = new GreenfootImage("gameworldbg.jpg");
+        bg.scale(getWidth(), getHeight());
+        setBackground(bg);
+        
         // Adds lumenfly onto head
         LumenflyIndicator lumen = new LumenflyIndicator();
         addObject(lumen, 850, 500);

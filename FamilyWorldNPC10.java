@@ -11,7 +11,7 @@ public class FamilyWorldNPC10 extends Actor
     public FamilyWorldNPC10()
     {
         // Loads and scales image 
-        idle = new GreenfootImage("npc2.png");
+        idle = new GreenfootImage("npc10.png");
         idle.scale(WIDTH, HEIGHT);
         setImage(idle);
     }

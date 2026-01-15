@@ -4,7 +4,7 @@ public class FamilyWorldNPC6 extends Actor
 {
     // Sets the players height and width
     private static final int WIDTH = 100;
-    private static final int HEIGHT = 100;
+    private static final int HEIGHT = 150;
     
     private GreenfootImage idle; 
     

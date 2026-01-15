@@ -2,8 +2,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class GoatBigNPC extends Actor
 {
-    private static final int BIG_HEIGHT = 500;
-    private static final int BIG_WIDTH = 500;
+    private static final int BIG_HEIGHT = 600;
+    private static final int BIG_WIDTH = 600;
     
     private GreenfootImage image1;
     private GreenfootImage image2;

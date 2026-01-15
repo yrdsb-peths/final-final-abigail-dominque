@@ -54,6 +54,9 @@ public class FamilyWorld extends World
         setBackground(background);
         
         // adds randoms into the world because the chef is so cheeky
+        FamilyWorldNPC8 npc8 = new FamilyWorldNPC8();
+        addObject(npc8, 436, 230);
+        
         FamilyWorldNPC npc1 = new FamilyWorldNPC();
         addObject(npc1, 538, 255);
         
@@ -61,29 +64,26 @@ public class FamilyWorld extends World
         addObject(npc2, 420, 257);
         
         FamilyWorldNPC3 npc3 = new FamilyWorldNPC3();
-        addObject(npc3, 502, 389);
+        addObject(npc3, 501, 424);
         
         FamilyWorldNPC4 npc4 = new FamilyWorldNPC4();
-        addObject(npc4, 590, 333);
+        addObject(npc4, 600, 389);
         
         FamilyWorldNPC5 npc5 = new FamilyWorldNPC5();
         addObject(npc5, 743, 325);
         
         FamilyWorldNPC6 npc6 = new FamilyWorldNPC6();
-        addObject(npc6, 312, 396);
+        addObject(npc6, 320, 432);
         
         // Side chairs
         FamilyWorldNPC7 npc7 = new FamilyWorldNPC7();
-        addObject(npc7, 124, 212);
-        
-        FamilyWorldNPC8 npc8 = new FamilyWorldNPC8();
-        addObject(npc8, 193, 165);
+        addObject(npc7, 268, 270);
         
         FamilyWorldNPC9 npc9 = new FamilyWorldNPC9();
-        addObject(npc9, 181, 130);
+        addObject(npc9, 198, 351);
         
         FamilyWorldNPC10 npc10 = new FamilyWorldNPC10();
-        addObject(npc10, 367, 129);
+        addObject(npc10, 356, 239);
         
         // adds chef npc
         chef = new ChefChibiNPC();
