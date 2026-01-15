@@ -110,11 +110,6 @@ public class FamilyWorld extends World
             player.setLocation(playerX - 50, playerY + 100);
         }
     }
-    
-    public void act()
-    {
-        
-    }
 
     // Called by Player when touching CookingPot
     public void startCooking()

@@ -52,14 +52,14 @@ public class CutsceneTwo extends World
         //dialogue while memories are playing
         String[] introDialogue = {
           "Let's piece the fragments together...",
-          "... \n(patient is running from puppy)",
-          "... \n(puppy bites patient)",
-          "... \n(patient is crying)",
-          "... \n(puppy feels sad)",
-          "... \n(puppy apologizes)",
-          "... \n(puppy and patient are happy!)",
-          "...",
-          "#socute... you've found the patient's memories!!! let's wake \nthem up hehehehehehehe"
+          "... \n(looks like the patient is running from the (cutest) puppy (ever))",
+          "... \n(well darn the (cutest) puppy (ever) bites the patient)",
+          "... \n(ruh roh the patient is crying)",
+          "... \n(the (cutest) puppy (ever) feels sad)",
+          "... \n((cutest) puppy (ever) apologizes)",
+          "... \n((cutest) puppy (ever) and patient are happy!)",
+          "Looks like this time the patient came to us early before they \nlost any more memories... lucky lucky ducky ;)... I suppose we'll wake them up now and \nsee what HAPPENS... ;)",
+          "..."
         };
         
         //player sounds
