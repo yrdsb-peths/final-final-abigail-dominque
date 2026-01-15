@@ -45,10 +45,10 @@ public class Instructions2 extends World
                 "Let's see what we've got here... hawhawhaw",
                 "Well I'll be! These are some scrumptious cookies... haha... The best \nI've ever eaten... after mine of course...",
                 "Good effort... but it seems no one will be able to best me \nin this field... haha... ha...",
-                "Thankfully your patient didn't eat these... hahaha... why don't we leave the baking to me... ha ha ha",
+                "Thankfully your patient didn't eat these... hahaha... why don't we\nleave the baking to me... ha ha ha",
                 "Here's your memory fragment... good luck finding the rest...haha...\nYou've successfully obtained one of the keys to regain one's memories.",
                 "Bye bye haha...",
-                "Make sure to visit again! You outta hone your baking skills...haha\nMaybe I'll cook you \nsomething next time...if you improve...haha\n... maybe..."
+                "Make sure to visit again! You outta hone your baking skills...haha\nMaybe I'll cook you something next time...if you improve...haha\n... maybe..."
             };
         }
 

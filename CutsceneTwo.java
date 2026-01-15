@@ -29,11 +29,11 @@ public class CutsceneTwo extends World
         // Background music
         bgMusic.setVolume(40);
         bgMusic.playLoop();
-        
+
         // Cutscene images and array that stores them
         backgrounds = new GreenfootImage[8];
     
-        backgrounds[0] = new GreenfootImage("end1.png");
+        backgrounds[0] = new GreenfootImage("end0.png");
         backgrounds[1] = new GreenfootImage("end1.png");
         backgrounds[2] = new GreenfootImage("end2.png");
         backgrounds[3] = new GreenfootImage("end3.png");
@@ -58,7 +58,7 @@ public class CutsceneTwo extends World
           "...",
           "...",
           "...",
-          "..."
+          "#socute... let's wake up the patient hehehehehehehe"
         };
         
         String[] playerSounds = {
@@ -95,6 +95,7 @@ public class CutsceneTwo extends World
             Greenfoot.setWorld(new EndWorld());
         }
     }
+    
     // Stops and starts music when entering and leaving world
     public void stopMusic() 
     {

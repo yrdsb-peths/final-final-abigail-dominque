@@ -54,30 +54,37 @@ public class FamilyWorld extends World
         setBackground(background);
         
         // adds randoms into the world because the chef is so cheeky
-        FamilyWorldNPC2 npc5 = new FamilyWorldNPC2();
-        addObject(npc5, 538, 255);
+        FamilyWorldNPC npc1 = new FamilyWorldNPC();
+        addObject(npc1, 538, 255);
         
-        FamilyWorldNPC npc = new FamilyWorldNPC();
-        addObject(npc, 420, 257);
+        FamilyWorldNPC2 npc2 = new FamilyWorldNPC2();
+        addObject(npc2, 420, 257);
         
-        FamilyWorldNPC2 npc1 = new FamilyWorldNPC2();
-        addObject(npc1, 502, 389);
+        FamilyWorldNPC3 npc3 = new FamilyWorldNPC3();
+        addObject(npc3, 502, 389);
         
-        FamilyWorldNPC npc2 = new FamilyWorldNPC();
-        addObject(npc2, 590, 333);
+        FamilyWorldNPC4 npc4 = new FamilyWorldNPC4();
+        addObject(npc4, 590, 333);
         
-        FamilyWorldNPC2 npc3 = new FamilyWorldNPC2();
-        addObject(npc3, 743, 325);
+        FamilyWorldNPC5 npc5 = new FamilyWorldNPC5();
+        addObject(npc5, 743, 325);
         
-        FamilyWorldNPC npc4 = new FamilyWorldNPC();
-        addObject(npc4, 312, 396);
+        FamilyWorldNPC6 npc6 = new FamilyWorldNPC6();
+        addObject(npc6, 312, 396);
         
+        // Side chairs
+        FamilyWorldNPC7 npc7 = new FamilyWorldNPC7();
+        addObject(npc7, 124, 212);
         
+        FamilyWorldNPC8 npc8 = new FamilyWorldNPC8();
+        addObject(npc8, 193, 165);
         
-        // PLACEHLODER
-        // PLACEHLODER
-        // PLACEHLODER
-        // PLACEHLODER
+        FamilyWorldNPC9 npc9 = new FamilyWorldNPC9();
+        addObject(npc9, 181, 130);
+        
+        FamilyWorldNPC10 npc10 = new FamilyWorldNPC10();
+        addObject(npc10, 367, 129);
+        
         // adds chef npc
         chef = new ChefChibiNPC();
         addObject(chef, 200, 500);
@@ -266,7 +273,7 @@ public class FamilyWorld extends World
     {
         // spawns fire door
         FireDoor door = new FireDoor();
-        addObject(door, 800, 350);
+        addObject(door, 500, 50);
     }
     
     // Stops and starts music when entering and leaving world
