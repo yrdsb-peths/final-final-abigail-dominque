@@ -127,11 +127,17 @@ public class MushroomWorld extends World
     // Spawns the fireflies
     private void spawnFireflies()
     {
+        int half = 20;
+        
         for (int i = 0; i < 3; i++)
         {
-            int x = Greenfoot.getRandomNumber(getWidth() - 500) + 500;
-            int y = Greenfoot.getRandomNumber(getHeight() - 100) + 50;
+            int minX = 500 + half;                 // 500 → but shifted right 20px
+            int maxX = getWidth() - half;          // 1000 - 20 = 980
+            int x = minX + Greenfoot.getRandomNumber(maxX - minX + 1);
     
+            int minY = half;                       // 20
+            int maxY = getHeight() - half;         // 700 - 20 = 680
+            int y = minY + Greenfoot.getRandomNumber(maxY - minY + 1);
             addObject(new Firefly(), x, y);
         }
     }

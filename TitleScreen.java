@@ -21,7 +21,7 @@ public class TitleScreen extends World
         setBackground(background);
 
         PlayButton button = new PlayButton();
-        addObject(button, 530, 500);
+        addObject(button, 510, 500);
     }
 
 }

@@ -28,10 +28,10 @@ public class IntroWorld extends World
         setBackground(backgrounds[0]);
         
         String[] introDialogue = {
-          "Missing memories and headaches...",
-          "It seems as if you're affected by the ",
-          "help help zim",
-          "i said help",
+          "You're missing memories??!?!?!?!",
+          "Don't even worry about it we'll fix you right up",
+          "Just close your eyes and let me (professional) get to work",
+          "hehe haw haw",
           "..."
         };
         
