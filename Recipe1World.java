@@ -44,7 +44,7 @@ public class Recipe1World extends World
         String[] text1;
         text1 = new String[] {
             "Wassup",
-            "We boutta make some cookies"
+            "We boutta make some cookies... click to add zem ingredients \nin the bowl (on foenem)"
         };
         
         String[] ratataSounds = {
