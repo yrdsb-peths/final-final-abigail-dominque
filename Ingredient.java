@@ -26,7 +26,7 @@ public class Ingredient extends Actor
         if(!addedToPot && Greenfoot.mousePressed(this))
         {
             addedToPot = true;
-            setLocation(500,400);
+            setLocation(500,330);
             
             if(recipe1World != null)
             {

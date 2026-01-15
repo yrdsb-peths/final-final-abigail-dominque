@@ -128,7 +128,7 @@ public class Recipe1World extends World
         removeObjects(getObjects(CookingPotTop.class));
         
         SugarCookies cookies = new SugarCookies();
-        addObject(cookies, 500, 250);
+        addObject(cookies, 500, 330);
 
         recipeMade = true;
         
