@@ -10,7 +10,7 @@ public class PlayerControls extends World
         this.returnWorld = world;
         
         String [] dialogue = {
-            "Arrow keys to move",
+            "WASD to move",
             "Press space to talk",
             "When you're finished reading, press escape to leave!",
             "..."
