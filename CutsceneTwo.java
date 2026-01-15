@@ -58,7 +58,7 @@ public class CutsceneTwo extends World
           "... \n(the (cutest) puppy (ever) feels sad)",
           "... \n((cutest) puppy (ever) apologizes)",
           "... \n((cutest) puppy (ever) and patient are happy!)",
-          "Looks like this time the patient came to us early before they \nlost any more memories... lucky lucky ducky ;)... I suppose we'll wake them up now and \nsee what HAPPENS... ;)",
+          "Looks like this time the patient came to us early before they \nlost any more memories... lucky lucky ducky ;)... I suppose we'll wake them up \nnow and see what HAPPENS... ;)",
           "..."
         };
         
