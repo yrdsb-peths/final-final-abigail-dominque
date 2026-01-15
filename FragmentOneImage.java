@@ -10,7 +10,7 @@ public class FragmentOneImage extends World
         previousWorld = previous;
         
         // Set background to the image
-        GreenfootImage fragment = new GreenfootImage("mushroom_big_image3.png");
+        GreenfootImage fragment = new GreenfootImage("fragment1.png");
         fragment.scale(getWidth(), getHeight());
         setBackground(fragment);
         
