@@ -43,20 +43,11 @@ public class MushroomBigNPC extends Actor
     
     private void toggleImage()
     {
-        index = (index + 1) % 3;
+        index = (index + 1) % 2;
         
-        if (index == 1)
-        {
-            setImage1();
-        }
-        
-        if(index == 2 || index == 3)
-        {
-            setImage2();
-        }
-        
+        GreenfootImage[] images = {image1, image2};
+        setImage(images[index]);
     }
-    
     
     public void setImage1()
     {

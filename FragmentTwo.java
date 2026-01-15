@@ -9,8 +9,8 @@ public class FragmentTwo extends Actor
     public FragmentTwo()
     {
         // initiates and scales book image
-        fragment = new GreenfootImage("recipe1.jpg");
-        fragment.scale(50,50);
+        fragment = new GreenfootImage("fragment2.png");
+        fragment.scale(100,100);
         setImage(fragment);
     }
     
