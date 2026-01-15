@@ -68,14 +68,8 @@ public class MushroomWorld extends World
         mushroom = new MushroomChibiNPC();
         addObject(mushroom, 80, 450);
         
-        //Adds book and cooking pot after instructions
-        if(instructionsRead)
-        {
-            Book book = new Book();
-            addObject(book, 950, 50);
-        }
         
-        //Adds door after lantern is given
+        //Adds door and book after lantern is given
         if(instructionsRead && lanternGiven == true)
         {
             Door door = new Door();

@@ -80,12 +80,13 @@ public class Instructions extends World
             {
                 world.setTalkedToChibi(true);
                 world.startFireflyQuest();
-                world.spawnBookIfNeeded();
             }
     
             // AFTER FIRELIES → give lantern
             if (world.getDialogueStage() == 2 && !world.lanternAlreadyGiven())
             {
+                world.spawnBookIfNeeded();
+                
                 Player p = world.getObjects(Player.class).get(0);
                 world.giveLantern(p);
             }
