@@ -1,20 +1,7 @@
-# Set up Greenfoot for VSCode
+Welcome to Somnolent... a game about dreams and memories :)
+It follows a doctor on their journey in the Dreamscape... the doctor is helping a patient regain their memories by collecting memory fragments in the dream.
+In the dream, the doctor meets multiple characters and has to pass some trials in order to collect the fragments and ultimately cure their patient...
 
-[Mac]
-1. Open `Finder` and navigate to the Applications folder.
-2. Right-click on the Greenfoot app and select `Show Package Contents`.
-3. In the opened folder, go to `Contents -> Resources -> Java` and find the `greenfoot.jar` file.
-4. Copy this `greenfoot.jar` to the `/lib` Folder in this project.
+Press play in intro screen to play! There is a book on the top right with some instructions in case you get lost... 
 
-[Windows]
-1. Open `File Explorer` and navigate to `C:\Program Files\Greenfoot` and locate the `greenfoot.jar` file.
-2. Copy this `greenfoot.jar` to the `\lib` Folder in this project.
-
-<br>
-<br>
-
-# project.greenfoot
-Copy the `project.greenfoot.md` file and rename it to `project.greenfoot`
-
-# Learn Markdown Basics
-[Markdown basics](https://www.markdownguide.org/getting-started/)
+BTW we drew everything... ;)
