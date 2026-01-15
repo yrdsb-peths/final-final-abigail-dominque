@@ -34,11 +34,11 @@ public class Recipe1World extends World
         
         // Adds Ratata to world (the real goat)
         Ratata rat = new Ratata();
-        addObject(rat, 120, 450);
+        addObject(rat, 500, 110);
         
         // adds cooking pot in the middle
         CookingPotTop pot = new CookingPotTop();
-        addObject(pot, 500, 400);
+        addObject(pot, 500, 330);
         
         // intro text
         String[] text1;
@@ -80,8 +80,8 @@ public class Recipe1World extends World
         text2 = new String[] {
             "Bro these better be good gon be honest",
             "But lie I won't be surprised if they ain't",
-            "If chef Norve don't like them you're dun",
-            "Okay I guess you can leave now ;-;"
+            "If chef Norve don't like them WE are dun on blud on bluh",
+            "Okay let's go...keep pressing the exit button to leave the kitchen"
         };
         
         String[] chefSounds = {
@@ -128,7 +128,7 @@ public class Recipe1World extends World
         removeObjects(getObjects(CookingPotTop.class));
         
         SugarCookies cookies = new SugarCookies();
-        addObject(cookies, 500, 300);
+        addObject(cookies, 500, 250);
 
         recipeMade = true;
         

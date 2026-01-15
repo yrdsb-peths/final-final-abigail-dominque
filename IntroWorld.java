@@ -2,6 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class IntroWorld extends World
 {
+    // Variables for the dialogue and cutscene images
     private boolean finished = false;
     private DialogueBox dialogue;
     private GreenfootImage[] backgrounds;
@@ -12,6 +13,7 @@ public class IntroWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1);
         
+        // Cutscene images and array that stores them
         backgrounds = new GreenfootImage[5];
         
         backgrounds[0] = new GreenfootImage("introworld_1.png");
@@ -19,6 +21,7 @@ public class IntroWorld extends World
         backgrounds[2] = new GreenfootImage("introworld_3.png");
         backgrounds[3] = new GreenfootImage("introworld_4.png");
         backgrounds[4] = new GreenfootImage("blackscreen.png");
+        
         
         for (int i = 0; i < backgrounds.length; i++)
         {
@@ -31,7 +34,7 @@ public class IntroWorld extends World
           "You're missing memories??!?!?!?!",
           "Don't even worry about it we'll fix you right up",
           "Just close your eyes and let me (professional) get to work",
-          "hehe haw haw",
+          "Hehe haw haw",
           "..."
         };
         

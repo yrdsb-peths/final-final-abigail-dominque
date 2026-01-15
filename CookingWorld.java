@@ -35,16 +35,13 @@ public class CookingWorld extends World
         
         String[] text;
         text = new String[] {
-            "Welcome to the kitchen!",
-            "Click sugar cookies to begin"
+            "Ey get ready to cook bluddy... click the cookies and we'll get right \nto it ._.",
+            "What you mean you can't see me ;-"
         };
         
         String[] chefSounds = {
-            "chef1.mp3",
-            "chef2.mp3",
-            "chef3.mp3",
-            "chef4.mp3",
-            "chef5.mp3",
+            "rat1.mp3",
+            "rat3.mp3"
         };
         dialogue = new DialogueBox(text, chefSounds);
         addObject(dialogue, 500, 600);
