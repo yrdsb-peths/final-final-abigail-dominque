@@ -32,6 +32,10 @@ public class Recipe1World extends World
         Exit exit = new Exit(worldPrevious);
         addObject(exit, 950, 50);
         
+        // Adds Ratata to world (the real goat)
+        Ratata rat = new Ratata();
+        addObject(rat, 120, 450);
+        
         // adds cooking pot in the middle
         CookingPotTop pot = new CookingPotTop();
         addObject(pot, 500, 400);

@@ -84,7 +84,7 @@ public class FamilyWorld extends World
         
         // Adds the lumenfly onto the chef
         LumenflyIndicator lumen = new LumenflyIndicator();
-        addObject(lumen, 230, 410);
+        addObject(lumen, 240, 437);
         
         // adds the instructions book
         Book book = new Book();
@@ -190,7 +190,7 @@ public class FamilyWorld extends World
     public void spawnCookingPot()
     {
         pot = new CookingPot();
-        addObject(pot, 900, 600);
+        addObject(pot, 800, 540);
     }
 
     public void giveSugarCookies()
