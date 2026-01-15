@@ -14,12 +14,6 @@ public class FragmentTwo extends Actor
         setImage(fragment);
     }
     
-    public void openInstructions()
-    {
-        // Open the world with the fragment image
-        Greenfoot.setWorld(new CutsceneTwo());
-    }
-    
     public void act()
     {
         if(used)
@@ -33,7 +27,7 @@ public class FragmentTwo extends Actor
         {
             used = true;
             
-            GameWorld world = (GameWorld) getWorld();
+            Greenfoot.setWorld(new CutsceneTwo());
         }
     }
 }

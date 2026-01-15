@@ -99,6 +99,7 @@ public class GameWorld extends World
     // Opens cutscene2
     public void openCutsceneTwo()
     {
+        stopMusic();
         Greenfoot.setWorld(new CutsceneTwo());
     }
 
