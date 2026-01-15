@@ -49,18 +49,20 @@ public class CutsceneTwo extends World
 
         setBackground(backgrounds[0]);
         
+        //dialogue while memories are playing
         String[] introDialogue = {
           "Let's piece the fragments together...",
+          "... \n(patient is running from puppy)",
+          "... \n(puppy bites patient)",
+          "... \n(patient is crying)",
+          "... \n(puppy feels sad)",
+          "... \n(puppy apologizes)",
+          "... \n(puppy and patient are happy!)",
           "...",
-          "...",
-          "...",
-          "...",
-          "...",
-          "...",
-          "...",
-          "#socute... let's wake up the patient hehehehehehehe"
+          "#socute... you've found the patient's memories!!! let's wake \nthem up hehehehehehehe"
         };
         
+        //player sounds
         String[] playerSounds = {
             "player1.mp3",
             "player2.mp3",

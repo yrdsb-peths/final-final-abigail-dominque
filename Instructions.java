@@ -17,12 +17,14 @@ public class Instructions extends World
         returnX = x;
         returnY = y;
         
+        //bg
         GreenfootImage background = new GreenfootImage("mushroom_background.png");
         background.scale(getWidth(), getHeight());
         setBackground(background);
         
         String[] dialogue;
         
+        // npc dialogue
         if(stage == 0)
         {
             dialogue = new String[] {

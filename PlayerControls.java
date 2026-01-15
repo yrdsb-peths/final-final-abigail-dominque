@@ -27,6 +27,7 @@ public class PlayerControls extends World
     
     public void act()
     {
+        //escape to exit
         if (Greenfoot.isKeyDown("escape"))
         {
             Greenfoot.setWorld(returnWorld);

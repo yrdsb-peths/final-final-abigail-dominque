@@ -62,7 +62,8 @@ public class IntroWorld extends World
                 lastLine = line;
             }
         }
-    
+        
+        //switches world to mushroomworld after cutscene is done
         if (!finished && getObjects(DialogueBox.class).isEmpty())
         {
             finished = true;

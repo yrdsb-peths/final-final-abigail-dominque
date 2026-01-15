@@ -257,6 +257,7 @@ public class MushroomWorld extends World
         }
     }
     
+    //spawns book after dialogue
     public void spawnBookIfNeeded()
     {
         if(!bookSpawned)

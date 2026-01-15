@@ -33,16 +33,20 @@ public class CookingWorld extends World
         exit = new Exit(familyWorld);
         addObject(exit, 950, 50);
         
+        //rat dialogue
         String[] text;
         text = new String[] {
             "Ey get ready to cook bluddy... click the cookies and we'll get right \nto it ._.",
             "What you mean you can't see me ;-"
         };
         
+        //rat sounds
         String[] chefSounds = {
             "rat1.mp3",
             "rat3.mp3"
         };
+        
+        //adds dialogue
         dialogue = new DialogueBox(text, chefSounds);
         addObject(dialogue, 500, 600);
     }
@@ -79,6 +83,7 @@ public class CookingWorld extends World
         return returnY;
     }
     
+    //ends cooking
     public void finishCooking(String recipe)
     {
         if (recipe.equals("SugarCookie"))

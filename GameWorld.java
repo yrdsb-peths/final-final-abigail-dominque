@@ -36,6 +36,10 @@ public class GameWorld extends World
         bg.scale(getWidth(), getHeight());
         setBackground(bg);
         
+        //adds frag one to screen
+        FragmentOne frag = new FragmentOne();
+        addObject(frag, 800, 50);
+        
         // Adds lumenfly onto head
         LumenflyIndicator lumen = new LumenflyIndicator();
         addObject(lumen, 850, 500);

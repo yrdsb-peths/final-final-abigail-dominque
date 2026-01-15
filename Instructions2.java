@@ -23,6 +23,7 @@ public class Instructions2 extends World
         
         String[] dialogue;
         
+        //npc dialogue
         if(stage == 0)
         {
             dialogue = new String[] {
@@ -74,13 +75,14 @@ public class Instructions2 extends World
         {
             dialogueFinished = true;
             
+            //spawns cooking pot and shows text after talking 
             if(returnWorld.isQuestStarted() && !returnWorld.isQuestCompleted())
             {
                 returnWorld.spawnCookingPot();
                 returnWorld.showReminderText();
             }
             
-            
+            //removes pot and text after final dialogue
             if (returnWorld.removePotAfterText)
             {
                 returnWorld.removeCookingPot();

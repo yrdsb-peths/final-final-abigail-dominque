@@ -128,6 +128,7 @@ public class Player extends Actor
         }
     }
 
+    //checks if player has used cookingpot
     private void checkCookingPot()
     {
         if(isTouching(CookingPot.class) && canCook && Greenfoot.isKeyDown("space"))
@@ -142,6 +143,7 @@ public class Player extends Actor
         }
     }
     
+    //checks if door has been used
     private void checkDoor()
     {
         if(isTouching(Door.class))
@@ -152,6 +154,7 @@ public class Player extends Actor
         }
     }
     
+    //checks if all fireflies picked up
     private void checkFireflyPickup()
     {
         Firefly firefly = (Firefly)getOneIntersectingObject(Firefly.class);
@@ -165,6 +168,7 @@ public class Player extends Actor
         }
     }
     
+    //checks if talked to chef
     private void checkChefInteraction()
     {
         ChefChibiNPC npc = (ChefChibiNPC)getOneIntersectingObject(ChefChibiNPC.class);
@@ -199,6 +203,7 @@ public class Player extends Actor
         }
     }
     
+    //checks if firedoor used
     private void checkFireDoor()
     {
         if(isTouching(FireDoor.class))
@@ -209,6 +214,7 @@ public class Player extends Actor
         }
     }
     
+    //checks if talked to goat npc
     private void checkGoatInteraction()
     {
         GoatChibiNPC npc = (GoatChibiNPC)getOneIntersectingObject(GoatChibiNPC.class);
@@ -226,6 +232,7 @@ public class Player extends Actor
         }
     }
     
+    //checks if fragtwo was collided into
     private void checkFragmentTwo()
     {
         FragmentTwo frag = (FragmentTwo)getOneIntersectingObject(FragmentTwo.class);
