@@ -34,7 +34,7 @@ public class IntroWorld extends World
           "You're missing memories??!?!?!?!",
           "Don't even worry about it we'll fix you right up",
           "Just close your eyes and let me (professional) get to work",
-          "(**beep boop**)... \n(**press SPACE to talk to guides after entering the dreamscape**)...",
+          "(**beep boop**)... \n(**press SPACE to talk to guides after entering the dreamscape**)...\n...(**WASD to move**)...",
           "..."
         };
         
