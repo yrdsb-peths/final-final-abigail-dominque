@@ -17,7 +17,7 @@ public class Instructions2 extends World
         returnX = x;
         returnY = y;
         
-        GreenfootImage background = new GreenfootImage("mushroom_background.png");
+        GreenfootImage background = new GreenfootImage("familyworld_bg.jpg");
         background.scale(getWidth(), getHeight());
         setBackground(background);
         
